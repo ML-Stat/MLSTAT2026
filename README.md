@@ -1,6 +1,6 @@
-# MLSTAT2025
+# MLSTAT2026
 
-[MLSTAT2025 website](https://ml-stat.github.io/MLSTAT2025/)
+[MLSTAT2026 website](https://ml-stat.github.io/MLSTAT2026/)
 
 
 ## 安装hugo
@@ -22,7 +22,7 @@ hugo version
 ## 克隆仓库
 
 ```bash 
-git clone https://github.com/ML-Stat/MLSTAT2025.git
+git clone https://github.com/ML-Stat/MLSTAT2026.git
 git checkout dev
 
 ```
@@ -35,7 +35,7 @@ git checkout dev
 
 ## 生成网页
 
-在MLSTAT2025文件夹下执行
+在MLSTAT2026文件夹下执行
 
 ```bash 
 
@@ -45,7 +45,7 @@ hugo server -D
 ```
 
 
-浏览器访问`http://localhost:1313/MLSTAT2025/`
+浏览器访问`http://localhost:1313/MLSTAT2026/`
 
 代码push到远程dev分支
 ```

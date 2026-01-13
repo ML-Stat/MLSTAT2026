@@ -1,137 +1,137 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MLSTAT 2025</title>
-    <link>https://ml-stat.github.io/MLSTAT2025/</link>
-    <description>Recent content on MLSTAT 2025</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>MLSTAT 2026</title>
+    <link>http://localhost:1313/MLSTAT2026/</link>
+    <description>Recent content on MLSTAT 2026</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://ml-stat.github.io/MLSTAT2025/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/MLSTAT2026/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Is External Information Useful for Data Fusion? An Evaluation before Acquisition</title>
-      <link>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/daiguorong/</link>
+      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/daiguorong/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/daiguorong/</guid>
+      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/daiguorong/</guid>
       <description>9:00 a.m. — 9:40 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>随机梯度下降算法在高维回归问题中正则效应与泛化性能研究</title>
-      <link>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/fangcong/</link>
+      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/fangcong/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/fangcong/</guid>
+      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/fangcong/</guid>
       <description>9:55 a.m. — 10:35 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>用合成统计量来整合推断结果</title>
-      <link>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/gangbowen/</link>
+      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/gangbowen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/gangbowen/</guid>
+      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/gangbowen/</guid>
       <description>10:40 a.m. — 11:20 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>生成还是判别：探索复杂条件下的图像生成新范式</title>
-      <link>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/hutianyang/</link>
+      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/hutianyang/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/hutianyang/</guid>
+      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/hutianyang/</guid>
       <description>11:25 a.m. — 12:05 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>Model Free Prediction with Uncertainty Assessment</title>
-      <link>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/kanglican/</link>
+      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/kanglican/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/kanglican/</guid>
+      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/kanglican/</guid>
       <description>14:00 a.m. — 14:40 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>带偏差随机优化算法的稳定与泛化性能</title>
-      <link>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/leiyunwen/</link>
+      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/leiyunwen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/leiyunwen/</guid>
+      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/leiyunwen/</guid>
       <description>14:45 a.m. — 15:25 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>大模型机理分析初探-- In-context learning和数据合成机理分析</title>
-      <link>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/liuyong/</link>
+      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/liuyong/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/liuyong/</guid>
+      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/liuyong/</guid>
       <description>15:30 a.m. — 16:10 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>Learning Theory of Classification with Deep Neural Networks</title>
-      <link>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/shilei/</link>
+      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/shilei/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/shilei/</guid>
+      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/shilei/</guid>
       <description>16:25 a.m. — 17:05 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>复杂场景下的共型预测理论及方法</title>
-      <link>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/weihongxin/</link>
+      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/weihongxin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/weihongxin/</guid>
+      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/weihongxin/</guid>
       <description>5:10 p.m. — 5:50 p.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>Overview</title>
-      <link>https://ml-stat.github.io/MLSTAT2025/overview/</link>
+      <link>http://localhost:1313/MLSTAT2026/overview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ml-stat.github.io/MLSTAT2025/overview/</guid>
-      <description>第三届机器学习与统计学国际会议（MLSTAT）即将展开 (The 3nd International Conference on Machine Learning and Statistics (MLSTAT) will be held)&#xA;日期 (Date): June 20-22, 2025.&#xA;地址 (Localtion): 中国湖北省武汉市武昌区八一路299号 武汉大学雷军楼一楼报告厅 (Lecture Hall on the First Floor of Lei Jun Building, Wuhan university, 299, Bayi Road, Wuchang District, Wuhan City, Hubei Province, China).&#xA;目的 (Aim): 机器学习与统计学国际会议（MLSTAT）是一项旨在促进国内外机器学习与统计学领域学者学术交流的重要会议。通过推动机器学习与统计学的协同发展，本届会议致力于夯实数据科学与人工智能等基础学科建设，进而为相关数字经济发展提供学术支撑。(The Machine Learning and Statistics Conference (MLSTAT) is an academic conference that serves to facilitate scholarly exchange among domestic and international scholars in the fields of machine learning and statistics.</description>
+      <guid>http://localhost:1313/MLSTAT2026/overview/</guid>
+      <description>&lt;p&gt;第四届机器学习与统计学国际会议（MLSTAT）即将展开 (The 4th International Conference on Machine Learning and Statistics (&lt;strong&gt;MLSTAT&lt;/strong&gt;) will be held)&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;日期 (Date)&lt;/strong&gt;: &lt;span style=&#34;font-size:150%&#34;&gt;July 15-17, 2026&lt;/span&gt;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;地址 (Localtion)&lt;/strong&gt;: &lt;span style=&#34;font-size:150%&#34;&gt;中国湖北省武汉市武昌区八一路299号 武汉大学雷军楼一楼报告厅 (Lecture Hall on the First Floor of Lei Jun Building, Wuhan university, 299, Bayi Road, Wuchang District, Wuhan City, Hubei Province, China)&lt;/span&gt;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;目的 (Aim)&lt;/strong&gt;: 机器学习与统计学国际会议（MLSTAT）是一项旨在促进国内外机器学习与统计学领域学者学术交流的重要会议。通过推动机器学习与统计学的协同发展，本届会议致力于夯实数据科学与人工智能等基础学科建设，进而为相关数字经济发展提供学术支撑。(The Machine Learning and Statistics Conference (MLSTAT) is an academic conference that serves to facilitate scholarly exchange among domestic and international scholars in the fields of machine learning and statistics. Through fostering an academic culture that promotes the mutual development of machine learning and statistics, the conference aims to advance foundational disciplines such as data science and artificial intelligence, and thereby contribute to the development of related digital economic industries.)&lt;/p&gt;</description>
     </item>
     <item>
       <title>Statistics at a crossroads: How it can revolutionize artificial intelligence</title>
-      <link>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/wurongling/</link>
+      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/wurongling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/wurongling/</guid>
+      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/wurongling/</guid>
       <description>8:30 a.m. — 9:10 a.m., Sunday, Jun.22, 2025</description>
     </item>
     <item>
       <title>几何等变先验嵌入的深度学习</title>
-      <link>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/xieqi/</link>
+      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/xieqi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/xieqi/</guid>
+      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/xieqi/</guid>
       <description>9:15 a.m. — 9:55 a.m., Sunday, Jun.22, 2025</description>
     </item>
     <item>
       <title>Semi-implicit Functional Gradient Flow (半隐式函数型梯度流)</title>
-      <link>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/zhangcheng/</link>
+      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/zhangcheng/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/zhangcheng/</guid>
+      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/zhangcheng/</guid>
       <description>10:10 a.m. — 10:50 a.m., Sunday, Jun.22, 2025</description>
     </item>
     <item>
       <title>A Statistical Hypothesis Testing Framework for Data Misappropriation Detection in Large Language Models</title>
-      <link>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/zhanglinjun/</link>
+      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/zhanglinjun/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/zhanglinjun/</guid>
+      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/zhanglinjun/</guid>
       <description>10:55 a.m. — 11:35 a.m., Sunday, Jun.22, 2025</description>
     </item>
     <item>
       <title>应对高频挑战：从浅层到多层神经网络</title>
-      <link>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/zhangshijun/</link>
+      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/zhangshijun/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/zhangshijun/</guid>
+      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/zhangshijun/</guid>
       <description>2:00 p.m. — 2:40 p.m., Sunday, Jun.22, 2025</description>
     </item>
     <item>
       <title>Continuous Modeling Perspective for Imaging Science</title>
-      <link>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/zhaoxile/</link>
+      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/zhaoxile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/zhaoxile/</guid>
+      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/zhaoxile/</guid>
       <description>2:45 p.m. — 3:25 p.m., Sunday, Jun.22, 2025</description>
     </item>
     <item>
       <title>Proper Dataset Valuation by Pointwise Mutual Information</title>
-      <link>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/zhengshuran/</link>
+      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/zhengshuran/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ml-stat.github.io/MLSTAT2025/schedule/sessions/zhengshuran/</guid>
+      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/zhengshuran/</guid>
       <description>3:30 p.m. — 4:10 p.m., Sunday, Jun.22, 2025</description>
     </item>
     <item>
-      <title>Machine Learning and Statistics 2025 Organizing Committee</title>
-      <link>https://ml-stat.github.io/MLSTAT2025/committee/</link>
+      <title>Machine Learning and Statistics 2026 Organizing Committee</title>
+      <link>http://localhost:1313/MLSTAT2026/committee/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ml-stat.github.io/MLSTAT2025/committee/</guid>
-      <description>Program Committee (Listed alphabetically by surname) Program Chairs:&#xA;Deyu Meng, Xi&amp;rsquo;an Jiaotong University Sai Li, Renmin University of China Program Members:&#xA;Cong Fang, Peking University&#xA;Tianfan Fu, Nanjing University&#xA;Bowen Gang, Fudan University&#xA;Tianyang Hu, National University of Singapore&#xA;Lican Kang, The Chinese University of Hong Kong (Shenzhen)&#xA;Yunwen Lei, The University of Hong Kong&#xA;Nuo Ma, Zero One All Things&#xA;Lei Shi, Fudan University&#xA;Hongxin Wei, Southern University of Science and Technology</description>
+      <guid>http://localhost:1313/MLSTAT2026/committee/</guid>
+      <description>&lt;!-- ________________________________________ --&gt;&#xD;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Program Committee (Listed alphabetically by surname)&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Program Chairs&lt;/strong&gt;:&lt;br&gt;&#xA;Chengchun Shi, London School of Economics and Political Science &lt;br&gt;&#xA;Yuling Jiao, Wuhan University&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Program Members&lt;/strong&gt;:&lt;br&gt;&#xA;Zhanrui Cai, The University of Hong Kong &lt;br&gt;&#xA;Xiaowu Dai, University of California, Los Angeles &lt;br&gt;&#xA;Zhongxiang Dai, The Chinese University of Hong Kong &lt;br&gt;&#xA;Di He, Peking University &lt;br&gt;&#xA;Fanghui Liu, Shanghai Jiao Tong University &lt;br&gt;&#xA;Jian Li, Tsinghua University &lt;br&gt;&#xA;Ziye Ma, City University of Hong Kong &lt;br&gt;&#xA;Xiaojie Mao, Tsinghua University &lt;br&gt;&#xA;Jun Shu, Xi&amp;rsquo;an Jiaotong University &lt;br&gt;&#xA;Weijie Su, University of Pennsylvania &lt;br&gt;&#xA;Wei Sun, Purdue University &lt;br&gt;&#xA;Lei Wu, Peking University &lt;br&gt;&#xA;Feng Zhou, Renmin University of China &lt;br&gt;&#xA;Fan Zhou, Shanghai University of Finance and Economics &lt;br&gt;&#xA;Yunfei Yang, Sun Yat-sen University&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

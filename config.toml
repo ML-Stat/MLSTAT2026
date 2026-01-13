@@ -1,12 +1,12 @@
-baseurl = "https://ml-stat.github.io/MLSTAT2025/"
+baseurl = "https://ml-stat.github.io/MLSTAT2026/"
 languageCode = "en-us"
-title = "MLSTAT 2025"
+title = "MLSTAT 2026"
 theme = "hugo-material-banner"
 metadataformat = "yaml"
 canonifyurls = true
 # Enable Google Analytics by entering your tracking id
 googleAnalytics = ""
-disableKinds = ["taxonomy", "taxonomyTerm"]
+disableKinds = ["taxonomy"]
 
 [markup.goldmark.renderer]
 unsafe = true
@@ -38,7 +38,7 @@ unsafe = true
   	code = "sans-serif Mono"
 
 
-[social]
+[params.social]
 	twitter = ""
 	github  = "/orgs/ML-Stat/repositories"
 	email   = "xiangyuchang@stu.edu.cn"
