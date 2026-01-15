@@ -1,6 +1,8 @@
 ---
-title: "Schedules"
+title: "会议日程"
 ---
+
+<p class="grey-text" style="margin-top:-1rem">Schedule</p>
 
 {{ range .Site.RegularPages.ByDate.Reverse }}
   {{ if eq .Section "sessions" }}

@@ -18,13 +18,13 @@ unsafe = true
 
 	logo = "/images/logo-AA.jpg"
 	favicon = "images/logo-AA.jpg"
-	banner_image = "/images/dbsdCC.png"
+	banner_image = "/images/swufe.jpg"
 
 	permalink = "#"
 
 	# Custom assets
-	custom_css = []
-	custom_js  = []
+	custom_css = ["css/custom.css"]
+	custom_js  = ["js/api.js", "js/app.js", "js/admin.js"]
 
 	# Syntax highlighting theme
 	highlight_css  = ""
@@ -47,6 +47,11 @@ unsafe = true
 	name   = "Overview"
 	url    = "overview"
 	weight = 10
+
+[[menu.main]]
+	name   = "Registration"
+	url    = "registration"
+	weight = 20
 
 [[menu.main]]
 	name   = "Committee"
