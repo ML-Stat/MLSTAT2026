@@ -498,9 +498,9 @@ async function showReviewModal(poster) {
             </div>
 
             <div style="margin-bottom:16px;">
-                <a href="${poster.file_url_base}?token=${api.token}" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:12px;background:#3f51b5;color:#fff;border-radius:6px;text-decoration:none;">
+                <button onclick="downloadAdminPoster(${poster.id})" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:12px;background:#3f51b5;color:#fff;border-radius:6px;text-decoration:none;width:100%;border:none;cursor:pointer;font-size:14px;">
                     <i class="material-icons">visibility</i> 查看海报文件
-                </a>
+                </button>
             </div>
 
             ${history.length > 0 ? `
@@ -858,4 +858,10 @@ function showDetailedChanges(id, fromPosterModal = false) {
     } catch (e) {
         showMessage('无法解析变更详情', 'error');
     }
+}
+
+// 管理员下载海报
+function downloadAdminPoster(posterId) {
+    const url = api.getPosterDownloadUrl(posterId);
+    window.open(url, '_blank');
 }

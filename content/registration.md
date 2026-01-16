@@ -29,8 +29,8 @@ url: /registration/
     <label><i class="material-icons">description</i> 发票类型 / Invoice Type</label>
     <select name="invoice_type">
         <option value="" disabled selected>请选择 / Please select</option>
-        <option value="普通发票">增值税普通发票 / VAT General Invoice</option>
-        <option value="专用发票">增值税专用发票 / VAT Special Invoice</option>
+        <option value="general">增值税普通发票 / VAT General Invoice</option>
+        <option value="special">增值税专用发票 / VAT Special Invoice</option>
     </select>
 </div>
 

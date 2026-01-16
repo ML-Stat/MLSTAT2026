@@ -378,7 +378,7 @@ async function viewPosterDetail(posterId) {
                         <label>状态 / Status</label>
                         <p><span class="custom-status custom-status-${statusClass}">${STATUS.poster[poster.status]}</span></p>
                     </div>
-                    ${reviewHistoryHtml ? reviewHistoryHtml : `
+                    ${historyHtml ? historyHtml : `
                     <div class="detail-group">
                         <label>审核意见 / Review Comment</label>
                         <p ${poster.review_comment ? 'class="review-comment-box"' : ''}>${poster.review_comment ? escapeHtml(poster.review_comment) : '无 / None'}</p>
@@ -386,7 +386,7 @@ async function viewPosterDetail(posterId) {
                     `}
                     <div class="detail-group">
                         <label>文件 / File</label>
-                        <p><a href="${API_BASE}/posters/${poster.id}/download?token=${api.token}" class="custom-btn custom-btn-small"><i class="material-icons">download</i> ${escapeHtml(poster.file_name)}</a></p>
+                        <p><button onclick="downloadPosterFile(${poster.id})" class="custom-btn custom-btn-small"><i class="material-icons">download</i> ${escapeHtml(poster.file_name)}</button></p>
                     </div>
                     ${(poster.status === 'submitted' || poster.status === 'revision_required') ? `
                     <div class="detail-actions">
@@ -643,10 +643,10 @@ async function loadDocumentsPage() {
                     </div>
                     <h4>${config.name}</h4>
                     <p>${config.desc}</p>
-                    <a href="${escapeHtml(api.getDocumentDownloadUrl(d.id))}" class="custom-doc-download-btn">
+                    <button onclick="downloadDocument(${d.id})" class="custom-doc-download-btn">
                         <i class="material-icons">download</i>
                         下载 / Download
-                    </a>
+                    </button>
                 </div>
             `;
         }).join('')}</div>`;
@@ -766,6 +766,19 @@ function checkResetToken() {
             `;
         }
     }
+}
+
+
+// ==================== 下载 / Download ====================
+
+function downloadDocument(docId) {
+    const url = api.getDocumentDownloadUrl(docId);
+    window.open(url, '_blank');
+}
+
+function downloadPosterFile(posterId) {
+    const url = api.getPosterDownloadUrl(posterId);
+    window.open(url, '_blank');
 }
 
 // ==================== 页面初始化 / Initialization ====================

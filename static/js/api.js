@@ -239,10 +239,12 @@ class ApiClient {
         return this.request('/documents/');
     }
 
-    // 注意：下载链接中包含 token 是为了兼容浏览器直接下载
-    // 生产环境应考虑使用短期下载令牌替代
     getDocumentDownloadUrl(docId) {
         return `${API_BASE}/documents/${docId}/download?token=${this.token}`;
+    }
+
+    getPosterDownloadUrl(posterId) {
+        return `${API_BASE}/posters/${posterId}/download?token=${this.token}`;
     }
 
     // ========== 管理员 ==========

@@ -569,10 +569,46 @@
     width: 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .form-container .row {
         flex-direction: column;
         gap: 0;
+    }
+    .form-container .row .col,
+    .form-container .row [class*="col"],
+    .form-container .row > .input-field {
+        flex: none;
+        width: 100%;
+        min-width: 100%;
+    }
+    .form-container .row .input-field {
+        margin-bottom: 20px;
+    }
+    .form-container {
+        padding: 0 12px;
+    }
+    .form-container .card-content {
+        padding: 24px 16px;
+    }
+    .form-container .input-field {
+        margin-bottom: 24px;
+    }
+    .form-container .input-field label {
+        font-size: 15px;
+        margin-bottom: 10px;
+        line-height: 1.4;
+    }
+    .form-container .input-field input,
+    .form-container .input-field select,
+    .form-container .input-field textarea {
+        font-size: 16px;
+        height: 48px;
+        padding: 12px 14px;
+    }
+    .form-container .input-field .helper-text {
+        font-size: 13px;
+        margin-top: 6px;
+        line-height: 1.4;
     }
 }
 
