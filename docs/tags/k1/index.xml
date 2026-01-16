@@ -2,121 +2,121 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>K1 on MLSTAT 2026</title>
-    <link>http://localhost:1313/MLSTAT2026/tags/k1/</link>
+    <link>https://ml-stat.github.io/MLSTAT2026/tags/k1/</link>
     <description>Recent content in K1 on MLSTAT 2026</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/MLSTAT2026/tags/k1/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ml-stat.github.io/MLSTAT2026/tags/k1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Is External Information Useful for Data Fusion? An Evaluation before Acquisition</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/daiguorong/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/daiguorong/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/daiguorong/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/daiguorong/</guid>
       <description>9:00 a.m. — 9:40 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>随机梯度下降算法在高维回归问题中正则效应与泛化性能研究</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/fangcong/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/fangcong/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/fangcong/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/fangcong/</guid>
       <description>9:55 a.m. — 10:35 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>用合成统计量来整合推断结果</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/gangbowen/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/gangbowen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/gangbowen/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/gangbowen/</guid>
       <description>10:40 a.m. — 11:20 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>生成还是判别：探索复杂条件下的图像生成新范式</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/hutianyang/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/hutianyang/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/hutianyang/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/hutianyang/</guid>
       <description>11:25 a.m. — 12:05 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>Model Free Prediction with Uncertainty Assessment</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/kanglican/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/kanglican/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/kanglican/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/kanglican/</guid>
       <description>14:00 a.m. — 14:40 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>带偏差随机优化算法的稳定与泛化性能</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/leiyunwen/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/leiyunwen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/leiyunwen/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/leiyunwen/</guid>
       <description>14:45 a.m. — 15:25 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>大模型机理分析初探-- In-context learning和数据合成机理分析</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/liuyong/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/liuyong/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/liuyong/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/liuyong/</guid>
       <description>15:30 a.m. — 16:10 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>Learning Theory of Classification with Deep Neural Networks</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/shilei/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/shilei/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/shilei/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/shilei/</guid>
       <description>16:25 a.m. — 17:05 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>复杂场景下的共型预测理论及方法</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/weihongxin/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/weihongxin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/weihongxin/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/weihongxin/</guid>
       <description>5:10 p.m. — 5:50 p.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>Statistics at a crossroads: How it can revolutionize artificial intelligence</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/wurongling/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/wurongling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/wurongling/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/wurongling/</guid>
       <description>8:30 a.m. — 9:10 a.m., Sunday, Jun.22, 2025</description>
     </item>
     <item>
       <title>几何等变先验嵌入的深度学习</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/xieqi/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/xieqi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/xieqi/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/xieqi/</guid>
       <description>9:15 a.m. — 9:55 a.m., Sunday, Jun.22, 2025</description>
     </item>
     <item>
       <title>Semi-implicit Functional Gradient Flow (半隐式函数型梯度流)</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/zhangcheng/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhangcheng/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/zhangcheng/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhangcheng/</guid>
       <description>10:10 a.m. — 10:50 a.m., Sunday, Jun.22, 2025</description>
     </item>
     <item>
       <title>A Statistical Hypothesis Testing Framework for Data Misappropriation Detection in Large Language Models</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/zhanglinjun/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhanglinjun/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/zhanglinjun/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhanglinjun/</guid>
       <description>10:55 a.m. — 11:35 a.m., Sunday, Jun.22, 2025</description>
     </item>
     <item>
       <title>应对高频挑战：从浅层到多层神经网络</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/zhangshijun/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhangshijun/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/zhangshijun/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhangshijun/</guid>
       <description>2:00 p.m. — 2:40 p.m., Sunday, Jun.22, 2025</description>
     </item>
     <item>
       <title>Continuous Modeling Perspective for Imaging Science</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/zhaoxile/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhaoxile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/zhaoxile/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhaoxile/</guid>
       <description>2:45 p.m. — 3:25 p.m., Sunday, Jun.22, 2025</description>
     </item>
     <item>
       <title>Proper Dataset Valuation by Pointwise Mutual Information</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/zhengshuran/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhengshuran/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/zhengshuran/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhengshuran/</guid>
       <description>3:30 p.m. — 4:10 p.m., Sunday, Jun.22, 2025</description>
     </item>
   </channel>

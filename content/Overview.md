@@ -40,7 +40,7 @@ weight: 10
 
 **注册费用 / Registration Fee**
 
-普通 ¥200，学生 ¥100 / Regular ¥200, Student ¥100
+普通 ¥500，学生 ¥200 / Regular ¥500, Student ¥200
 
 **住宿说明 / Accommodation**
 

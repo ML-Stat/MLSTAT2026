@@ -6,7 +6,7 @@ url: /registration/
 
 <div class="reg-fee-notice">
     <i class="material-icons">info</i>
-    <span>注册费 / Registration Fee：<strong>¥200</strong>（学生优惠 Student：<strong>¥100</strong>）</span>
+    <span>注册费 / Registration Fee：<strong>¥500</strong>（学生优惠 Student：<strong>¥200</strong>）</span>
 </div>
 
 <div class="form-container" style="max-width:560px">

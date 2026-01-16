@@ -2,136 +2,213 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MLSTAT 2026</title>
-    <link>http://localhost:1313/MLSTAT2026/</link>
+    <link>https://ml-stat.github.io/MLSTAT2026/</link>
     <description>Recent content on MLSTAT 2026</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/MLSTAT2026/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ml-stat.github.io/MLSTAT2026/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Is External Information Useful for Data Fusion? An Evaluation before Acquisition</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/daiguorong/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/daiguorong/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/daiguorong/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/daiguorong/</guid>
       <description>9:00 a.m. — 9:40 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>随机梯度下降算法在高维回归问题中正则效应与泛化性能研究</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/fangcong/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/fangcong/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/fangcong/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/fangcong/</guid>
       <description>9:55 a.m. — 10:35 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>用合成统计量来整合推断结果</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/gangbowen/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/gangbowen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/gangbowen/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/gangbowen/</guid>
       <description>10:40 a.m. — 11:20 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>生成还是判别：探索复杂条件下的图像生成新范式</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/hutianyang/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/hutianyang/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/hutianyang/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/hutianyang/</guid>
       <description>11:25 a.m. — 12:05 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>Model Free Prediction with Uncertainty Assessment</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/kanglican/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/kanglican/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/kanglican/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/kanglican/</guid>
       <description>14:00 a.m. — 14:40 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>带偏差随机优化算法的稳定与泛化性能</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/leiyunwen/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/leiyunwen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/leiyunwen/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/leiyunwen/</guid>
       <description>14:45 a.m. — 15:25 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>大模型机理分析初探-- In-context learning和数据合成机理分析</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/liuyong/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/liuyong/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/liuyong/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/liuyong/</guid>
       <description>15:30 a.m. — 16:10 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>Learning Theory of Classification with Deep Neural Networks</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/shilei/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/shilei/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/shilei/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/shilei/</guid>
       <description>16:25 a.m. — 17:05 a.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
       <title>复杂场景下的共型预测理论及方法</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/weihongxin/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/weihongxin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/weihongxin/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/weihongxin/</guid>
       <description>5:10 p.m. — 5:50 p.m., Saturday, Jun.21, 2025</description>
     </item>
     <item>
-      <title>Overview</title>
-      <link>http://localhost:1313/MLSTAT2026/overview/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/overview/</guid>
-      <description>&lt;p&gt;第四届机器学习与统计学国际会议（MLSTAT）即将展开 (The 4th International Conference on Machine Learning and Statistics (&lt;strong&gt;MLSTAT&lt;/strong&gt;) will be held)&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;日期 (Date)&lt;/strong&gt;: &lt;span style=&#34;font-size:150%&#34;&gt;July 15-17, 2026&lt;/span&gt;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;地址 (Localtion)&lt;/strong&gt;: &lt;span style=&#34;font-size:150%&#34;&gt;中国湖北省武汉市武昌区八一路299号 武汉大学雷军楼一楼报告厅 (Lecture Hall on the First Floor of Lei Jun Building, Wuhan university, 299, Bayi Road, Wuchang District, Wuhan City, Hubei Province, China)&lt;/span&gt;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;目的 (Aim)&lt;/strong&gt;: 机器学习与统计学国际会议（MLSTAT）是一项旨在促进国内外机器学习与统计学领域学者学术交流的重要会议。通过推动机器学习与统计学的协同发展，本届会议致力于夯实数据科学与人工智能等基础学科建设，进而为相关数字经济发展提供学术支撑。(The Machine Learning and Statistics Conference (MLSTAT) is an academic conference that serves to facilitate scholarly exchange among domestic and international scholars in the fields of machine learning and statistics. Through fostering an academic culture that promotes the mutual development of machine learning and statistics, the conference aims to advance foundational disciplines such as data science and artificial intelligence, and thereby contribute to the development of related digital economic industries.)&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Statistics at a crossroads: How it can revolutionize artificial intelligence</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/wurongling/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/wurongling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/wurongling/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/wurongling/</guid>
       <description>8:30 a.m. — 9:10 a.m., Sunday, Jun.22, 2025</description>
     </item>
     <item>
-      <title>几何等变先验嵌入的深度学习</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/xieqi/</link>
+      <title>会议概览 / Overview</title>
+      <link>https://ml-stat.github.io/MLSTAT2026/overview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/xieqi/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/overview/</guid>
+      <description>&lt;p&gt;第四届机器学习与统计学国际会议（MLSTAT）即将展开&lt;/p&gt;&#xA;&lt;p class=&#34;grey-text&#34;&gt;The 4th International Conference on Machine Learning and Statistics (MLSTAT) will be held&lt;/p&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;日期 / Date&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;span style=&#34;font-size:1.2em&#34;&gt;2026年7月15日至17日 / July 15–17, 2026&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;地点 / Location&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;中国四川省成都市温江区柳台大道555号，西南财经大学柳林校区弘远楼105会议室&lt;/p&gt;&#xA;&lt;p class=&#34;grey-text&#34;&gt;Room 105, Hongyuan Building, Liulin Campus, Southwestern University of Finance and Economics, No. 555 Liutai Avenue, Wenjiang District, Chengdu, Sichuan, China&lt;/p&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;会议目的 / Aim&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;机器学习与统计学国际会议（MLSTAT）是一项旨在促进国内外机器学习与统计学领域学者学术交流的重要会议。通过推动机器学习与统计学的协同发展，本届会议致力于夯实数据科学与人工智能等基础学科建设，进而为相关数字经济发展提供学术支撑。&lt;/p&gt;&#xA;&lt;p class=&#34;grey-text&#34;&gt;The Machine Learning and Statistics Conference (MLSTAT) is an academic conference that serves to facilitate scholarly exchange among domestic and international scholars in the fields of machine learning and statistics. Through fostering an academic culture that promotes the mutual development of machine learning and statistics, the conference aims to advance foundational disciplines such as data science and artificial intelligence, and thereby contribute to the development of related digital economic industries.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>几何等变先验嵌入的深度学习</title>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/xieqi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/xieqi/</guid>
       <description>9:15 a.m. — 9:55 a.m., Sunday, Jun.22, 2025</description>
     </item>
     <item>
       <title>Semi-implicit Functional Gradient Flow (半隐式函数型梯度流)</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/zhangcheng/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhangcheng/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/zhangcheng/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhangcheng/</guid>
       <description>10:10 a.m. — 10:50 a.m., Sunday, Jun.22, 2025</description>
     </item>
     <item>
       <title>A Statistical Hypothesis Testing Framework for Data Misappropriation Detection in Large Language Models</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/zhanglinjun/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhanglinjun/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/zhanglinjun/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhanglinjun/</guid>
       <description>10:55 a.m. — 11:35 a.m., Sunday, Jun.22, 2025</description>
     </item>
     <item>
       <title>应对高频挑战：从浅层到多层神经网络</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/zhangshijun/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhangshijun/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/zhangshijun/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhangshijun/</guid>
       <description>2:00 p.m. — 2:40 p.m., Sunday, Jun.22, 2025</description>
     </item>
     <item>
       <title>Continuous Modeling Perspective for Imaging Science</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/zhaoxile/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhaoxile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/zhaoxile/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhaoxile/</guid>
       <description>2:45 p.m. — 3:25 p.m., Sunday, Jun.22, 2025</description>
     </item>
     <item>
       <title>Proper Dataset Valuation by Pointwise Mutual Information</title>
-      <link>http://localhost:1313/MLSTAT2026/schedule/sessions/zhengshuran/</link>
+      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhengshuran/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/schedule/sessions/zhengshuran/</guid>
+      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhengshuran/</guid>
       <description>3:30 p.m. — 4:10 p.m., Sunday, Jun.22, 2025</description>
     </item>
     <item>
-      <title>Machine Learning and Statistics 2026 Organizing Committee</title>
-      <link>http://localhost:1313/MLSTAT2026/committee/</link>
+      <title>注册 / Register</title>
+      <link>https://ml-stat.github.io/MLSTAT2026/register/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/MLSTAT2026/committee/</guid>
-      <description>&lt;!-- ________________________________________ --&gt;&#xD;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Program Committee (Listed alphabetically by surname)&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Program Chairs&lt;/strong&gt;:&lt;br&gt;&#xA;Chengchun Shi, London School of Economics and Political Science &lt;br&gt;&#xA;Yuling Jiao, Wuhan University&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Program Members&lt;/strong&gt;:&lt;br&gt;&#xA;Zhanrui Cai, The University of Hong Kong &lt;br&gt;&#xA;Xiaowu Dai, University of California, Los Angeles &lt;br&gt;&#xA;Zhongxiang Dai, The Chinese University of Hong Kong &lt;br&gt;&#xA;Di He, Peking University &lt;br&gt;&#xA;Fanghui Liu, Shanghai Jiao Tong University &lt;br&gt;&#xA;Jian Li, Tsinghua University &lt;br&gt;&#xA;Ziye Ma, City University of Hong Kong &lt;br&gt;&#xA;Xiaojie Mao, Tsinghua University &lt;br&gt;&#xA;Jun Shu, Xi&amp;rsquo;an Jiaotong University &lt;br&gt;&#xA;Weijie Su, University of Pennsylvania &lt;br&gt;&#xA;Wei Sun, Purdue University &lt;br&gt;&#xA;Lei Wu, Peking University &lt;br&gt;&#xA;Feng Zhou, Renmin University of China &lt;br&gt;&#xA;Fan Zhou, Shanghai University of Finance and Economics &lt;br&gt;&#xA;Yunfei Yang, Sun Yat-sen University&lt;/p&gt;</description>
+      <guid>https://ml-stat.github.io/MLSTAT2026/register/</guid>
+      <description>&lt;div class=&#34;form-container&#34; style=&#34;max-width:560px&#34;&gt;&#xA;&lt;div class=&#34;card&#34;&gt;&#xA;&lt;div class=&#34;card-content&#34;&gt;&#xA;&lt;form onsubmit=&#34;handleRegister(event)&#34;&gt;&#xA;&lt;div class=&#34;input-field&#34;&gt;&#xA;    &lt;label for=&#34;email&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;email&lt;/i&gt; 邮箱 / Email *&lt;/label&gt;&#xA;    &lt;input type=&#34;email&#34; id=&#34;email&#34; name=&#34;email&#34; required&gt;&#xA;    &lt;span class=&#34;helper-text&#34;&gt;用于登录和接收通知 / For login and notifications&lt;/span&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;row&#34;&gt;&#xA;    &lt;div class=&#34;input-field col s12 m6&#34;&gt;&#xA;        &lt;label for=&#34;password&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;lock&lt;/i&gt; 密码 / Password *&lt;/label&gt;&#xA;        &lt;input type=&#34;password&#34; id=&#34;password&#34; name=&#34;password&#34; required minlength=&#34;8&#34;&gt;&#xA;        &lt;span class=&#34;helper-text&#34;&gt;至少8位 / At least 8 characters&lt;/span&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;input-field col s12 m6&#34;&gt;&#xA;        &lt;label for=&#34;confirm_password&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;lock_outline&lt;/i&gt; 确认密码 / Confirm *&lt;/label&gt;&#xA;        &lt;input type=&#34;password&#34; id=&#34;confirm_password&#34; name=&#34;confirm_password&#34; required minlength=&#34;8&#34;&gt;&#xA;    &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;row&#34;&gt;&#xA;    &lt;div class=&#34;input-field col s12 m6&#34;&gt;&#xA;        &lt;label for=&#34;name&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;person&lt;/i&gt; 姓名 / Name *&lt;/label&gt;&#xA;        &lt;input type=&#34;text&#34; id=&#34;name&#34; name=&#34;name&#34; required&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;input-field col s12 m6&#34;&gt;&#xA;        &lt;label for=&#34;phone&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;phone&lt;/i&gt; 手机号码 / Phone *&lt;/label&gt;&#xA;        &lt;input type=&#34;tel&#34; id=&#34;phone&#34; name=&#34;phone&#34; required&gt;&#xA;    &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;input-field&#34;&gt;&#xA;    &lt;label for=&#34;affiliation&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;business&lt;/i&gt; 工作单位 / Affiliation *&lt;/label&gt;&#xA;    &lt;input type=&#34;text&#34; id=&#34;affiliation&#34; name=&#34;affiliation&#34; required&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;input-field&#34;&gt;&#xA;    &lt;label for=&#34;department&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;apartment&lt;/i&gt; 院系/部门 / Department&lt;/label&gt;&#xA;    &lt;input type=&#34;text&#34; id=&#34;department&#34; name=&#34;department&#34;&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;row&#34;&gt;&#xA;    &lt;div class=&#34;input-field col s12 m6&#34;&gt;&#xA;        &lt;label&gt;&lt;i class=&#34;material-icons&#34;&gt;badge&lt;/i&gt; 身份类型 / Identity *&lt;/label&gt;&#xA;        &lt;select name=&#34;identity_type&#34; required&gt;&#xA;            &lt;option value=&#34;&#34; disabled selected&gt;请选择 / Please select&lt;/option&gt;&#xA;            &lt;option value=&#34;student&#34;&gt;学生 / Student&lt;/option&gt;&#xA;            &lt;option value=&#34;teacher&#34;&gt;教师 / Faculty&lt;/option&gt;&#xA;            &lt;option value=&#34;researcher&#34;&gt;研究人员 / Researcher&lt;/option&gt;&#xA;            &lt;option value=&#34;other&#34;&gt;其他 / Other&lt;/option&gt;&#xA;        &lt;/select&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;input-field col s12 m6&#34;&gt;&#xA;        &lt;label for=&#34;title&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;school&lt;/i&gt; 职称/学位 / Title&lt;/label&gt;&#xA;        &lt;input type=&#34;text&#34; id=&#34;title&#34; name=&#34;title&#34;&gt;&#xA;    &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;center-align&#34; style=&#34;margin-top:2rem&#34;&gt;&#xA;    &lt;button type=&#34;submit&#34; class=&#34;btn-large&#34;&gt;&#xA;        &lt;i class=&#34;material-icons left&#34;&gt;person_add&lt;/i&gt;注册 / Register&#xA;    &lt;/button&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;divider&#34; style=&#34;margin:2rem 0&#34;&gt;&lt;/div&gt;&#xA;&lt;p class=&#34;center-align&#34;&gt;&#xA;    &lt;a href=&#34;javascript:goto(&#39;login/&#39;)&#34;&gt;已有账号？立即登录&lt;br&gt;&lt;small&gt;Already have an account? Sign In&lt;/small&gt;&lt;/a&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>登录 / Login</title>
+      <link>https://ml-stat.github.io/MLSTAT2026/login/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ml-stat.github.io/MLSTAT2026/login/</guid>
+      <description>&lt;div class=&#34;form-container&#34;&gt;&#xA;&lt;div class=&#34;card&#34;&gt;&#xA;&lt;div class=&#34;card-content&#34;&gt;&#xA;&lt;form onsubmit=&#34;handleLogin(event)&#34;&gt;&#xA;&lt;div class=&#34;input-field&#34;&gt;&#xA;    &lt;label for=&#34;email&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;email&lt;/i&gt; 邮箱 / Email&lt;/label&gt;&#xA;    &lt;input type=&#34;email&#34; id=&#34;email&#34; name=&#34;email&#34; required&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;input-field&#34;&gt;&#xA;    &lt;label for=&#34;password&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;lock&lt;/i&gt; 密码 / Password&lt;/label&gt;&#xA;    &lt;input type=&#34;password&#34; id=&#34;password&#34; name=&#34;password&#34; required&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;center-align&#34; style=&#34;margin-top:2rem&#34;&gt;&#xA;    &lt;button type=&#34;submit&#34; class=&#34;btn-large&#34;&gt;&#xA;        &lt;i class=&#34;material-icons left&#34;&gt;login&lt;/i&gt;登录 / Sign In&#xA;    &lt;/button&gt;&#xA;&lt;/div&gt;&#xA;&lt;p class=&#34;center-align&#34; style=&#34;margin-top:1.5rem&#34;&gt;&#xA;    &lt;a href=&#34;javascript:goto(&#39;forgot-password/&#39;)&#34; class=&#34;grey-text&#34; style=&#34;font-size:0.9rem&#34;&gt;忘记密码？ / Forgot Password?&lt;/a&gt;&#xA;&lt;/p&gt;&#xA;&lt;div class=&#34;divider&#34; style=&#34;margin:2rem 0&#34;&gt;&lt;/div&gt;&#xA;&lt;p class=&#34;center-align&#34;&gt;&#xA;    &lt;a href=&#34;javascript:goto(&#39;register/&#39;)&#34;&gt;没有账号？立即注册&lt;br&gt;&lt;small&gt;Don&#39;t have an account? Register&lt;/small&gt;&lt;/a&gt;&#xA;&lt;/p&gt;&#xA;&lt;/form&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>会议注册 / Registration</title>
+      <link>https://ml-stat.github.io/MLSTAT2026/registration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ml-stat.github.io/MLSTAT2026/registration/</guid>
+      <description>&lt;div class=&#34;reg-fee-notice&#34;&gt;&#xA;    &lt;i class=&#34;material-icons&#34;&gt;info&lt;/i&gt;&#xA;    &lt;span&gt;注册费 / Registration Fee：&lt;strong&gt;¥500&lt;/strong&gt;（学生优惠 Student：&lt;strong&gt;¥200&lt;/strong&gt;）&lt;/span&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;form-container&#34; style=&#34;max-width:560px&#34;&gt;&#xA;&lt;div class=&#34;card&#34;&gt;&#xA;&lt;div class=&#34;card-content&#34;&gt;&#xA;&lt;form onsubmit=&#34;handleConferenceRegister(event)&#34;&gt;&#xA;&lt;div class=&#34;input-field&#34;&gt;&#xA;    &lt;label&gt;&lt;i class=&#34;material-icons&#34;&gt;event&lt;/i&gt; 参会类型 / Participation Type *&lt;/label&gt;&#xA;    &lt;select name=&#34;participation_type&#34; required&gt;&#xA;        &lt;option value=&#34;&#34; disabled selected&gt;请选择 / Please select&lt;/option&gt;&#xA;        &lt;option value=&#34;poster&#34;&gt;海报展示 / Poster Presentation&lt;/option&gt;&#xA;        &lt;option value=&#34;attend_only&#34;&gt;仅参会 / Attendance Only&lt;/option&gt;&#xA;    &lt;/select&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;divider&#34;&gt;&lt;/div&gt;&#xA;&lt;div class=&#34;input-field&#34;&gt;&#xA;    &lt;label&gt;&lt;i class=&#34;material-icons&#34;&gt;description&lt;/i&gt; 发票类型 / Invoice Type&lt;/label&gt;&#xA;    &lt;select name=&#34;invoice_type&#34;&gt;&#xA;        &lt;option value=&#34;&#34; disabled selected&gt;请选择 / Please select&lt;/option&gt;&#xA;        &lt;option value=&#34;general&#34;&gt;增值税普通发票 / VAT General Invoice&lt;/option&gt;&#xA;        &lt;option value=&#34;special&#34;&gt;增值税专用发票 / VAT Special Invoice&lt;/option&gt;&#xA;    &lt;/select&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;row&#34;&gt;&#xA;    &lt;div class=&#34;input-field col s12 m6&#34;&gt;&#xA;        &lt;label for=&#34;invoice_title&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;business&lt;/i&gt; 发票抬头 / Invoice Title&lt;/label&gt;&#xA;        &lt;input type=&#34;text&#34; id=&#34;invoice_title&#34; name=&#34;invoice_title&#34;&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;input-field col s12 m6&#34;&gt;&#xA;        &lt;label for=&#34;invoice_tax_id&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;numbers&lt;/i&gt; 纳税人识别号 / Tax ID&lt;/label&gt;&#xA;        &lt;input type=&#34;text&#34; id=&#34;invoice_tax_id&#34; name=&#34;invoice_tax_id&#34;&gt;&#xA;    &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;center-align&#34; style=&#34;margin-top:2rem&#34;&gt;&#xA;    &lt;button type=&#34;submit&#34; class=&#34;btn-large&#34;&gt;&#xA;        &lt;i class=&#34;material-icons left&#34;&gt;send&lt;/i&gt;提交注册 / Submit Registration&#xA;    &lt;/button&gt;&#xA;&lt;/div&gt;&#xA;&lt;/form&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>个人中心 / Dashboard</title>
+      <link>https://ml-stat.github.io/MLSTAT2026/dashboard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ml-stat.github.io/MLSTAT2026/dashboard/</guid>
+      <description>&lt;div id=&#34;dashboard-content&#34;&gt;&#xA;    &lt;p class=&#34;grey-text&#34; style=&#34;text-align:center;padding:48px&#34;&gt;正在加载...&lt;br&gt;&lt;small&gt;Loading...&lt;/small&gt;&lt;/p&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>会议缴费 / Payment</title>
+      <link>https://ml-stat.github.io/MLSTAT2026/payment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ml-stat.github.io/MLSTAT2026/payment/</guid>
+      <description>&lt;div id=&#34;payment-content&#34;&gt;&#xA;    &lt;p class=&#34;grey-text&#34; style=&#34;text-align:center;padding:48px&#34;&gt;正在加载...&lt;br&gt;&lt;small&gt;Loading...&lt;/small&gt;&lt;/p&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>海报投稿 / Poster Submission</title>
+      <link>https://ml-stat.github.io/MLSTAT2026/poster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ml-stat.github.io/MLSTAT2026/poster/</guid>
+      <description>&lt;div id=&#34;poster-content&#34;&gt;&#xA;    &lt;p class=&#34;grey-text&#34; style=&#34;text-align:center;padding:48px&#34;&gt;正在加载...&lt;br&gt;&lt;small&gt;Loading...&lt;/small&gt;&lt;/p&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>资料下载 / Documents</title>
+      <link>https://ml-stat.github.io/MLSTAT2026/documents/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ml-stat.github.io/MLSTAT2026/documents/</guid>
+      <description>&lt;div id=&#34;documents-content&#34;&gt;&#xA;    &lt;p class=&#34;grey-text&#34; style=&#34;text-align:center;padding:48px&#34;&gt;正在加载...&lt;br&gt;&lt;small&gt;Loading...&lt;/small&gt;&lt;/p&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>忘记密码 / Forgot Password</title>
+      <link>https://ml-stat.github.io/MLSTAT2026/forgot-password/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ml-stat.github.io/MLSTAT2026/forgot-password/</guid>
+      <description>&lt;div class=&#34;form-container&#34;&gt;&#xA;&lt;div class=&#34;card&#34;&gt;&#xA;&lt;div class=&#34;card-content&#34;&gt;&#xA;&lt;form onsubmit=&#34;handleForgotPassword(event)&#34;&gt;&#xA;&lt;div class=&#34;input-field&#34;&gt;&#xA;    &lt;label for=&#34;email&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;email&lt;/i&gt; 邮箱 / Email&lt;/label&gt;&#xA;    &lt;input type=&#34;email&#34; id=&#34;email&#34; name=&#34;email&#34; required&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;center-align&#34; style=&#34;margin-top:2rem&#34;&gt;&#xA;    &lt;button type=&#34;submit&#34; class=&#34;btn-large&#34;&gt;&#xA;        &lt;i class=&#34;material-icons left&#34;&gt;send&lt;/i&gt;发送重置邮件 / Send Reset Link&#xA;    &lt;/button&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;divider&#34; style=&#34;margin:2rem 0&#34;&gt;&lt;/div&gt;&#xA;&lt;p class=&#34;center-align&#34;&gt;&#xA;    &lt;a href=&#34;javascript:goto(&#39;login/&#39;)&#34; class=&#34;grey-text&#34;&gt;← 返回登录 / Back to Sign In&lt;/a&gt;&#xA;&lt;/p&gt;&#xA;&lt;/form&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>管理后台 / Admin</title>
+      <link>https://ml-stat.github.io/MLSTAT2026/admin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ml-stat.github.io/MLSTAT2026/admin/</guid>
+      <description>&lt;div id=&#34;admin-content&#34;&gt;&#xA;    &lt;p class=&#34;grey-text&#34; style=&#34;text-align:center;padding:48px&#34;&gt;正在加载...&lt;br&gt;&lt;small&gt;Loading...&lt;/small&gt;&lt;/p&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>邮箱验证 / Email Verification</title>
+      <link>https://ml-stat.github.io/MLSTAT2026/verify/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ml-stat.github.io/MLSTAT2026/verify/</guid>
+      <description>&lt;div id=&#34;verify-content&#34; style=&#34;text-align:center;padding:48px&#34;&gt;&#xA;    &lt;p class=&#34;grey-text&#34;&gt;正在验证...&lt;br&gt;&lt;small&gt;Verifying...&lt;/small&gt;&lt;/p&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>重置密码 / Reset Password</title>
+      <link>https://ml-stat.github.io/MLSTAT2026/reset-password/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ml-stat.github.io/MLSTAT2026/reset-password/</guid>
+      <description>&lt;div id=&#34;reset-content&#34;&gt;&#xA;&lt;div class=&#34;form-container&#34;&gt;&#xA;&lt;div class=&#34;card&#34;&gt;&#xA;&lt;div class=&#34;card-content&#34;&gt;&#xA;&lt;form onsubmit=&#34;handleResetPassword(event)&#34;&gt;&#xA;&lt;div class=&#34;input-field&#34;&gt;&#xA;    &lt;label for=&#34;password&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;lock&lt;/i&gt; 新密码 / New Password&lt;/label&gt;&#xA;    &lt;input type=&#34;password&#34; id=&#34;password&#34; name=&#34;password&#34; required minlength=&#34;8&#34;&gt;&#xA;    &lt;span class=&#34;helper-text&#34;&gt;至少8位 / At least 8 characters&lt;/span&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;input-field&#34;&gt;&#xA;    &lt;label for=&#34;confirm_password&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;lock_outline&lt;/i&gt; 确认密码 / Confirm Password&lt;/label&gt;&#xA;    &lt;input type=&#34;password&#34; id=&#34;confirm_password&#34; name=&#34;confirm_password&#34; required minlength=&#34;8&#34;&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;center-align&#34; style=&#34;margin-top:2rem&#34;&gt;&#xA;    &lt;button type=&#34;submit&#34; class=&#34;btn-large&#34;&gt;&#xA;        &lt;i class=&#34;material-icons left&#34;&gt;vpn_key&lt;/i&gt;重置密码 / Reset Password&#xA;    &lt;/button&gt;&#xA;&lt;/div&gt;&#xA;&lt;/form&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>组织委员会 / Organizing Committee</title>
+      <link>https://ml-stat.github.io/MLSTAT2026/committee/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ml-stat.github.io/MLSTAT2026/committee/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;程序委员会 / Program Committee&lt;/strong&gt; &lt;small class=&#34;grey-text&#34; style=&#34;font-weight:normal&#34;&gt;（按姓氏字母排序 / Alphabetically by surname）&lt;/small&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;程序主席 / Program Chairs&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Chengchun Shi, London School of Economics and Political Science&lt;/li&gt;&#xA;&lt;li&gt;Yuling Jiao, Wuhan University&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;程序委员 / Program Members&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Zhanrui Cai, The University of Hong Kong&lt;/li&gt;&#xA;&lt;li&gt;Xiaowu Dai, University of California, Los Angeles&lt;/li&gt;&#xA;&lt;li&gt;Zhongxiang Dai, The Chinese University of Hong Kong&lt;/li&gt;&#xA;&lt;li&gt;Di He, Peking University&lt;/li&gt;&#xA;&lt;li&gt;Fanghui Liu, Shanghai Jiao Tong University&lt;/li&gt;&#xA;&lt;li&gt;Jian Li, Tsinghua University&lt;/li&gt;&#xA;&lt;li&gt;Ziye Ma, City University of Hong Kong&lt;/li&gt;&#xA;&lt;li&gt;Xiaojie Mao, Tsinghua University&lt;/li&gt;&#xA;&lt;li&gt;Jun Shu, Xi&amp;rsquo;an Jiaotong University&lt;/li&gt;&#xA;&lt;li&gt;Weijie Su, University of Pennsylvania&lt;/li&gt;&#xA;&lt;li&gt;Wei Sun, Purdue University&lt;/li&gt;&#xA;&lt;li&gt;Lei Wu, Peking University&lt;/li&gt;&#xA;&lt;li&gt;Feng Zhou, Renmin University of China&lt;/li&gt;&#xA;&lt;li&gt;Fan Zhou, Shanghai University of Finance and Economics&lt;/li&gt;&#xA;&lt;li&gt;Yunfei Yang, Sun Yat-sen University&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>

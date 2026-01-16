@@ -1,0 +1,120 @@
+/**
+ * MLSTAT 2026 Registration System
+ * 最小化自定义样式，主要使用 Materialize CSS
+ */
+
+/* ========== 状态颜色 (用于 chip) ========== */
+.chip.status-pending { background: #fff3e0; color: #e65100; }
+.chip.status-submitted { background: #e3f2fd; color: #1565c0; }
+.chip.status-confirmed, .chip.status-accepted { background: #e8f5e9; color: #2e7d32; }
+.chip.status-rejected { background: #ffebee; color: #c62828; }
+.chip.status-revision_required { background: #fff8e1; color: #f57c00; }
+
+/* ========== Auth Nav ========== */
+#auth-nav {
+    margin-bottom: 20px;
+}
+
+#auth-nav .breadcrumb {
+    color: #1565c0;
+}
+
+#auth-nav .breadcrumb:last-child {
+    color: rgba(0,0,0,.87);
+}
+
+/* ========== Dashboard Grid ========== */
+.dashboard-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -12px;
+}
+
+.dashboard-grid > .card {
+    flex: 1;
+    min-width: 300px;
+    margin: 12px;
+}
+
+/* ========== Stats Grid ========== */
+.stats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    flex: 1;
+    min-width: 120px;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.stat-card h3 { font-size: 32px; margin: 8px 0 4px; font-weight: 500; }
+.stat-card p { margin: 0; font-size: 12px; opacity: .9; }
+
+/* ========== Hotel Cards Grid ========== */
+.hotel-cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -12px;
+}
+
+.hotel-cards > .card {
+    flex: 1;
+    min-width: 280px;
+    margin: 12px;
+}
+
+/* ========== Form Container ========== */
+.form-container {
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+/* ========== Custom Modal (admin用) ========== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active { display: flex; }
+
+.modal-box {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 24px 48px rgba(0,0,0,.2);
+    padding: 24px;
+    max-width: 400px;
+    width: 90%;
+}
+
+.modal-box h3 { margin: 0 0 20px; font-size: 18px; }
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 600px) {
+    .dashboard-grid > .card,
+    .hotel-cards > .card {
+        min-width: 100%;
+    }
+    .stats-grid { flex-wrap: wrap; }
+    .stat-card { min-width: calc(50% - 8px); }
+    .stat-card h3 { font-size: 24px; }
+}
