@@ -200,15 +200,31 @@ async function handleResetPassword(e) {
 // ==================== 会议注册 / Conference Registration ====================
 async function handleConferenceRegister(e) {
     e.preventDefault();
-    const data = Object.fromEntries(new FormData(e.target));
-    data.need_invoice = e.target.querySelector('[name="need_invoice"]')?.checked || false;
+    const formData = new FormData(e.target);
+
+    // 检查学生是否上传了学生证
+    const user = api.getUser();
+    if (user && user.identity_type === 'student') {
+        const studentIdFile = formData.get('student_id');
+        if (!studentIdFile || !studentIdFile.size) {
+            return showMessage('请上传学生证照片\nPlease upload student ID photo', 'error');
+        }
+    }
 
     try {
-        await api.createRegistration(data);
+        await api.createRegistration(formData);
         showMessage('注册成功，请前往缴费\nRegistration successful, please proceed to payment', 'success');
         setTimeout(() => goto('payment/'), 1500);
     } catch (err) {
         showMessage(err.message, 'error');
+    }
+}
+
+function initRegistrationPage() {
+    const user = api.getUser();
+    const studentIdSection = document.getElementById('student-id-section');
+    if (studentIdSection && user && user.identity_type === 'student') {
+        studentIdSection.style.display = 'block';
     }
 }
 
@@ -543,25 +559,32 @@ function renderPaymentInfo(reg) {
     const el = document.getElementById('payment-content');
     if (!el) return;
     const base = getBasePath();
+    const user = api.getUser();
+    const isStudent = user && user.identity_type === 'student';
+    const qrCode = isStudent ? 'payment_code_student.jpg' : 'payment_code.jpg';
+    const feeType = isStudent ? '学生 / Student' : '普通 / Regular';
 
     if (reg.payment_status === 'pending') {
         el.innerHTML = `
             <div class="payment-box">
                 <div class="payment-amount">
-                    <div class="payment-label">应缴金额 / Amount Due</div>
+                    <div class="payment-label">应缴金额 / Amount Due (${feeType})</div>
                     <div class="payment-price">¥${reg.payment_amount}</div>
                 </div>
                 <div class="payment-qr">
-                    <img src="${base}images/baoming_code.jpg" alt="Payment QR Code">
+                    <img src="${base}images/${qrCode}" alt="Payment QR Code">
                     <div class="payment-tip">微信/支付宝扫码支付<br><small>Scan with WeChat/Alipay</small></div>
                 </div>
                 <div class="payment-note">
                     <i class="material-icons">info</i>
-                    <span>支付时请备注：<strong>姓名+手机号</strong><br><small>Note: Name + Phone Number</small></span>
+                    <span>支付时请备注：<strong>单位+姓名+联系电话</strong><br><small>Note: Affiliation + Name + Phone</small></span>
                 </div>
                 <button onclick="submitPayment()" class="custom-btn" style="width:100%">
                     <i class="material-icons">check</i> 我已完成支付 / I Have Paid
                 </button>
+                <p style="text-align:center;margin-top:16px">
+                    <a href="${base}dashboard/" style="color:#666">← 返回个人中心 / Back to Dashboard</a>
+                </p>
             </div>
         `;
     } else if (reg.payment_status === 'submitted') {
@@ -574,14 +597,21 @@ function renderPaymentInfo(reg) {
                         <small>Payment submitted, awaiting admin confirmation</small>
                     </div>
                 </div>
-                <div class="payment-info-row"><span>应缴金额</span><span>¥${reg.payment_amount}</span></div>
-                <div class="payment-note" style="margin-top:16px">
-                    <i class="material-icons">info</i>
-                    <span>管理员确认后会发送邮件通知，届时可下载发票和邀请函<br><small>You will receive an email notification once confirmed</small></span>
+                <div class="payment-amount">
+                    <div class="payment-label">应缴金额 / Amount Due (${feeType})</div>
+                    <div class="payment-price">¥${reg.payment_amount}</div>
                 </div>
-                <a href="${base}dashboard/" class="custom-btn custom-btn-secondary" style="width:100%;margin-top:16px">
-                    <i class="material-icons">arrow_back</i> 返回个人中心 / Back to Dashboard
-                </a>
+                <div class="payment-qr">
+                    <img src="${base}images/${qrCode}" alt="Payment QR Code">
+                    <div class="payment-tip">如未支付，请扫码支付<br><small>If not paid, please scan to pay</small></div>
+                </div>
+                <div class="payment-note">
+                    <i class="material-icons">info</i>
+                    <span>支付时请备注：<strong>单位+姓名+联系电话</strong><br><small>Note: Affiliation + Name + Phone</small></span>
+                </div>
+                <p style="text-align:center;margin-top:16px">
+                    <a href="${base}dashboard/" style="color:#666">← 返回个人中心 / Back to Dashboard</a>
+                </p>
             </div>
         `;
     } else if (reg.payment_status === 'confirmed') {
@@ -598,6 +628,9 @@ function renderPaymentInfo(reg) {
                 <a href="${base}documents/" class="custom-btn" style="width:100%;margin-top:16px">
                     <i class="material-icons">download</i> 下载资料 / Download Documents
                 </a>
+                <p style="text-align:center;margin-top:16px">
+                    <a href="${base}dashboard/" style="color:#666">← 返回个人中心 / Back to Dashboard</a>
+                </p>
             </div>
         `;
     }
@@ -686,6 +719,32 @@ function renderDashboard(data) {
 
     const { user, registration: reg, posters = [] } = data;
     const base = getBasePath();
+    const isStudent = user.identity_type === 'student';
+
+    // 学生证显示逻辑
+    let studentIdHtml = '';
+    if (isStudent && reg) {
+        const canEdit = reg.payment_status !== 'confirmed';
+        if (reg.has_student_id) {
+            studentIdHtml = `
+                <div class="dash-info">
+                    <span>学生证 / Student ID</span>
+                    <span>
+                        <a href="javascript:viewStudentId()" style="color:#1976d2"><i class="material-icons" style="font-size:16px;vertical-align:middle">visibility</i> ${escapeHtml(reg.student_id_name)}</a>
+                        ${canEdit ? `<a href="javascript:showUpdateStudentIdModal()" style="color:#666;margin-left:8px"><i class="material-icons" style="font-size:16px;vertical-align:middle">edit</i></a>` : ''}
+                    </span>
+                </div>`;
+        } else {
+            studentIdHtml = `
+                <div class="dash-info">
+                    <span>学生证 / Student ID</span>
+                    <span style="color:#f57c00">
+                        <i class="material-icons" style="font-size:16px;vertical-align:middle">warning</i> 未上传
+                        ${canEdit ? `<a href="javascript:showUpdateStudentIdModal()" style="color:#1976d2;margin-left:8px">上传 / Upload</a>` : ''}
+                    </span>
+                </div>`;
+        }
+    }
 
     el.innerHTML = `
 <div class="dash-row">
@@ -705,7 +764,9 @@ function renderDashboard(data) {
             <div class="dash-info"><span>参会类型 / Type</span><span>${STATUS.participation[reg.participation_type]}</span></div>
             <div class="dash-info"><span>注册费用 / Fee</span><span>¥${reg.payment_amount}</span></div>
             <div class="dash-info"><span>缴费状态 / Status</span><span class="dash-status dash-status-${reg.payment_status}">${STATUS.payment[reg.payment_status]}</span></div>
+            ${studentIdHtml}
             ${reg.payment_status === 'pending' ? `<a href="${base}payment/" class="dash-link">前往缴费 / Pay Now →</a>` : ''}
+            ${reg.payment_status === 'submitted' ? `<a href="${base}payment/" class="dash-link">查看缴费状态 / Payment Status →</a>` : ''}
             ${reg.payment_status === 'confirmed' ? `<a href="${base}documents/" class="dash-link">下载资料 / Documents →</a>` : ''}
         ` : `
             <div class="dash-empty">您尚未注册会议<br><small>You have not registered yet</small></div>
@@ -781,6 +842,58 @@ function downloadPosterFile(posterId) {
     window.open(url, '_blank');
 }
 
+// ==================== 学生证 / Student ID ====================
+
+function viewStudentId() {
+    const url = api.getStudentIdDownloadUrl();
+    window.open(url, '_blank');
+}
+
+function showUpdateStudentIdModal() {
+    const modal = document.createElement('div');
+    modal.className = 'modal-overlay';
+    modal.innerHTML = `
+        <div class="modal-content" style="max-width:450px">
+            <div class="modal-header">
+                <h3>上传学生证 / Upload Student ID</h3>
+                <button class="modal-close" onclick="this.closest('.modal-overlay').remove()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="handleUpdateStudentId(event)">
+                    <div class="custom-form-group">
+                        <label>学生证照片 / Student ID Photo <span class="required">*</span></label>
+                        <input type="file" name="student_id" accept=".jpg,.jpeg,.png,.pdf" required>
+                        <span class="helper-text">支持 JPG、PNG、PDF 格式 / JPG, PNG, PDF supported</span>
+                    </div>
+                    <div style="text-align:center;margin-top:1.5rem">
+                        <button type="submit" class="custom-btn">
+                            <i class="material-icons">upload</i> 上传 / Upload
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.remove();
+    });
+}
+
+async function handleUpdateStudentId(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+
+    try {
+        await api.updateStudentId(formData);
+        showMessage('学生证上传成功\nStudent ID uploaded successfully', 'success');
+        document.querySelector('.modal-overlay')?.remove();
+        loadDashboard(); // 刷新页面
+    } catch (err) {
+        showMessage(err.message, 'error');
+    }
+}
+
 // ==================== 页面初始化 / Initialization ====================
 document.addEventListener('DOMContentLoaded', async function() {
     updateNavAuth();
@@ -798,6 +911,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         loadDashboard();
     } else if (path.includes('/registration')) {
         if (!requireAuth()) return;
+        initRegistrationPage();
         await checkRegistrationStatus();
     } else if (path.includes('/poster') && !path.includes('/admin')) {
         loadPosterPage();

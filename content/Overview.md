@@ -27,16 +27,15 @@ weight: 10
 **组织单位 / Organizers**
 
 - 中国应用统计学会机器学习分会<br><small class="grey-text">Machine Learning Branch of the Chinese Association for Applied Statistics</small>
-- 湖北国家应用数学中心<br><small class="grey-text">National Center for Applied Mathematics in Hubei</small>
-- 武汉大学数学与统计学院<br><small class="grey-text">School of Mathematics and Statistics, Wuhan University</small>
-- 武汉大学人工智能学院<br><small class="grey-text">School of AI, Wuhan University</small>
+- 西南财经大学统计研究中心<br><small class="grey-text">Center of Statistical Research, Southwestern University of Finance and Economics</small>
+- 西南财经大学统计与数据科学学院<br><small class="grey-text">School of Statistics and Data Science, Southwestern University of Finance and Economics</small>
 
 **会议主持 / Session Chairs**
 
-- 21日上午：焦雨领、常象宇
-- 21日下午：魏鸿鑫、刘勇
-- 22日上午：任传贤、谢琦
-- 22日下午：李赛
+- 7月15日上午 / July 15 AM: Zhang Zhihua, Chang Xiangyu
+- 7月15日下午 / July 15 PM: Jiao Yuling, Zhou Ling
+- 7月16日上午 / July 16 AM: Yu Zhou, Li Sai
+- 7月16日下午 / July 16 PM: Zheng Shurong
 
 **注册费用 / Registration Fee**
 
@@ -48,5 +47,9 @@ weight: 10
 
 <p class="grey-text">Accommodation is not provided. Recommended hotels nearby (prices for reference):</p>
 
-- 温江皇冠假日酒店 / Crowne Plaza Chengdu Wenjiang<br><small class="grey-text"><i class="material-icons" style="font-size:12px;vertical-align:middle">phone</i> 028-82607888 · ¥450-600 · 车程约10分钟 / ~10 min drive</small>
-- 温江世纪城假日酒店 / Holiday Inn Chengdu Wenjiang<br><small class="grey-text"><i class="material-icons" style="font-size:12px;vertical-align:middle">phone</i> 028-82606666 · ¥350-450 · 车程约15分钟 / ~15 min drive</small>
+- [酒店名称待定 / Hotel TBD]<br><small class="grey-text"><i class="material-icons" style="font-size:12px;vertical-align:middle">phone</i> [电话 / Phone] · [价格 / Price] · [距离 / Distance]</small>
+
+**联系方式 / Contact**
+
+- <i class="material-icons" style="font-size:16px;vertical-align:middle">phone</i> 电话 / Phone: 028-87092330
+- <i class="material-icons" style="font-size:16px;vertical-align:middle">email</i> 邮箱 / Email: mlstat2026@126.com

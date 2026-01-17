@@ -182,18 +182,22 @@ async function loadPendingPayments() {
                 </div>
                 ${registrations.length ? `
                 <table class="admin-table">
-                    <thead><tr><th>姓名</th><th>单位</th><th>手机</th><th>邮箱</th><th>金额</th><th>操作</th></tr></thead>
+                    <thead><tr><th>姓名</th><th>单位</th><th>身份</th><th>手机</th><th>金额</th><th>操作</th></tr></thead>
                     <tbody>
-                    ${registrations.map(r => `<tr>
+                    ${registrations.map(r => {
+                        const identityMap = { student: '学生', teacher: '教师', researcher: '研究人员', other: '其他' };
+                        const isStudent = r.user.identity_type === 'student';
+                        return `<tr>
                         <td><strong>${escapeHtml(r.user.name)}</strong></td>
                         <td>${escapeHtml(r.user.affiliation)}</td>
+                        <td>${identityMap[r.user.identity_type] || '-'}${isStudent && r.has_student_id ? ' <a href="javascript:viewStudentId(' + r.id + ')" title="查看学生证"><i class="material-icons" style="font-size:16px;vertical-align:middle;color:#1976d2">badge</i></a>' : ''}</td>
                         <td>${escapeHtml(r.user.phone || '-')}</td>
-                        <td><small>${escapeHtml(r.user.email)}</small></td>
                         <td><strong style="color:#e53935">¥${r.payment_amount}</strong></td>
                         <td class="admin-actions">
                             <button class="admin-btn admin-btn-success" onclick="confirmPayment(${r.id})"><i class="material-icons">check</i> 确认</button>
                         </td>
-                    </tr>`).join('')}
+                    </tr>`;
+                    }).join('')}
                     </tbody>
                 </table>
                 ${totalPages > 1 ? renderPagination('payments', page, totalPages) : ''}
@@ -209,13 +213,16 @@ async function loadPendingPayments() {
                 </div>
                 ${registrations.length ? `
                 <table class="admin-table">
-                    <thead><tr><th>姓名</th><th>单位</th><th>手机</th><th>邮箱</th><th>金额</th><th>文档状态</th><th>操作</th></tr></thead>
+                    <thead><tr><th>姓名</th><th>单位</th><th>身份</th><th>手机</th><th>金额</th><th>文档状态</th><th>操作</th></tr></thead>
                     <tbody>
-                    ${registrations.map(r => `<tr>
+                    ${registrations.map(r => {
+                        const identityMap = { student: '学生', teacher: '教师', researcher: '研究人员', other: '其他' };
+                        const isStudent = r.user.identity_type === 'student';
+                        return `<tr>
                         <td><strong>${escapeHtml(r.user.name)}</strong></td>
                         <td>${escapeHtml(r.user.affiliation)}</td>
+                        <td>${identityMap[r.user.identity_type] || '-'}${isStudent && r.has_student_id ? ' <a href="javascript:viewStudentId(' + r.id + ')" title="查看学生证"><i class="material-icons" style="font-size:16px;vertical-align:middle;color:#1976d2">badge</i></a>' : ''}</td>
                         <td>${escapeHtml(r.user.phone || '-')}</td>
-                        <td><small>${escapeHtml(r.user.email)}</small></td>
                         <td><strong>¥${r.payment_amount}</strong></td>
                         <td>
                             <span style="color:${r.has_invoice ? '#2e7d32' : '#888'}">${r.has_invoice ? '✓' : '○'} 发票</span><br>
@@ -224,7 +231,8 @@ async function loadPendingPayments() {
                         <td class="admin-actions">
                             <button class="admin-btn" onclick="showUploadModal(${r.id}, '${escapeHtml(r.user.name).replace(/'/g, "\\'")}')"><i class="material-icons">upload_file</i> 上传</button>
                         </td>
-                    </tr>`).join('')}
+                    </tr>`;
+                    }).join('')}
                     </tbody>
                 </table>
                 ${totalPages > 1 ? renderPagination('payments', page, totalPages) : ''}
@@ -863,5 +871,11 @@ function showDetailedChanges(id, fromPosterModal = false) {
 // 管理员下载海报
 function downloadAdminPoster(posterId) {
     const url = api.getPosterDownloadUrl(posterId);
+    window.open(url, '_blank');
+}
+
+// 查看学生证
+function viewStudentId(regId) {
+    const url = `${getApiBase()}/admin/registrations/${regId}/student-id?token=${api.token}`;
     window.open(url, '_blank');
 }

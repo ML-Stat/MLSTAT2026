@@ -1,23 +1,24 @@
 ---
-title: "带偏差随机优化算法的稳定与泛化性能"
-summary: "14:45 a.m. — 15:25 a.m., Saturday, Jun.21, 2025"
+title: "[报告标题待定 / Talk Title TBD]"
+summary: "[时间待定 / Time TBD]"
 tags: "k1"
-weight: 6
+weight: 1
 ---
 
-Saturday, June 21th, 2025
+[日期待定 / Date TBD]
 ------
 
 
 <hr style="border: 0; border-top: 5px solid;">
 
+
 <div class="tip">
-    <img class="icon" src="/images/shizhong.png" />
-    <b>Time: </b>&nbsp;14:45 a.m. — 15:25 a.m.
+    <img class="icon" src="/MLSTAT2026/images/schedule.png" />
+    <b>Time: </b>&nbsp; [时间待定 / Time TBD]
 </div>
 <div class="tip">
-    <img class="icon" src="/images/didian.png" />
-    <b>Location: 武汉大学-雷军楼一楼报告厅</b>&nbsp;
+    <img class="icon" src="/MLSTAT2026/images/schedule.png" />
+    <b>Location: </b>&nbsp; [地点待定 / Location TBD]
 </div>
 
 
@@ -25,13 +26,12 @@ ________________________________________
 
 <html>
 <head>
-    <title>带偏差随机优化算法的稳定与泛化性能</title>
+    <title>[报告标题待定 / Talk Title TBD]</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
-            /* padding: 20px; */
             background-color: #f5f5f5;
         }
         .row {
@@ -71,20 +71,20 @@ ________________________________________
 <body>
     <div class="row">
     <div class="left">
-    <img src="/images/leiyunwen.png" class="avatar" />
-        <div class="font-small font-bold">
-            Yunwen Lei
+        <div class="avatar-placeholder" style="width:120px;height:160px;background:#e0e0e0;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#999;">
+            <span>Photo</span>
         </div>
-        <div class="institute">
-            The University of Hong Kong
+        <div class="font-small font-bold">[演讲者姓名 / Speaker Name]</div>
+        <div class="institute">[单位 / Affiliation]</div>
         </div>
-    </div>
-    <div class="right">
-            <div class="title">Title: 带偏差随机优化算法的稳定与泛化性能</div>
+        <div class="right">
+            <div class="title">Title: [报告标题待定 / Talk Title TBD]</div>
             <div class="abstract">
-                <strong>Abstract:</strong> 随机优化通常使用带偏差的梯度估计来提高算法的鲁棒性、通信效率或计算速度。代表性的算法包括零阶随机梯度下降 、裁剪随机梯度下降和具有延迟的随机梯度下降。本次报告引入通用框架来研究带偏差随机优化算法的算法稳定与泛化性。在此基础上，我们研究了零阶随机梯度下降 、裁剪随机梯度下降等算法的学习理论。            </div>
+                <strong>Abstract:</strong> [摘要待定 / Abstract TBD]
+            </div>
             <div class="abstract">
-                <strong>CV:</strong> 雷云文，香港大学数学系的助理教授。他的主要研究兴趣包括学习理论和优化，主要集中在算法稳定性分析、深度学习以及随机优化等主题。研究成果发表在包括IEEE TIT、TPAMI、JMLR、ACHA、COLT、NeurIPS、ICML、ICLR等主流期刊与会议。            </div>
+                <strong>CV:</strong> [简历待定 / CV TBD]
+            </div>
         </div>
     </div>
 </body>
@@ -106,14 +106,14 @@ ________________________________________
 }
 
 .row {
-    padding: 10px; 
-    height: auto; 
-    border-bottom-width: 2px; 
-    border-style: solid; 
-    border-color: #E4E7ED; 
-    padding-bottom: 20px; 
+    padding: 10px;
+    height: auto;
+    border-bottom-width: 2px;
+    border-style: solid;
+    border-color: #E4E7ED;
+    padding-bottom: 20px;
     padding-top: 20px;
-    display: flex; 
+    display: flex;
     text-align: justify;
 }
 
@@ -130,7 +130,7 @@ ________________________________________
 }
 
 .right {
-    margin-left: 10px; 
+    margin-left: 10px;
     max-width: 80%;
 }
 

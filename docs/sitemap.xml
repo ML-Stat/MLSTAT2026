@@ -2,39 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/daiguorong/</loc>
-  </url><url>
-    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/fangcong/</loc>
-  </url><url>
-    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/gangbowen/</loc>
-  </url><url>
-    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/hutianyang/</loc>
-  </url><url>
-    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/kanglican/</loc>
-  </url><url>
-    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/leiyunwen/</loc>
-  </url><url>
-    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/liuyong/</loc>
-  </url><url>
-    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/shilei/</loc>
-  </url><url>
-    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/weihongxin/</loc>
-  </url><url>
-    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/wurongling/</loc>
+    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/placeholder/</loc>
   </url><url>
     <loc>https://ml-stat.github.io/MLSTAT2026/overview/</loc>
-  </url><url>
-    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/xieqi/</loc>
-  </url><url>
-    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhangcheng/</loc>
-  </url><url>
-    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhanglinjun/</loc>
-  </url><url>
-    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhangshijun/</loc>
-  </url><url>
-    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhaoxile/</loc>
-  </url><url>
-    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhengshuran/</loc>
   </url><url>
     <loc>https://ml-stat.github.io/MLSTAT2026/register/</loc>
   </url><url>
@@ -50,6 +20,8 @@
   </url><url>
     <loc>https://ml-stat.github.io/MLSTAT2026/documents/</loc>
   </url><url>
+    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/</loc>
+  </url><url>
     <loc>https://ml-stat.github.io/MLSTAT2026/forgot-password/</loc>
   </url><url>
     <loc>https://ml-stat.github.io/MLSTAT2026/admin/</loc>
@@ -63,7 +35,5 @@
     <loc>https://ml-stat.github.io/MLSTAT2026/tags/k1/</loc>
   </url><url>
     <loc>https://ml-stat.github.io/MLSTAT2026/</loc>
-  </url><url>
-    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/</loc>
   </url>
 </urlset>

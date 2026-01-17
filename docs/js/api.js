@@ -174,6 +174,14 @@ class ApiClient {
     }
 
     async createRegistration(data) {
+        // 支持 FormData（学生上传学生证）或普通对象
+        if (data instanceof FormData) {
+            return this.request('/conference/register', {
+                method: 'POST',
+                body: data,
+                headers: {}
+            });
+        }
         return this.request('/conference/register', {
             method: 'POST',
             body: JSON.stringify(data)
@@ -245,6 +253,18 @@ class ApiClient {
 
     getPosterDownloadUrl(posterId) {
         return `${API_BASE}/posters/${posterId}/download?token=${this.token}`;
+    }
+
+    getStudentIdDownloadUrl() {
+        return `${API_BASE}/conference/student-id/download?token=${this.token}`;
+    }
+
+    async updateStudentId(formData) {
+        return this.request('/conference/student-id', {
+            method: 'PUT',
+            body: formData,
+            headers: {}
+        });
     }
 
     // ========== 管理员 ==========

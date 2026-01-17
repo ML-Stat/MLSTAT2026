@@ -23,6 +23,12 @@ url: /registration/
     </select>
 </div>
 
+<div id="student-id-section" class="input-field" style="display:none">
+    <label><i class="material-icons">badge</i> 学生证照片 / Student ID Photo *</label>
+    <input type="file" id="student_id" name="student_id" accept=".jpg,.jpeg,.png,.pdf">
+    <span class="helper-text">请上传学生证照片以享受学生优惠 / Upload student ID for student discount</span>
+</div>
+
 <div class="divider"></div>
 
 <div class="input-field">
