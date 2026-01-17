@@ -1,0 +1,53 @@
+{{ define "main" }}
+
+<div class="backdrop">
+    <div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+{{ partial "header" . }}
+
+<main class="main">
+    <div class="drawer">
+        {{ partial "drawer" . }}
+    </div>
+
+    <article class="article">
+        <div class="wrapper">
+            {{ with .Site.Params.banner_image }}
+                <div class="logo">
+                <img src="{{ $.Site.BaseURL }}{{ . }}">
+                </div>
+            {{ end }}
+            <h1>{{ .Title }}</h1>
+
+            {{ range where .Site.RegularPages "Section" "schedule" }}
+            {{ if ne .Title "Sessions" }}
+            <div style="margin-bottom: 1.5rem;">
+                <h3 style="margin-bottom: 0.3rem;"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <p class="grey-text" style="margin: 0;">{{ .Params.summary }}</p>
+            </div>
+            {{ end }}
+            {{ end }}
+
+            <aside class="copyright" role="note">
+                {{ with .Site.Params.copyright }}
+                &copy; {{ $.Now.Format "2006" }} {{ . }} &ndash;
+                {{ end }}
+            </aside>
+        </div>
+    </article>
+
+    <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+            <div class="wrapper">
+                <div class="meta"></div>
+                <div class="list"></div>
+            </div>
+        </div>
+    </div>
+</main>
+{{ end }}
