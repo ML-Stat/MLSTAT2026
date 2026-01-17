@@ -12,15 +12,11 @@ disableKinds = ["taxonomy"]
 unsafe = true
 
 [params]
-	# General information
-	# author = "Bruce Eckel"
-	description = "A Self-Organizing Open-Spaces Unconference"
+	description = "The 4th International Conference on Machine Learning and Statistics"
 
 	logo = "/images/logo-AA.jpg"
-	favicon = "images/logo-AA.jpg"
+	favicon = "/images/logo-AA.jpg"
 	banner_image = "/images/swufe.jpg"
-
-	permalink = "#"
 
 	# Custom assets
 	custom_css = ["css/custom.css"]
@@ -39,9 +35,8 @@ unsafe = true
 
 
 [params.social]
-	twitter = ""
-	github  = "/orgs/ML-Stat/repositories"
-	email   = "xiangyuchang@stu.edu.cn"
+	github  = "https://github.com/ML-Stat"
+	email   = "mlstat2026@126.com"
 
 [[menu.main]]
 	name   = "Overview"
@@ -63,8 +58,3 @@ unsafe = true
 	url    = "schedule"
 	weight = 160
 
-[blackfriday]
-	smartypants	= true
-	fractions = true
-	smartDashes = true
-	plainIDAnchors = true

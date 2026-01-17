@@ -1,5 +1,19 @@
-public
-*.tmp
-.DS_Store
+# Hugo
+public/
+resources/
 .hugo_build.lock
 
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Temp
+*.tmp
+*.log

@@ -8,18 +8,11 @@
     <language>en-us</language>
     <atom:link href="https://ml-stat.github.io/MLSTAT2026/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[报告标题待定 / Talk Title TBD]</title>
-      <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/placeholder/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/placeholder/</guid>
-      <description>[时间待定 / Time TBD]</description>
-    </item>
-    <item>
       <title>会议概览 / Overview</title>
       <link>https://ml-stat.github.io/MLSTAT2026/overview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ml-stat.github.io/MLSTAT2026/overview/</guid>
-      <description>&lt;p&gt;第四届机器学习与统计学国际会议（MLSTAT）即将展开&lt;/p&gt;&#xA;&lt;p class=&#34;grey-text&#34;&gt;The 4th International Conference on Machine Learning and Statistics (MLSTAT) will be held&lt;/p&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;日期 / Date&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;span style=&#34;font-size:1.2em&#34;&gt;2026年7月15日至17日 / July 15–17, 2026&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;地点 / Location&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;中国四川省成都市温江区柳台大道555号，西南财经大学柳林校区弘远楼105会议室&lt;/p&gt;&#xA;&lt;p class=&#34;grey-text&#34;&gt;Room 105, Hongyuan Building, Liulin Campus, Southwestern University of Finance and Economics, No. 555 Liutai Avenue, Wenjiang District, Chengdu, Sichuan, China&lt;/p&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;会议目的 / Aim&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;机器学习与统计学国际会议（MLSTAT）是一项旨在促进国内外机器学习与统计学领域学者学术交流的重要会议。通过推动机器学习与统计学的协同发展，本届会议致力于夯实数据科学与人工智能等基础学科建设，进而为相关数字经济发展提供学术支撑。&lt;/p&gt;&#xA;&lt;p class=&#34;grey-text&#34;&gt;The Machine Learning and Statistics Conference (MLSTAT) is an academic conference that serves to facilitate scholarly exchange among domestic and international scholars in the fields of machine learning and statistics. Through fostering an academic culture that promotes the mutual development of machine learning and statistics, the conference aims to advance foundational disciplines such as data science and artificial intelligence, and thereby contribute to the development of related digital economic industries.&lt;/p&gt;</description>
+      <description>&lt;p&gt;第四届机器学习与统计学国际会议（MLSTAT）将于2026年7月在成都召开。&lt;/p&gt;&#xA;&lt;p class=&#34;grey-text&#34;&gt;The 4th International Conference on Machine Learning and Statistics (MLSTAT) will be held in Chengdu in July 2026.&lt;/p&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;日期 / Date&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;span style=&#34;font-size:1.2em&#34;&gt;2026年7月15日至17日 / July 15–17, 2026&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;地点 / Location&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;中国四川省成都市温江区柳台大道555号，西南财经大学柳林校区弘远楼105会议室&lt;/p&gt;&#xA;&lt;p class=&#34;grey-text&#34;&gt;Room 105, Hongyuan Building, Liulin Campus, Southwestern University of Finance and Economics, No. 555 Liutai Avenue, Wenjiang District, Chengdu, Sichuan, China&lt;/p&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;会议目的 / Aim&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;机器学习与统计学国际会议（MLSTAT）是一项旨在促进国内外机器学习与统计学领域学者学术交流的重要会议。通过推动机器学习与统计学的协同发展，本届会议致力于夯实数据科学与人工智能等基础学科建设，进而为相关数字经济发展提供学术支撑。&lt;/p&gt;&#xA;&lt;p class=&#34;grey-text&#34;&gt;The Machine Learning and Statistics Conference (MLSTAT) is an academic conference that serves to facilitate scholarly exchange among domestic and international scholars in the fields of machine learning and statistics. Through fostering an academic culture that promotes the mutual development of machine learning and statistics, the conference aims to advance foundational disciplines such as data science and artificial intelligence, and thereby contribute to the development of related digital economic industries.&lt;/p&gt;</description>
     </item>
     <item>
       <title>注册 / Register</title>
@@ -99,7 +92,7 @@
       <description>&lt;div id=&#34;reset-content&#34;&gt;&#xA;&lt;div class=&#34;form-container&#34;&gt;&#xA;&lt;div class=&#34;card&#34;&gt;&#xA;&lt;div class=&#34;card-content&#34;&gt;&#xA;&lt;form onsubmit=&#34;handleResetPassword(event)&#34;&gt;&#xA;&lt;div class=&#34;input-field&#34;&gt;&#xA;    &lt;label for=&#34;password&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;lock&lt;/i&gt; 新密码 / New Password&lt;/label&gt;&#xA;    &lt;input type=&#34;password&#34; id=&#34;password&#34; name=&#34;password&#34; required minlength=&#34;8&#34;&gt;&#xA;    &lt;span class=&#34;helper-text&#34;&gt;至少8位 / At least 8 characters&lt;/span&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;input-field&#34;&gt;&#xA;    &lt;label for=&#34;confirm_password&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;lock_outline&lt;/i&gt; 确认密码 / Confirm Password&lt;/label&gt;&#xA;    &lt;input type=&#34;password&#34; id=&#34;confirm_password&#34; name=&#34;confirm_password&#34; required minlength=&#34;8&#34;&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;center-align&#34; style=&#34;margin-top:2rem&#34;&gt;&#xA;    &lt;button type=&#34;submit&#34; class=&#34;btn-large&#34;&gt;&#xA;        &lt;i class=&#34;material-icons left&#34;&gt;vpn_key&lt;/i&gt;重置密码 / Reset Password&#xA;    &lt;/button&gt;&#xA;&lt;/div&gt;&#xA;&lt;/form&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>组织委员会 / Organizing Committee</title>
+      <title>委员会 / Committee</title>
       <link>https://ml-stat.github.io/MLSTAT2026/committee/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ml-stat.github.io/MLSTAT2026/committee/</guid>

@@ -1,5 +1,5 @@
 ---
-title: 组织委员会 / Organizing Committee
+title: 委员会 / Committee
 weight: 160
 ---
 

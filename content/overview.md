@@ -4,9 +4,9 @@ type: index
 weight: 10
 ---
 
-第四届机器学习与统计学国际会议（MLSTAT）即将展开
+第四届机器学习与统计学国际会议（MLSTAT）将于2026年7月在成都召开。
 
-<p class="grey-text">The 4th International Conference on Machine Learning and Statistics (MLSTAT) will be held</p>
+<p class="grey-text">The 4th International Conference on Machine Learning and Statistics (MLSTAT) will be held in Chengdu in July 2026.</p>
 
 **日期 / Date**
 
