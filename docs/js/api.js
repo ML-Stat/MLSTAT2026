@@ -18,7 +18,7 @@
 })();
 
 // 根据环境自动选择 API 地址
-const API_BASE = 'http://47.243.175.139:5000/api';
+const API_BASE = 'https://api.mlstat.top';
 
 class ApiClient {
     constructor() {

@@ -19,7 +19,7 @@ let paymentSubTab = 'pending'; // pending=待确认, confirmed=已确认
 
 // API 基础地址
 function getApiBase() {
-    return 'http://47.243.175.139:5000/api';
+    return 'https://api.mlstat.top';
 }
 
 // 初始化管理后台
