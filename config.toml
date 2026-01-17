@@ -36,7 +36,7 @@ unsafe = true
 
 
 [params.social]
-	github  = "https://github.com/ML-Stat"
+	github  = "orgs/ML-Stat/repositories"
 	email   = "mlstat2026@126.com"
 
 [[menu.main]]
