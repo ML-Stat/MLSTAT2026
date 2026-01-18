@@ -30,12 +30,13 @@ weight: 10
 - 西南财经大学统计研究中心<br><small class="grey-text">Center of Statistical Research, Southwestern University of Finance and Economics</small>
 - 西南财经大学统计与数据科学学院<br><small class="grey-text">School of Statistics and Data Science, Southwestern University of Finance and Economics</small>
 
-**会议主持 / Session Chairs**
+**会议日程 / Schedule**
 
-- 7月15日上午 / July 15 AM: Zhang Zhihua, Chang Xiangyu
-- 7月15日下午 / July 15 PM: Jiao Yuling, Zhou Ling
-- 7月16日上午 / July 16 AM: Yu Zhou, Li Sai
-- 7月16日下午 / July 16 PM: Zheng Shurong
+| 日期 / Date | 时间 / Time | 内容 / Event | 会议主持 / Session Chairs |
+|-------------|-------------|--------------|-----------------|
+| 7月15日 / July 15 | 下午 / Afternoon | Tutorial | Chengchun Shi (LSE), Wei Sun (Purdue) |
+| 7月16日 / July 16 | 全天 / All Day | 会议报告 / Conference | [待定 / TBD] |
+| 7月17日 / July 17 | 上午 / Morning | 会议报告 / Conference | [待定 / TBD] |
 
 **注册费用 / Registration Fee**
 

@@ -42,5 +42,5 @@ weight: 160
 - Ziyang Gong, Southwestern University of Finance and Economics
 - Wei Lan, Southwestern University of Finance and Economics
 - Xiaoli Li, Southwestern University of Finance and Economics
-- Shiyin Tang, Southwestern University of Finance and Economics
+- Shiyun Tang, Southwestern University of Finance and Economics
 - Senhui Yang, Southwestern University of Finance and Economics
