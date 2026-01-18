@@ -32,11 +32,11 @@ weight: 10
 
 **会议日程 / Schedule**
 
-| 日期 / Date | 时间 / Time | 内容 / Event | 会议主持 / Session Chairs |
-|-------------|-------------|--------------|-----------------|
-| 7月15日 / July 15 | 下午 / Afternoon | Tutorial | Chengchun Shi (LSE), Wei Sun (Purdue) |
-| 7月16日 / July 16 | 全天 / All Day | 会议报告 / Conference | [待定 / TBD] |
-| 7月17日 / July 17 | 上午 / Morning | 会议报告 / Conference | [待定 / TBD] |
+- **7月15日 (周三) 下午** / July 15 (Wed) Afternoon<br>Tutorial — Session Chairs: Chengchun Shi (LSE), Wei Sun (Purdue)
+
+- **7月16日 (周四) 全天** / July 16 (Thu) All Day<br>会议报告 / Conference — Session Chairs: [待定 / TBD]
+
+- **7月17日 (周五) 上午** / July 17 (Fri) Morning<br>会议报告 / Conference — Session Chairs: [待定 / TBD]
 
 **注册费用 / Registration Fee**
 
