@@ -32,6 +32,10 @@ weight: 160
 
 **会议组织委员会 / Conference Organizing Committee** <small class="grey-text" style="font-weight:normal">(按姓氏字母排序 / Listed alphabetically by surname)</small>
 
+**名誉主席 / Honorary Chair:**
+
+- Huazhen Lin, Southwestern University of Finance and Economics
+
 **组织主席 / Organizing Chairs:**
 
 - Xiangyu Chang, Xi'an Jiaotong University
@@ -39,8 +43,12 @@ weight: 160
 
 **组织委员 / Organizing Members:**
 
+- Xuerong Cheng, Southwestern University of Finance and Economics
 - Ziyang Gong, Southwestern University of Finance and Economics
+- Bin Guo, Southwestern University of Finance and Economics
 - Wei Lan, Southwestern University of Finance and Economics
 - Xiaoli Li, Southwestern University of Finance and Economics
+- Bin Liu, Southwestern University of Finance and Economics
 - Shiyun Tang, Southwestern University of Finance and Economics
 - Senhui Yang, Southwestern University of Finance and Economics
+- Fred Zhang, Southwestern University of Finance and Economics
