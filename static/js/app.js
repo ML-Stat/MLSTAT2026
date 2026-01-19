@@ -577,7 +577,7 @@ function renderPaymentInfo(reg) {
                 </div>
                 <div class="payment-note">
                     <i class="material-icons">info</i>
-                    <span>支付时请备注：<strong>单位+姓名+联系电话</strong><br><small>Note: Affiliation + Name + Phone</small></span>
+                    <span>支付时请备注：<strong>手机+电子邮箱+发票抬头</strong><br><small>Note: Phone + Email + Invoice Title</small></span>
                 </div>
                 <button onclick="submitPayment()" class="custom-btn" style="width:100%">
                     <i class="material-icons">check</i> 我已完成支付 / I Have Paid
@@ -607,7 +607,7 @@ function renderPaymentInfo(reg) {
                 </div>
                 <div class="payment-note">
                     <i class="material-icons">info</i>
-                    <span>支付时请备注：<strong>单位+姓名+联系电话</strong><br><small>Note: Affiliation + Name + Phone</small></span>
+                    <span>支付时请备注：<strong>手机+电子邮箱+发票抬头</strong><br><small>Note: Phone + Email + Invoice Title</small></span>
                 </div>
                 <p style="text-align:center;margin-top:16px">
                     <a href="${base}dashboard/" style="color:#666">← 返回个人中心 / Back to Dashboard</a>
