@@ -51,4 +51,4 @@ weight: 160
 - Bin Liu, Southwestern University of Finance and Economics
 - Shiyun Tang, Southwestern University of Finance and Economics
 - Senhui Yang, Southwestern University of Finance and Economics
-- Fred Zhang, Southwestern University of Finance and Economics
+- Fode Zhang, Southwestern University of Finance and Economics

@@ -561,7 +561,7 @@ function renderPaymentInfo(reg) {
     const base = getBasePath();
     const user = api.getUser();
     const isStudent = user && user.identity_type === 'student';
-    const qrCode = isStudent ? 'payment_code_student.jpg' : 'payment_code.jpg';
+    const qrCode = isStudent ? 'payment_code_student.png' : 'payment_code.png';
     const feeType = isStudent ? '学生 / Student' : '普通 / Regular';
 
     if (reg.payment_status === 'pending') {
@@ -573,7 +573,7 @@ function renderPaymentInfo(reg) {
                 </div>
                 <div class="payment-qr">
                     <img src="${base}images/${qrCode}" alt="Payment QR Code">
-                    <div class="payment-tip">微信/支付宝扫码支付<br><small>Scan with WeChat/Alipay</small></div>
+                    <div class="payment-tip">微信扫码支付<br><small>Scan with WeChat</small></div>
                 </div>
                 <div class="payment-note">
                     <i class="material-icons">info</i>
