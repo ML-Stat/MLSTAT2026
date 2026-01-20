@@ -43,7 +43,7 @@ weight: 160
 
 **组织委员 / Organizing Members:**
 
-- Xuerong Cheng, Southwestern University of Finance and Economics
+- Xuerong Chen, Southwestern University of Finance and Economics
 - Ziyang Gong, Southwestern University of Finance and Economics
 - Bin Guo, Southwestern University of Finance and Economics
 - Wei Lan, Southwestern University of Finance and Economics
