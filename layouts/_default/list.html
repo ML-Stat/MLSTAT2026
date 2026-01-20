@@ -19,7 +19,7 @@
         <div class="wrapper">
             {{ with .Site.Params.banner_image }}
                 <div class="logo">
-                <img src="{{ $.Site.BaseURL }}{{ . }}">
+                <img src="{{ $.Site.BaseURL }}{{ . }}" decoding="async" fetchpriority="high">
                 </div>
             {{ end }}
             <h1>{{ .Title }}</h1>
