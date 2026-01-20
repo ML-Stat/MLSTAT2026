@@ -15,9 +15,9 @@ unsafe = true
 [params]
 	description = "The 4th International Conference on Machine Learning and Statistics"
 
-	logo = "/images/logo-AA.jpg"
-	favicon = "/images/logo-AA.jpg"
-	banner_image = "/images/swufe.jpg"
+	logo = "images/logo-AA.jpg"
+	favicon = "images/logo-AA.jpg"
+	banner_image = "images/swufe.jpg"
 
 	# Custom assets
 	custom_css = ["css/custom.css"]
