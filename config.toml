@@ -46,7 +46,7 @@ unsafe = true
 
 [[menu.main]]
 	name   = "Registration"
-	url    = "registration"
+	url    = "register"
 	weight = 20
 
 [[menu.main]]

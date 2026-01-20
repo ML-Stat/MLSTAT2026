@@ -29,8 +29,7 @@
   <!-- Material Icons: 使用 BootCDN 国内源 -->
   <link href="https://cdn.bootcdn.net/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" rel="stylesheet">
 
-  <!-- Highlight.js CSS: 使用 BootCDN 国内源 -->
-  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+  <!-- Highlight.js CSS: 已移除（网站无代码高亮需求） -->
 
   <style>
     @font-face {
@@ -52,7 +51,6 @@
   <link rel="stylesheet" href="{{ "stylesheets/application.css" | absURL }}">
   <link rel="stylesheet" href="{{ "stylesheets/temporary.css" | absURL }}">
   <link rel="stylesheet" href="{{ "stylesheets/palettes.css" | absURL }}">
-  <link rel="stylesheet" href="{{ with .Site.Params.highlight_css }}{{ . | absURL }}{{ else }}{{ "stylesheets/highlight/highlight.css" | absURL }}{{ end }}">
 
   <!-- 使用系统字体替代 Google Fonts，国内访问更快 -->
   <style>
