@@ -26,7 +26,7 @@ weight: 10
 
 **组织单位 / Organizers**
 
-- 中国应用统计学会机器学习分会<br><small class="grey-text">Machine Learning Branch of the Chinese Association for Applied Statistics</small>
+- 中国现场统计研究会机器学习分会<br><small class="grey-text">Machine Learning Branch of the Chinese Association for Applied Statistics</small>
 - 西南财经大学统计研究中心<br><small class="grey-text">Center of Statistical Research, Southwestern University of Finance and Economics</small>
 - 西南财经大学统计与数据科学学院<br><small class="grey-text">School of Statistics and Data Science, Southwestern University of Finance and Economics</small>
 
