@@ -48,7 +48,10 @@ weight: 10
 
 <p class="grey-text">Accommodation is not provided. Recommended hotels nearby (prices for reference):</p>
 
-- [酒店名称待定 / Hotel TBD]<br><small class="grey-text"><i class="material-icons" style="font-size:12px;vertical-align:middle">phone</i> [电话 / Phone] · [价格 / Price] · [距离 / Distance]</small>
+- 成都费尔顿大酒店<br><small class="grey-text">¥370-470/晚含早 · 成都市温江区文化路111号 · 张建军 156-8098-5368</small>
+- 澄舍酒店<br><small class="grey-text">¥350/晚含早 · 成都市温江区南熏大道三段702号 · 郑家春 152-0837-8192</small>
+- 万浩酒店/汉庭酒店<br><small class="grey-text">¥260-280/晚 · 成都市温江区天府海科路东段611号 · 田楠 186-9842-4149</small>
+- 谷兹·名人首座酒店<br><small class="grey-text">¥259/晚含早 · 成都市温江区南熏大道3段155号 · 郭传快 180-0051-0330</small>
 
 **联系方式 / Contact**
 
