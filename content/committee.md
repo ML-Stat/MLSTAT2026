@@ -32,10 +32,6 @@ weight: 160
 
 **会议组织委员会 / Conference Organizing Committee** <small class="grey-text" style="font-weight:normal">(按姓氏字母排序 / Listed alphabetically by surname)</small>
 
-**名誉主席 / Honorary Chair:**
-
-- Huazhen Lin, Southwestern University of Finance and Economics
-
 **组织主席 / Organizing Chairs:**
 
 - Xiangyu Chang, Xi'an Jiaotong University
