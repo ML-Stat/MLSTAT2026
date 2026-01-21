@@ -17,6 +17,7 @@ weight: 160
 - Zhongxiang Dai, The Chinese University of Hong Kong
 - Di He, Peking University
 - Fanghui Liu, Shanghai Jiao Tong University
+- Yong Liu, Renmin University of China
 - Jian Li, Tsinghua University
 - Ziye Ma, City University of Hong Kong
 - Xiaojie Mao, Tsinghua University
