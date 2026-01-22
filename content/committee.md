@@ -3,6 +3,12 @@ title: 委员会 / Committee
 weight: 160
 ---
 
+**大会主席 / General Chair:**
+
+- Huazhen Lin, Southwestern University of Finance and Economics
+
+---
+
 **程序委员会 / Program Committee** <small class="grey-text" style="font-weight:normal">(按姓氏字母排序 / Listed alphabetically by surname)</small>
 
 **程序主席 / Program Chairs:**
