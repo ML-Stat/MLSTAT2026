@@ -13,7 +13,7 @@ disableKinds = ["taxonomy"]
 unsafe = true
 
 [params]
-	description = "The 4th International Conference on Machine Learning and Statistics"
+	description = "The 4th Conference on Machine Learning and Statistics"
 
 	logo = "images/logo-AA.jpg"
 	favicon = "images/logo-AA.jpg"

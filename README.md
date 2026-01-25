@@ -1,6 +1,6 @@
 # MLSTAT 2026
 
-第四届机器学习与统计学国际会议 / The 4th International Conference on Machine Learning and Statistics
+第四届机器学习与统计学会议 / The 4th Conference on Machine Learning and Statistics
 
 https://ml-stat.github.io/MLSTAT2026/
 
