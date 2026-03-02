@@ -98,6 +98,7 @@ class ApiClient {
                     _redirectingToLogin = true;
                     showMessage('登录已过期，请重新登录\nSession expired, please login again', 'warning');
                     setTimeout(() => {
+                        _redirectingToLogin = false;
                         window.location.href = (window.HUGO_CONFIG?.basePath || '/') + 'login/';
                     }, 1000);
                 }

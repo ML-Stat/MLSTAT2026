@@ -54,7 +54,7 @@ function showMessage(msg, type = 'info') {
     alert((prefix[type] || '') + msg);
 }
 
-function requireAuth(redirectTo = 'register/') {
+function requireAuth(redirectTo = 'login/') {
     if (!api.isLoggedIn()) {
         goto(redirectTo);
         return false;
