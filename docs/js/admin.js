@@ -14,6 +14,12 @@ let pagination = {
     logs: { page: 1, perPage: 50 }
 };
 
+// 数据缓存（避免重复请求）
+let dataCache = {};
+
+// 海报数据缓存（避免序列化到 HTML）
+let posterCache = {};
+
 // 缴费管理 - 子标签状态
 let paymentSubTab = 'pending'; // pending=待确认, confirmed=已确认
 
@@ -24,6 +30,8 @@ function getApiBase() {
 
 // 初始化管理后台
 function initAdminPage() {
+    dataCache = {};
+    posterCache = {};
     loadAdminDashboard();
 }
 
@@ -136,7 +144,7 @@ function renderAdminDashboard(stats) {
     switchTab(currentTab);
 }
 
-function switchTab(tab) {
+function switchTab(tab, forceReload = false) {
     currentTab = tab;
     // 更新 tab 样式
     document.querySelectorAll('.admin-tab-nav button').forEach(btn => {
@@ -145,7 +153,17 @@ function switchTab(tab) {
     });
     // 更新内容显示
     document.querySelectorAll('.custom-tab-content').forEach(el => el.classList.remove('active'));
-    document.getElementById('tab-' + tab).classList.add('active');
+    const tabEl = document.getElementById('tab-' + tab);
+    tabEl.classList.add('active');
+
+    // 如果有缓存且不强制刷新，跳过请求
+    const cacheKey = tab === 'payments' ? `payments_${paymentSubTab}_${pagination.payments.page}` : `${tab}_${pagination[tab].page}`;
+    if (!forceReload && dataCache[cacheKey]) {
+        return;
+    }
+
+    // 立即显示 loading 状态
+    tabEl.innerHTML = '<div class="admin-empty"><i class="material-icons">hourglass_empty</i><p>加载中...<br><small>Loading...</small></p></div>';
 
     // 加载数据
     if (tab === 'payments') loadPendingPayments();
@@ -166,9 +184,11 @@ async function loadPendingPayments() {
     const el = document.getElementById('tab-payments');
     const { page, perPage } = pagination.payments;
     const status = paymentSubTab === 'pending' ? 'submitted' : 'confirmed';
+    const cacheKey = `payments_${paymentSubTab}_${page}`;
 
     try {
         const { registrations, total } = await api.adminGetRegistrations({ page, per_page: perPage, payment_status: status });
+        dataCache[cacheKey] = true;
         const totalPages = Math.ceil(total / perPage);
 
         el.innerHTML = `
@@ -247,7 +267,7 @@ async function loadPendingPayments() {
 function switchPaymentSubTab(tab) {
     paymentSubTab = tab;
     pagination.payments.page = 1;
-    loadPendingPayments();
+    switchTab('payments', true);
 }
 
 // 导出开票信息
@@ -290,11 +310,7 @@ function renderPagination(tab, current, total) {
 
 function gotoPage(tab, page) {
     pagination[tab].page = page;
-    if (tab === 'payments') loadPendingPayments();
-    else if (tab === 'posters') loadPendingPosters();
-    else if (tab === 'registrations') loadRegistrations();
-    else if (tab === 'users') loadUsers();
-    else if (tab === 'logs') loadAdminLogs();
+    switchTab(tab, true);
 }
 
 async function confirmPayment(regId) {
@@ -302,6 +318,7 @@ async function confirmPayment(regId) {
     try {
         await api.adminConfirmPayment(regId);
         showMessage('缴费确认成功\nPayment confirmed', 'success');
+        dataCache = {}; // 操作后清除所有缓存
         loadPendingPayments();
     } catch (err) {
         showMessage(err.message, 'error');
@@ -407,6 +424,7 @@ async function submitUpload(regId) {
         }
 
         closeUploadModal();
+        dataCache = {}; // 操作后清除所有缓存
         loadPendingPayments(); // 刷新列表
     } catch (err) {
         showMessage(err.message, 'error');
@@ -418,11 +436,16 @@ async function submitUpload(regId) {
 async function loadPendingPosters() {
     const el = document.getElementById('tab-posters');
     const { page, perPage } = pagination.posters;
+    const cacheKey = `posters_${page}`;
 
     try {
         const { posters, total } = await api.adminGetPosters({ page, per_page: perPage });
+        dataCache[cacheKey] = true;
         const totalPages = Math.ceil(total / perPage);
         const statusMap = { submitted: '待审核', accepted: '已通过', rejected: '已拒绝', revision_required: '需修改' };
+
+        // 缓存海报数据，避免序列化到 HTML 属性
+        posters.forEach(p => { posterCache[p.id] = p; });
 
         el.innerHTML = `
             <div class="admin-toolbar">
@@ -438,7 +461,7 @@ async function loadPendingPosters() {
                     <td>${escapeHtml(p.user.name)}</td>
                     <td><span class="dash-status dash-status-${p.status}">${statusMap[p.status] || '-'}</span></td>
                     <td class="admin-actions">
-                        <button class="admin-btn" onclick='showReviewModal(${JSON.stringify(p).replace(/'/g, "&#39;")})'><i class="material-icons">rate_review</i> ${p.status === 'submitted' ? '审核' : '查看'}</button>
+                        <button class="admin-btn" onclick="showReviewModal(posterCache[${p.id}])"><i class="material-icons">rate_review</i> ${p.status === 'submitted' ? '审核' : '查看'}</button>
                     </td>
                 </tr>`).join('')}
                 </tbody>
@@ -599,6 +622,7 @@ async function submitReview(posterId) {
         await api.adminReviewPoster(posterId, status, comment);
         showMessage('审核完成\nReview submitted', 'success');
         closeReviewModal();
+        dataCache = {}; // 操作后清除所有缓存
         loadPendingPosters();
     } catch (err) {
         showMessage(err.message, 'error');
@@ -610,9 +634,11 @@ async function submitReview(posterId) {
 async function loadRegistrations() {
     const el = document.getElementById('tab-registrations');
     const { page, perPage } = pagination.registrations;
+    const cacheKey = `registrations_${page}`;
 
     try {
         const { registrations, total } = await api.adminGetRegistrations({ page, per_page: perPage });
+        dataCache[cacheKey] = true;
         const totalPages = Math.ceil(total / perPage);
         const statusMap = { pending: '待缴费', submitted: '待确认', confirmed: '已确认' };
 
@@ -673,9 +699,11 @@ async function exportRegistrations() {
 async function loadUsers() {
     const el = document.getElementById('tab-users');
     const { page, perPage } = pagination.users;
+    const cacheKey = `users_${page}`;
 
     try {
         const { users, total } = await api.adminGetUsers({ page, per_page: perPage, include_admins: true });
+        dataCache[cacheKey] = true;
         const totalPages = Math.ceil(total / perPage);
         const currentUser = api.getUser();
         const identityMap = { student: '学生', teacher: '教师', researcher: '研究人员', other: '其他' };
@@ -715,6 +743,7 @@ async function toggleAdmin(userId, isAdmin) {
     try {
         await api.adminSetUserAdmin(userId, isAdmin);
         showMessage(isAdmin ? '已设为管理员\nAdmin granted' : '已取消管理员权限\nAdmin removed', 'success');
+        dataCache = {};
         loadUsers();
     } catch (err) {
         showMessage(err.message, 'error');
@@ -728,9 +757,11 @@ let logsFilter = { type: 'all' };  // all/admin/user
 async function loadAdminLogs() {
     const el = document.getElementById('tab-logs');
     const { page, perPage } = pagination.logs;
+    const cacheKey = `logs_${logsFilter.type}_${page}`;
 
     try {
         const { logs, total } = await api.adminGetLogs({ page, per_page: perPage, type: logsFilter.type });
+        dataCache[cacheKey] = true;
         const totalPages = Math.ceil(total / perPage);
 
         // 操作类型映射
@@ -750,6 +781,44 @@ async function loadAdminLogs() {
             'delete_poster': '删除海报'
         };
 
+        // 预处理日志详情（避免在模板中做 JSON.parse）
+        // 注意：details 会直接插入 innerHTML（因为包含 <a> 标签），所以用户数据必须 escapeHtml
+        const statusMapReview = { 'accepted': '通过', 'rejected': '拒绝', 'revision_required': '需修改' };
+        window._detailedChanges = {};
+        const processedLogs = logs.map(log => {
+            let details = '';
+            try {
+                const d = JSON.parse(log.details || '{}');
+                if (log.action === 'confirm_payment') {
+                    details = `${escapeHtml(d.user_name || '')} ¥${d.amount || ''}`;
+                } else if (log.action === 'review_poster') {
+                    const titleText = d.poster_title ? escapeHtml(d.poster_title.slice(0, 15)) + '...' : '';
+                    details = `${titleText} → ${statusMapReview[d.new_status] || escapeHtml(d.new_status) || '-'}`;
+                } else if (log.action === 'upload_document') {
+                    details = `${escapeHtml(d.user_name || '')}: ${escapeHtml(d.file_name || '')}`;
+                } else if (log.action === 'set_admin') {
+                    details = `${escapeHtml(d.user_name || '')} → ${d.is_admin ? '管理员' : '普通用户'}`;
+                } else if (log.action === 'register') {
+                    details = escapeHtml(d.email || '');
+                } else if (log.action === 'conf_register') {
+                    details = `${d.participation_type === 'poster' ? '海报展示' : '仅参会'} ¥${d.amount || ''}`;
+                } else if (log.action === 'submit_payment') {
+                    details = `¥${d.amount || ''}`;
+                } else if (log.action === 'submit_poster' || log.action === 'delete_poster') {
+                    details = d.title ? escapeHtml(d.title.length > 20 ? d.title.slice(0, 20) + '...' : d.title) : '';
+                } else if (log.action === 'update_poster') {
+                    const title = d.title ? escapeHtml(d.title.length > 15 ? d.title.slice(0, 15) + '...' : d.title) : '';
+                    const changes = d.changes && d.changes.length > 0 ? escapeHtml(d.changes.join('、')) : '';
+                    details = `${title} [${changes || '无变更'}]`;
+                    if (d.detailed_changes && d.detailed_changes.length > 0) {
+                        window._detailedChanges[log.id] = d.detailed_changes;
+                        details += ` <a href="javascript:showDetailedChanges(${log.id})" style="color:#1565c0;font-size:11px">查看</a>`;
+                    }
+                }
+            } catch (e) { details = escapeHtml(log.details || ''); }
+            return { ...log, _details: details };
+        });
+
         el.innerHTML = `
             <div class="admin-toolbar">
                 <div class="admin-filters">
@@ -761,51 +830,18 @@ async function loadAdminLogs() {
                 </div>
                 <div class="admin-count">共 ${total} 条日志</div>
             </div>
-            ${logs.length ? `
+            ${processedLogs.length ? `
             <table class="admin-table">
                 <thead><tr><th>时间</th><th>操作人</th><th>类型</th><th>操作</th><th>详情</th><th>IP</th></tr></thead>
                 <tbody>
-                ${logs.map(log => {
-                    let details = '';
-                    try {
-                        const d = JSON.parse(log.details || '{}');
-                        if (log.action === 'confirm_payment') {
-                            details = `${d.user_name || ''} ¥${d.amount || ''}`;
-                        } else if (log.action === 'review_poster') {
-                            const statusMap = { 'accepted': '通过', 'rejected': '拒绝', 'revision_required': '需修改' };
-                            details = `${d.poster_title ? d.poster_title.slice(0, 15) + '...' : ''} → ${statusMap[d.new_status] || d.new_status || '-'}`;
-                        } else if (log.action === 'upload_document') {
-                            details = `${d.user_name || ''}: ${d.file_name || ''}`;
-                        } else if (log.action === 'set_admin') {
-                            details = `${d.user_name || ''} → ${d.is_admin ? '管理员' : '普通用户'}`;
-                        } else if (log.action === 'register') {
-                            details = d.email || '';
-                        } else if (log.action === 'conf_register') {
-                            details = `${d.participation_type === 'poster' ? '海报展示' : '仅参会'} ¥${d.amount || ''}`;
-                        } else if (log.action === 'submit_payment') {
-                            details = `¥${d.amount || ''}`;
-                        } else if (log.action === 'submit_poster' || log.action === 'delete_poster') {
-                            details = d.title ? (d.title.length > 20 ? d.title.slice(0, 20) + '...' : d.title) : '';
-                        } else if (log.action === 'update_poster') {
-                            const title = d.title ? (d.title.length > 15 ? d.title.slice(0, 15) + '...' : d.title) : '';
-                            const changes = d.changes && d.changes.length > 0 ? d.changes.join('、') : '';
-                            details = `${title} [${changes || '无变更'}]`;
-                            // 如果有详细变更，添加可展开的标识
-                            if (d.detailed_changes && d.detailed_changes.length > 0) {
-                                // 存储到全局变量
-                                window._detailedChanges = window._detailedChanges || {};
-                                window._detailedChanges[log.id] = d.detailed_changes;
-                                details += ` <a href="javascript:showDetailedChanges(${log.id})" style="color:#1565c0;font-size:11px">查看</a>`;
-                            }
-                        }
-                    } catch (e) { details = log.details || ''; }
+                ${processedLogs.map(log => {
                     const typeLabel = log.is_admin_action ? '<span style="color:#1565c0;font-weight:500">管理员</span>' : '<span style="color:#666">用户</span>';
                     return `<tr>
                         <td style="white-space:nowrap;font-size:13px">${new Date(log.created_at).toLocaleString('zh-CN')}</td>
                         <td>${escapeHtml(log.user_name || '-')}</td>
                         <td>${typeLabel}</td>
                         <td>${actionMap[log.action] || log.action}</td>
-                        <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis">${escapeHtml(details)}</td>
+                        <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis">${log._details}</td>
                         <td style="font-size:12px;color:#888">${escapeHtml(log.ip_address || '-')}</td>
                     </tr>`;
                 }).join('')}
@@ -822,7 +858,7 @@ async function loadAdminLogs() {
 function filterLogs(type) {
     logsFilter.type = type;
     pagination.logs.page = 1;
-    loadAdminLogs();
+    switchTab('logs', true);
 }
 
 // 显示详细变更

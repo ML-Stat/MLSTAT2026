@@ -20,6 +20,9 @@
 // 根据环境自动选择 API 地址
 const API_BASE = 'https://api.mlstat.top';
 
+// 防止多个并发 401 响应触发重复跳转
+let _redirectingToLogin = false;
+
 class ApiClient {
     constructor() {
         this.token = localStorage.getItem('mlstat_token');
@@ -87,6 +90,18 @@ class ApiClient {
         }
 
         if (!response.ok) {
+            // token 过期或无效，自动退出登录
+            if (response.status === 401 && this.token) {
+                this.clearToken();
+                // 避免在登录页面重复跳转；使用全局标志防止并发 401 触发多次重定向
+                if (!_redirectingToLogin && !window.location.pathname.includes('/login')) {
+                    _redirectingToLogin = true;
+                    showMessage('登录已过期，请重新登录\nSession expired, please login again', 'warning');
+                    setTimeout(() => {
+                        window.location.href = (window.HUGO_CONFIG?.basePath || '/') + 'login/';
+                    }, 1000);
+                }
+            }
             throw new Error(data.error || '请求失败');
         }
 
