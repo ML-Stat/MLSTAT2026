@@ -9,8 +9,9 @@
   </script>
 
   <script src="{{ "javascripts/application.js" | absURL }}"></script>
+  {{ $cacheBust := now.Unix }}
   {{ range .Site.Params.custom_js }}
-  <script src="{{ . | absURL }}"></script>
+  <script src="{{ . | absURL }}?v={{ $cacheBust }}"></script>
   {{ end }}
 
   <script>

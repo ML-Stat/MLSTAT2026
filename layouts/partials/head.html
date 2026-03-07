@@ -72,8 +72,9 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 
+  {{ $cacheBust := now.Unix }}
   {{ range .Site.Params.custom_css }}
-  <link rel="stylesheet" href="{{ . | absURL }}">
+  <link rel="stylesheet" href="{{ . | absURL }}?v={{ $cacheBust }}">
   {{ end }}
   <script src="{{ "javascripts/modernizr.js" | absURL }}"></script>
 
