@@ -2,8 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/placeholder/</loc>
-    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/daixiaowu/</loc>
+    <lastmod>2026-03-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/liufanghui/</loc>
+    <lastmod>2026-03-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/maziye/</loc>
+    <lastmod>2026-03-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/shujun/</loc>
+    <lastmod>2026-03-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/wulei/</loc>
+    <lastmod>2026-03-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhoufeng/</loc>
+    <lastmod>2026-03-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ml-stat.github.io/MLSTAT2026/overview/</loc>
   </url><url>
@@ -22,7 +37,10 @@
     <loc>https://ml-stat.github.io/MLSTAT2026/documents/</loc>
   </url><url>
     <loc>https://ml-stat.github.io/MLSTAT2026/schedule/</loc>
-    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/placeholder/</loc>
+    <lastmod>2026-03-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ml-stat.github.io/MLSTAT2026/forgot-password/</loc>
   </url><url>
@@ -35,12 +53,12 @@
     <loc>https://ml-stat.github.io/MLSTAT2026/committee/</loc>
   </url><url>
     <loc>https://ml-stat.github.io/MLSTAT2026/tags/k1/</loc>
-    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ml-stat.github.io/MLSTAT2026/</loc>
-    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/</loc>
-    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-07T00:00:00+00:00</lastmod>
   </url>
 </urlset>

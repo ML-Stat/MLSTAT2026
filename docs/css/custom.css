@@ -1960,3 +1960,56 @@
     color: #999;
     font-style: italic;
 }
+
+/* ==================== Session 页面样式 ==================== */
+.session-header {
+    margin-bottom: 1.5rem;
+}
+
+.session-speaker {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.session-affiliation {
+    font-size: 15px;
+    color: #666;
+    margin-top: 2px;
+}
+
+.session-meta {
+    display: flex;
+    gap: 2rem;
+    padding: 10px 16px;
+    background: #f5f7fa;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.session-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.session-body {
+    padding: 0 4px;
+}
+
+.session-body h3 {
+    font-size: 17px;
+    color: #303f9f;
+    margin: 1.2rem 0 0.5rem;
+    padding-bottom: 4px;
+    border-bottom: 2px solid #e8eaf6;
+}
+
+.session-body .talk-content {
+    font-size: 15px;
+    line-height: 1.8;
+    text-align: justify;
+    color: #444;
+}
