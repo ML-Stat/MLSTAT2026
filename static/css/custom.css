@@ -1961,21 +1961,90 @@
     font-style: italic;
 }
 
-/* ==================== Session 页面样式 ==================== */
-.session-header {
-    margin-bottom: 1.5rem;
-}
+/* ==================== Session 页面覆盖主题默认值 ==================== */
 
-.session-speaker {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-}
-
-.session-affiliation {
+/* 覆盖主题的红色标题和大字号，使 session 相关页面更符合学术规范 */
+.session-page.article {
     font-size: 15px;
-    color: #666;
+    line-height: 1.8;
+}
+
+.session-page.article h1 {
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: 700;
+    color: #1a1a1a;
+    border-bottom: 2px solid var(--custom-primary-dark);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+/* 覆盖主题 .article a 的红色和下划线 */
+.session-page.article a {
+    color: var(--custom-primary-dark);
+    border-bottom: none;
+}
+
+.session-page.article a:hover {
+    color: var(--custom-primary);
+}
+
+/* ==================== Session 列表页样式 ==================== */
+.session-list-item {
+    padding: 14px 0;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.session-list-item:last-child {
+    border-bottom: none;
+}
+
+.session-list-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 3px;
+    line-height: 1.4;
+}
+
+.session-list-title a {
+    color: var(--custom-primary-dark);
+    text-decoration: none;
+    border-bottom: none;
+}
+
+.session-list-title a:hover {
+    text-decoration: underline;
+}
+
+.session-list-speaker {
+    font-size: 14px;
+    color: #555;
+}
+
+.session-list-meta {
+    font-size: 13px;
+    color: #999;
     margin-top: 2px;
+}
+
+/* ==================== Session 详情页样式 ==================== */
+.session-speaker-info {
+    margin-bottom: 16px;
+}
+
+.session-speaker-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+}
+
+.session-speaker-affiliation {
+    font-size: 15px;
+    color: #555;
+}
+
+.session-speaker-sep {
+    color: #555;
 }
 
 .session-meta {
@@ -1983,33 +2052,30 @@
     gap: 2rem;
     padding: 10px 16px;
     background: #f5f7fa;
-    border-radius: 6px;
-    font-size: 14px;
+    border-left: 3px solid var(--custom-primary-dark);
+    border-radius: 0 3px 3px 0;
+    font-size: 13px;
     color: #555;
-    margin-bottom: 1.5rem;
+    margin-bottom: 24px;
 }
 
-.session-meta span {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.session-body {
-    padding: 0 4px;
-}
-
-.session-body h3 {
-    font-size: 17px;
-    color: #303f9f;
-    margin: 1.2rem 0 0.5rem;
+h3.session-section-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #222;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 18px 0 6px;
+    padding-top: 0;
     padding-bottom: 4px;
-    border-bottom: 2px solid #e8eaf6;
+    border-bottom: 2px solid var(--custom-primary-dark);
 }
 
-.session-body .talk-content {
+p.session-text {
     font-size: 15px;
     line-height: 1.8;
     text-align: justify;
-    color: #444;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 0;
 }

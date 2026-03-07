@@ -1,0 +1,64 @@
+{{ define "main" }}
+
+<div class="backdrop">
+    <div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+{{ partial "header" . }}
+
+<main class="main">
+    <div class="drawer">
+        {{ partial "drawer" . }}
+    </div>
+
+    <article class="article{{ if and (eq .Section "schedule") .Params.speaker }} session-page{{ end }}">
+        <div class="wrapper">
+            {{ with .Site.Params.banner_image }}
+                <div class="logo">
+                <img src="{{ $.Site.BaseURL }}{{ . }}">
+                </div>
+            {{ end }}
+            <h1{{ if not (and (eq .Section "schedule") .Params.speaker) }}{{ with .Site.Params.palette.h1_ruler_color }} style="border-bottom: 3px solid {{ . }};"{{ end }}{{ end }}>{{ .Title }}{{ if .Draft }} (Draft){{ end }}</h1>
+
+            {{ if and (eq .Section "schedule") .Params.speaker }}
+            {{/* Session 详情页：渲染结构化演讲者信息 */}}
+            <div class="session-speaker-info">
+                <span class="session-speaker-name">{{ .Params.speaker }}</span>{{ with .Params.affiliation }}<span class="session-speaker-sep">,&nbsp;</span><span class="session-speaker-affiliation">{{ . }}</span>{{ end }}
+            </div>
+
+            {{ if or .Params.time .Params.location }}
+            <div class="session-meta">
+                {{ with .Params.time }}<span><b>Time:</b> {{ . }}</span>{{ end }}
+                {{ with .Params.location }}<span><b>Location:</b> {{ . }}</span>{{ end }}
+            </div>
+            {{ end }}
+            {{ end }}
+
+            {{ .Content }}
+
+            <aside class="copyright" role="note">
+                {{ with .Site.Params.copyright }}
+                &copy; {{ $.Now.Format "2006" }} {{ . }} &ndash;
+                {{ end }}
+            </aside>
+
+            <footer class="footer" {{ with .Site.Params.palette.footer_color }}style="background-color: {{ . }};"{{ end }}>
+                {{ partial "footer" . }}
+            </footer>
+        </div>
+    </article>
+
+    <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+            <div class="wrapper">
+                <div class="meta"></div>
+                <div class="list"></div>
+            </div>
+        </div>
+    </div>
+</main>
+{{ end }}

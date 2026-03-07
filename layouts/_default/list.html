@@ -15,7 +15,7 @@
         {{ partial "drawer" . }}
     </div>
 
-    <article class="article">
+    <article class="article{{ if eq .Section "schedule" }} session-page{{ end }}">
         <div class="wrapper">
             {{ with .Site.Params.banner_image }}
                 <div class="logo">
@@ -24,19 +24,34 @@
             {{ end }}
             <h1>{{ .Title }}</h1>
 
-            {{/* 渲染页面内容 */}}
-            {{ .Content }}
+            {{ if eq .Section "schedule" }}
+                {{/* Sessions 列表：自动从子页面生成 */}}
+                {{ range .Pages.ByWeight }}
+                {{ $page := . }}
+                <div class="session-list-item">
+                    <div class="session-list-title"><a href="{{ $page.Permalink }}">{{ $page.Title }}</a></div>
+                    {{ if $page.Params.speaker }}
+                    <div class="session-list-speaker">{{ $page.Params.speaker }}{{ with $page.Params.affiliation }}, {{ . }}{{ end }}</div>
+                    {{ end }}
+                    {{ if or $page.Params.time $page.Params.location }}
+                    <div class="session-list-meta">{{ with $page.Params.time }}{{ . }}{{ end }}{{ if and $page.Params.time $page.Params.location }} | {{ end }}{{ with $page.Params.location }}{{ . }}{{ end }}</div>
+                    {{ end }}
+                </div>
+                {{ end }}
+            {{ else }}
+                {{/* 其他列表页：渲染内容或默认列表 */}}
+                {{ .Content }}
 
-            {{/* 如果没有自定义内容，则显示子页面列表 */}}
-            {{ if not .Content }}
-            {{ range .Data.Pages }}
-            <a href="{{ .Permalink }}" title="{{ .Title }}">
-                <h2>{{ .Title }}</h2>
-            </a>
-            <br>
-            {{ printf "%s" .Summary | markdownify }}
-            <hr>
-            {{ end }}
+                {{ if not .Content }}
+                {{ range .Data.Pages }}
+                <a href="{{ .Permalink }}" title="{{ .Title }}">
+                    <h2>{{ .Title }}</h2>
+                </a>
+                <br>
+                {{ printf "%s" .Summary | markdownify }}
+                <hr>
+                {{ end }}
+                {{ end }}
             {{ end }}
 
             <aside class="copyright" role="note">

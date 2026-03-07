@@ -1,3 +1,3 @@
 ---
-title: "Sessions"
+title: "Invited Talks"
 ---

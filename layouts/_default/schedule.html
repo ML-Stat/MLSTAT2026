@@ -15,7 +15,7 @@
         {{ partial "drawer" . }}
     </div>
 
-    <article class="article">
+    <article class="article session-page">
         <div class="wrapper">
             {{ with .Site.Params.banner_image }}
                 <div class="logo">
@@ -26,9 +26,15 @@
 
             {{ range where .Site.RegularPages "Section" "schedule" }}
             {{ if ne .Title "Sessions" }}
-            <div style="margin-bottom: 1.5rem;">
-                <h3 style="margin-bottom: 0.3rem;"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                <p class="grey-text" style="margin: 0;">{{ .Params.summary }}</p>
+            {{ $page := . }}
+            <div class="session-list-item">
+                <div class="session-list-title"><a href="{{ $page.Permalink }}">{{ $page.Title }}</a></div>
+                {{ if $page.Params.speaker }}
+                <div class="session-list-speaker">{{ $page.Params.speaker }}{{ with $page.Params.affiliation }}, {{ . }}{{ end }}</div>
+                {{ end }}
+                {{ if or $page.Params.time $page.Params.location }}
+                <div class="session-list-meta">{{ with $page.Params.time }}{{ . }}{{ end }}{{ if and $page.Params.time $page.Params.location }} | {{ end }}{{ with $page.Params.location }}{{ . }}{{ end }}</div>
+                {{ end }}
             </div>
             {{ end }}
             {{ end }}

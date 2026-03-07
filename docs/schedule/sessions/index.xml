@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sessions on MLSTAT 2026</title>
+    <title>Invited Talks on MLSTAT 2026</title>
     <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/</link>
-    <description>Recent content in Sessions on MLSTAT 2026</description>
+    <description>Recent content in Invited Talks on MLSTAT 2026</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 07 Mar 2026 00:00:00 +0000</lastBuildDate>
@@ -13,49 +13,49 @@
       <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/daixiaowu/</link>
       <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
       <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/daixiaowu/</guid>
-      <description>[时间待定 / Time TBD]</description>
+      <description>&lt;h3 class=&#34;session-section-title&#34;&gt;Abstract&lt;/h3&gt;&#xA;&lt;p class=&#34;session-text&#34;&gt;&#xA;Large Language Models (LLMs) could prone to inconsistencies and hallucinations. We introduce Peer Elicitation Games (PEG), a training-free, game-theoretic framework for aligning LLMs through a peer elicitation mechanism involving a generator and multiple discriminators instantiated from distinct base models. Discriminators interact in a peer evaluation setting, where rewards are computed using a determinant-based mutual information score that provably incentivizes truthful reporting without requiring ground-truth labels. We establish theoretical guarantees showing that each agent, via online learning, achieves sublinear regret in the sense their cumulative performance approaches that of the best fixed truthful strategy in hindsight. Moreover, we prove last-iterate convergence to a truthful Nash equilibrium, ensuring that the actual policies used by agents converge to stable and truthful behavior over time. I&#39;ll also discuss the extension of PEG to the multi-agent reasoning and inference-time alignment.&#xA;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Norm-Based Generalization Under Scaling: The φ-Curve from Deterministic Equivalence to Function Spaces</title>
       <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/liufanghui/</link>
       <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
       <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/liufanghui/</guid>
-      <description>[时间待定 / Time TBD]</description>
+      <description>&lt;h3 class=&#34;session-section-title&#34;&gt;Abstract&lt;/h3&gt;&#xA;&lt;p class=&#34;session-text&#34;&gt;&#xA;In this talk, I will discuss some fundamental questions in modern machine learning: What is a suitable model capacity of a modern machine learning model? How to precisely characterize the test risk under such a model capacity? What is the corresponding function space induced by such a model capacity? What are the fundamental limits of statistical/computational learning efficiency within space? My talk will partly answer the above questions, through the lens of norm-based capacity control. By deterministic equivalence, we provide a precise characterization of how the estimator&#39;s norm concentrates and how it governs the associated test risk. Our results show that the predicted learning curve admits a phase transition from under- to over-parameterization, but no double descent behavior, and reshapes scaling laws as well. Additionally, I will talk about the path-norm based capacities and the induced Barron spaces to understand the fundamental limits of statistical efficiency, particularly in terms of sample complexity and dimension dependence—highlighting key statistical-computational gaps. Talk based on https://arxiv.org/abs/2502.01585, https://arxiv.org/abs/2404.18769&#xA;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Escaping Local Minima Deterministically and Provably in Matrix Sensing: Power of Simulated Over-Parameterization</title>
       <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/maziye/</link>
       <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
       <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/maziye/</guid>
-      <description>[时间待定 / Time TBD]</description>
+      <description>&lt;h3 class=&#34;session-section-title&#34;&gt;Abstract&lt;/h3&gt;&#xA;&lt;p class=&#34;session-text&#34;&gt;&#xA;Low-rank matrix sensing is a fundamental yet challenging nonconvex problem whose optimization landscape typically contains numerous spurious local minima, making it difficult for gradient-based optimizers to converge to the global optimum. Recent work has shown that tensor over-parameterization can, in principle, convert such local minima into strict saddle points; which also serves as a theoretical footnote to why scaling can improve generalization and performance in modern machine learning models like LLMs. Motivated by this observation, we propose a new escape mechanism that simulates the landscape and escape direction of the tensor-lifted space, without resorting to actually lifting the problem, since that would be computationally intractable. In essence, we designed a mathematical framework to project over-parametrized escape directions onto the original parameter space that could guarantee a strict decrease of objective value from existing local minima. To the best of the our knowledge, this represents the first deterministic framework that could escape spurious local minima with guarantee, especially without using random perturbations or heuristic estimates.&#xA;&lt;/p&gt;</description>
     </item>
     <item>
       <title>基于Koopman理论的连续谱动力系统表示与预测方法</title>
       <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/shujun/</link>
       <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
       <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/shujun/</guid>
-      <description>[时间待定 / Time TBD]</description>
+      <description>&lt;h3 class=&#34;session-section-title&#34;&gt;Abstract&lt;/h3&gt;&#xA;&lt;p class=&#34;session-text&#34;&gt;&#xA;对高维时空混沌动力系统进行表示与预测，仍然是动力系统理论与机器学习领域中的一个基础性挑战。高维、非线性且具有连续谱结构的动力系统广泛存在于气候演化、湍流流动、复杂网络传播以及神经动力学等现实场景中。尽管目前数据驱动方法能够实现较为准确的短期预测，但在以宽频或连续谱为主导的系统中，它们往往缺乏稳定性、可解释性和可扩展性。Koopman 理论为非线性动力学的表征和预测提供了一个线性化视角，但现有方法通常依赖于有限维逼近，这在高维场景下往往导致性能退化。本报告提出一种新的神经Koopman方法，通过将可逆运动与不可逆耗散分离，实现对动力系统的结构化表示。该方法在提高长期预测精度与稳定性的同时，也有助于揭示混沌行为中哪些方面是可以被理解和学习的。&#xA;&lt;/p&gt;&#xA;&lt;h3 class=&#34;session-section-title&#34;&gt;Biography&lt;/h3&gt;&#xA;&lt;p class=&#34;session-text&#34;&gt;&#xA;束俊，西安交通大学数学与统计学院副教授，博导。于2016年和2023年分别获西安交通大学理学学士与理学博士学位。目前从事于机器学习基础理论与算法研究；提出基于&#34;模拟学习方法论&#34;（简称SLeM）的学习框架，建立起相应的统计学习理论，为机器学习自动化提供了一个可行的理论途径，并在此框架下针对训练数据自选择、样本标记自校正、网络结构自调节、表现度量自构建、优化算法自设计等机器学习自动化任务研发了系列有效的机器学习自动化核心算法与技术。已在JMLR/TPAMI/TMLR/NSR/NeurIPS/ICML等国际顶级期刊和会议发表学术论文25余篇；ESI高被引论文2篇。谷歌学术引用2000余次，单篇论文引用超1100次。主持科技部重点研发计划青年科学家项目、基金委面上项目以及多项企业横向课题等。&#xA;&lt;/p&gt;</description>
     </item>
     <item>
       <title>泛函尺度律：大模型尺度现象的动力学解释</title>
       <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/wulei/</link>
       <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
       <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/wulei/</guid>
-      <description>[时间待定 / Time TBD]</description>
+      <description>&lt;h3 class=&#34;session-section-title&#34;&gt;Abstract&lt;/h3&gt;&#xA;&lt;p class=&#34;session-text&#34;&gt;&#xA;大模型尺度律揭示：性能随训练数据规模和计算量的增长呈现出可预测的幂律提升。这一规律深刻推动了现代人工智能的发展，但长期停留在经验观察层面，缺乏理论理解。为探究其成因，我们引入幂律核回归（power-law kernel regression）这一简化模型，作为理论原型来抽象尺度现象的关键机制。基于该模型的动力学推导，我们提出泛函尺度律（Functional Scaling Laws, FSL）：通过&#34;内蕴时间&#34;这一核心概念，将尺度律扩展为刻画整个训练过程的&#34;泛函&#34;形式，从而统一描述了不同模型规模和超参数设置下的损失演化。更进一步，FSL还揭示了&#34;预热-稳定-退火&#34;等常用学习率调度策略的有效性，显示出对实际大模型训练的潜在指导价值。&#xA;&lt;/p&gt;&#xA;&lt;h3 class=&#34;session-section-title&#34;&gt;Biography&lt;/h3&gt;&#xA;&lt;p class=&#34;session-text&#34;&gt;&#xA;吴磊，北京大学数学科学学院和国际机器学习研究中心助理教授，主要研究方向为深度学习的数理基础。2012年毕业于南开大学，获数学与应用数学学士学位；2018 年毕业于北京大学，获得计算数学博士学位。2018 年 11 月至 2021 年 10 月，先后在美国普林斯顿大学和宾夕法尼亚大学从事博士后研究工作。相关成果发表于 NeurIPS、ICML、Annals of Statistics、Journal of Machine Learning Research、 IEEE Transactions on Information Theory 等国际顶级会议与期刊。&#xA;&lt;/p&gt;</description>
     </item>
     <item>
       <title>SpecTr-GBV: Multi-Draft Block Verification Accelerating Speculative Decoding</title>
       <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhoufeng/</link>
       <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
       <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhoufeng/</guid>
-      <description>[时间待定 / Time TBD]</description>
+      <description>&lt;h3 class=&#34;session-section-title&#34;&gt;Abstract&lt;/h3&gt;&#xA;&lt;p class=&#34;session-text&#34;&gt;&#xA;Autoregressive language models achieve state-of-the-art performance across a wide range of natural language processing tasks, but suffer from high inference latency due to their sequential decoding nature. Speculative decoding (SD) mitigates this by employing a lightweight draft model to propose candidate tokens, which are selectively verified by a larger target model. While existing methods either adopt multi-draft strategies to increase acceptance rates or block verification techniques to jointly verify multiple tokens, they remain limited by treating these improvements in isolation. In this work, we propose SpecTr-GBV, a novel SD method that unifies multi-draft and greedy block verification (GBV) into a single framework. By formulating the verification step as an optimal transport problem over draft and target token blocks, SpecTr-GBV improves both theoretical efficiency and empirical performance. We theoretically prove that SpecTr-GBV achieves the optimal expected number of accepted tokens for any fixed number of draft sequences, and this bound improves as the number of drafts increases. Empirically, we evaluate SpecTr-GBV across five datasets and four baselines. Our method achieves superior speedup and significantly higher block efficiency while preserving output quality. In addition, we perform comprehensive ablation studies to evaluate the impact of various hyperparameters in the model.&#xA;&lt;/p&gt;</description>
     </item>
     <item>
       <title>[报告标题待定 / Talk Title TBD]</title>
       <link>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/placeholder/</link>
       <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
       <guid>https://ml-stat.github.io/MLSTAT2026/schedule/sessions/placeholder/</guid>
-      <description>[时间待定 / Time TBD]</description>
+      <description>&lt;h3 class=&#34;session-section-title&#34;&gt;Abstract&lt;/h3&gt;&#xA;&lt;p class=&#34;session-text&#34;&gt;&#xA;[摘要待定 / Abstract TBD]&#xA;&lt;/p&gt;&#xA;&lt;h3 class=&#34;session-section-title&#34;&gt;Biography&lt;/h3&gt;&#xA;&lt;p class=&#34;session-text&#34;&gt;&#xA;[简介待定 / Bio TBD]&#xA;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
