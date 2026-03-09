@@ -50,6 +50,7 @@ function goto(path) {
 }
 
 function showMessage(msg, type = 'info') {
+    if (msg === 'SESSION_EXPIRED') return;
     const prefix = { success: '✓ ', error: '✗ ', warning: '⚠ ', info: 'ℹ ' };
     alert((prefix[type] || '') + msg);
 }

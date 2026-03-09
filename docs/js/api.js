@@ -102,6 +102,10 @@ class ApiClient {
                         window.location.href = (window.HUGO_CONFIG?.basePath || '/') + 'login/';
                     }, 1000);
                 }
+                // 标记为已处理的 401，调用方无需再弹提示
+                const err = new Error('SESSION_EXPIRED');
+                err.handled = true;
+                throw err;
             }
             throw new Error(data.error || '请求失败');
         }
