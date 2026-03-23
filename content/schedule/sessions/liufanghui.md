@@ -2,7 +2,7 @@
 title: "Norm-Based Generalization Under Scaling: The φ-Curve from Deterministic Equivalence to Function Spaces"
 date: 2026-03-07
 tags: ["k1"]
-weight: 2
+weight: 4
 params:
   speaker: "刘方辉"
   affiliation: "上海交通大学"
@@ -17,5 +17,5 @@ In this talk, I will discuss some fundamental questions in modern machine learni
 
 <h3 class="session-section-title">Biography</h3>
 <p class="session-text">
-刘方辉，上海交通大学自然科学研究院与数学科学学院副教授，研究方向为机器学习数学理论与大模型机理分析。其主要研究工作包括函数空间视角下的机器学习理论、尺度扩展下的泛化理论，并进一步推动其在大模型微调与参数高效训练中的应用。相关研究获得国家自然科学基金委、英国皇家学会、阿兰·图灵研究所及谷歌等机构资助。2019 年博士毕业于上海交通大学，曾在 KU Leuven、EPFL 从事博士后研究，英国 University of Warwick担任助理教授。入选TUM 全球访问教授计划，获 AAAI 2024 新教师奖。担任 NeurIPS、ICLR、AISTATS等会议领域主席。
+刘方辉，上海交通大学自然科学研究院与数学科学学院副教授，研究方向为机器学习数学理论与大模型机理分析。其主要研究工作包括函数空间视角下的机器学习理论、尺度扩展下的泛化理论，并进一步推动其在大模型微调与参数高效训练中的应用。近五年发表论文在SIAM/JMLR/NeurIPS/ICML/ICLR/TPAMI 20余篇，相关研究获得国家自然科学基金委（海外优青项目）、英国皇家学会、阿兰·图灵研究所及谷歌等机构资助。2019 年博士毕业于上海交通大学，曾在 KU Leuven、EPFL 从事博士后研究，英国 University of Warwick担任助理教授。入选TUM 全球访问教授计划，获 AAAI 2024 新教师奖。担任 NeurIPS、ICLR、AISTATS等会议领域主席。
 </p>

@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=10" />
   <title>K1 - MLSTAT 2026</title>
-  <meta name="generator" content="Hugo 0.157.0">
+  <meta name="generator" content="Hugo 0.158.0">
 
   
   <meta name="description" content="The 4th Conference on Machine Learning and Statistics">
@@ -79,7 +79,7 @@
 
   
   
-  <link rel="stylesheet" href="https://ml-stat.github.io/MLSTAT2026/css/custom.css?v=1773020381">
+  <link rel="stylesheet" href="https://ml-stat.github.io/MLSTAT2026/css/custom.css?v=1774263051">
   
   <script src="https://ml-stat.github.io/MLSTAT2026/javascripts/modernizr.js"></script>
 
@@ -267,13 +267,33 @@
 
                 
                 
+                <a href="https://ml-stat.github.io/MLSTAT2026/schedule/sessions/caizhanrui/" title="A Statistical Framework for Alignment with Biased AI Feedback">
+                    <h2>A Statistical Framework for Alignment with Biased AI Feedback</h2>
+                </a>
+                <br>
+                <h3 class="session-section-title">Abstract</h3>
+<p class="session-text">
+Modern alignment pipelines are increasingly replacing expensive human preference labels with evaluations from large language models (LLM-as-Judge). However, AI labels can be systematically biased compared to high-quality human feedback datasets. In this paper, we develop two debiased alignment methods within a general framework that accommodates heterogeneous prompt-response distributions and external human feedback sources. Debiased Direct Preference Optimization (DDPO) augments standard DPO with a residual-based correction and density-ratio reweighting to mitigate systematic bias, while retaining DPO's computational efficiency. Debiased Identity Preference Optimization (DIPO) directly estimates human preference probabilities without imposing a parametric reward model. We provide theoretical guarantees for both methods: DDPO offers a practical and computationally efficient solution for large-scale alignment, whereas DIPO serves as a robust, statistically optimal alternative that attains the semiparametric efficiency bound. Empirical studies on sentiment generation, summarization, and single-turn dialogue demonstrate that the proposed methods substantially improve alignment efficiency and recover performance close to that of an oracle trained on fully human-labeled data.
+</p>
+                <hr>
+                
+                <a href="https://ml-stat.github.io/MLSTAT2026/schedule/sessions/daizhongxiang/" title="Optimizing Agentic Workflows: From Task-Level Search to Dynamic Construction">
+                    <h2>Optimizing Agentic Workflows: From Task-Level Search to Dynamic Construction</h2>
+                </a>
+                <br>
+                <h3 class="session-section-title">Abstract</h3>
+<p class="session-text">
+The rapid evolution of large language model (LLM) agents has demonstrated their immense potential in complex reasoning tasks, yet relying on manually designed agentic workflows fundamentally limits their adaptability and performance. In this talk, we present a trajectory of our recent research that progressively automates and refines workflow construction, moving from static to highly dynamic paradigms. We begin by introducing a task-level optimization framework that leverages bandit-guided graph evolution to discover a single, robust workflow capable of generalizing across all queries within a specific task domain. To push beyond the inherent performance ceiling of such task-level generalization, we then present a query-level orchestration method that utilizes contextual bandits to adaptively assign the optimal, customized workflow for every individual input. Finally, we address the limitations of one-shot, fixed workflow generation with Workflow-R1, a novel reinforcement learning-based approach for multi-turn workflow construction. Unlike previous methods where the workflow remains static after initial generation, Workflow-R1 optimizes group sub-sequence policies to dynamically construct and adjust the workflow online, conditioning subsequent steps directly on intermediate execution results. Together, these three works trace a clear path from static task-wide optimization to highly dynamic, execution-aware reasoning pathways, offering a comprehensive foundation for building more autonomous and resilient AI agents.
+</p>
+                <hr>
+                
                 <a href="https://ml-stat.github.io/MLSTAT2026/schedule/sessions/daixiaowu/" title="Multi-Agent Language Models: Games, Reasoning, and Alignment">
                     <h2>Multi-Agent Language Models: Games, Reasoning, and Alignment</h2>
                 </a>
                 <br>
                 <h3 class="session-section-title">Abstract</h3>
 <p class="session-text">
-Large Language Models (LLMs) could prone to inconsistencies and hallucinations. We introduce Peer Elicitation Games (PEG), a training-free, game-theoretic framework for aligning LLMs through a peer elicitation mechanism involving a generator and multiple discriminators instantiated from distinct base models. Discriminators interact in a peer evaluation setting, where rewards are computed using a determinant-based mutual information score that provably incentivizes truthful reporting without requiring ground-truth labels. We establish theoretical guarantees showing that each agent, via online learning, achieves sublinear regret in the sense their cumulative performance approaches that of the best fixed truthful strategy in hindsight. Moreover, we prove last-iterate convergence to a truthful Nash equilibrium, ensuring that the actual policies used by agents converge to stable and truthful behavior over time. I'll also discuss the extension of PEG to the multi-agent reasoning and inference-time alignment.
+Large Language Models (LLMs) are prone to inconsistencies and hallucinations. We introduce Peer Elicitation Games (PEG), a training-free, game-theoretic framework for aligning LLMs through a peer elicitation mechanism involving a generator and multiple discriminators instantiated from distinct base models. Discriminators interact in a peer evaluation setting, where rewards are computed using a determinant-based mutual information score that provably incentivizes truthful reporting without requiring ground-truth labels. We establish theoretical guarantees showing that each agent, via online learning, achieves sublinear regret in the sense their cumulative performance approaches that of the best fixed truthful strategy in hindsight. Moreover, we prove last-iterate convergence to a truthful Nash equilibrium, ensuring that the actual policies used by agents converge to stable and truthful behavior over time. I'll also discuss the extension of PEG to the multi-agent reasoning and inference-time alignment.
 </p>
                 <hr>
                 
@@ -293,7 +313,7 @@ In this talk, I will discuss some fundamental questions in modern machine learni
                 <br>
                 <h3 class="session-section-title">Abstract</h3>
 <p class="session-text">
-Low-rank matrix sensing is a fundamental yet challenging nonconvex problem whose optimization landscape typically contains numerous spurious local minima, making it difficult for gradient-based optimizers to converge to the global optimum. Recent work has shown that tensor over-parameterization can, in principle, convert such local minima into strict saddle points; which also serves as a theoretical footnote to why scaling can improve generalization and performance in modern machine learning models like LLMs. Motivated by this observation, we propose a new escape mechanism that simulates the landscape and escape direction of the tensor-lifted space, without resorting to actually lifting the problem, since that would be computationally intractable. In essence, we designed a mathematical framework to project over-parametrized escape directions onto the original parameter space that could guarantee a strict decrease of objective value from existing local minima. To the best of the our knowledge, this represents the first deterministic framework that could escape spurious local minima with guarantee, especially without using random perturbations or heuristic estimates.
+Low-rank matrix sensing is a fundamental yet challenging nonconvex problem whose optimization landscape typically contains numerous spurious local minima, making it difficult for gradient-based optimizers to converge to the global optimum. Recent work has shown that tensor over-parameterization can, in principle, convert such local minima into strict saddle points; which also serves as a theoretical footnote to why scaling can improve generalization and performance in modern machine learning models like LLMs. Motivated by this observation, we propose a new escape mechanism that simulates the landscape and escape direction of the tensor-lifted space, without resorting to actually lifting the problem, since that would be computationally intractable. In essence, we designed a mathematical framework to project over-parametrized escape directions onto the original parameter space that could guarantee a strict decrease of objective value from existing local minima. To the best of our knowledge, this represents the first deterministic framework that could escape spurious local minima with guarantee, especially without using random perturbations or heuristic estimates.
 </p>
                 <hr>
                 
@@ -311,6 +331,16 @@ Low-rank matrix sensing is a fundamental yet challenging nonconvex problem whose
 </p>
                 <hr>
                 
+                <a href="https://ml-stat.github.io/MLSTAT2026/schedule/sessions/suweijie/" title="Some Recent Progress on Matrix-Gradient Optimizers">
+                    <h2>Some Recent Progress on Matrix-Gradient Optimizers</h2>
+                </a>
+                <br>
+                <h3 class="session-section-title">Abstract</h3>
+<p class="session-text">
+Introduced in December 2024, Muon is an optimization method for training language models that updates the weight along the direction of an orthogonalized gradient. The superiority of Muon has been quickly recognized, as demonstrated on industry-scale models; for example, it has been successfully used to train a trillion-parameter frontier language model. In this talk, we offer two perspectives to shed light on this matrix-gradient method. First, we introduce a unifying framework that precisely distinguishes between preconditioning for curvature anisotropy (like Adam) and gradient anisotropy (like Muon). This perspective not only offers new insights into Adam's instabilities and Muon's accelerated convergence but also leads to a new extension, such as PolarGrad. Next, we introduce a second perspective based on an isotropic curvature model. We derive this model by assuming isotropy of curvature (including Hessian and higher-order terms) across all perturbation directions. We show that under a general growth condition, the optimal update is one that makes the gradient's spectrum more homogeneous; that is, making its singular values closer in ratio. We then show that the orthogonalized gradient becomes optimal for this model when the curvature exhibits a phase transition in growth. Taken together, these results suggest that the gradient orthogonalization employed in Muon is directionally correct but may not be strictly optimal, and we will discuss how to leverage this model for designing new optimization methods. This talk is based on arXiv:2505.21799 and 2511.00674.
+</p>
+                <hr>
+                
                 <a href="https://ml-stat.github.io/MLSTAT2026/schedule/sessions/wulei/" title="泛函尺度律：大模型尺度现象的动力学解释">
                     <h2>泛函尺度律：大模型尺度现象的动力学解释</h2>
                 </a>
@@ -322,6 +352,16 @@ Low-rank matrix sensing is a fundamental yet challenging nonconvex problem whose
 <h3 class="session-section-title">Biography</h3>
 <p class="session-text">
 吴磊，北京大学数学科学学院和国际机器学习研究中心助理教授，主要研究方向为深度学习的数理基础。2012年毕业于南开大学，获数学与应用数学学士学位；2018 年毕业于北京大学，获得计算数学博士学位。2018 年 11 月至 2021 年 10 月，先后在美国普林斯顿大学和宾夕法尼亚大学从事博士后研究工作。相关成果发表于 NeurIPS、ICML、Annals of Statistics、Journal of Machine Learning Research、 IEEE Transactions on Information Theory 等国际顶级会议与期刊。
+</p>
+                <hr>
+                
+                <a href="https://ml-stat.github.io/MLSTAT2026/schedule/sessions/yangyunfei/" title="Approximating and learning smooth functions by ReLU neural networks">
+                    <h2>Approximating and learning smooth functions by ReLU neural networks</h2>
+                </a>
+                <br>
+                <h3 class="session-section-title">Abstract</h3>
+<p class="session-text">
+In this talk, we will discuss some recent progresses on the approximation and learning theory of ReLU neural networks. We divide the approximation theory of neural networks into two parts according to the methods. In the first method, we approximate smooth functions by piecewise polynomials and then construct neural networks to approximate these piecewise polynomials. Using constructive approximation, one can derive optimal approximation rates in terms of the width and depth. In the second method, we consider the function space of shallow neural networks, which is called Barron space, and use random approximation method to derive approximation bounds in this space. By studying the relation between the Barron space and the smooth function spaces, we can characterize the approximation error of shallow neural networks by the width and certain norm of the weights. As an application, we will discuss how these approximation results can be used in nonparametric regression problems. In particular, we will show that least squares estimations based on deep or shallow neural networks can achieve minimax optimal rates of convergence for learning smooth function classes in various settings.
 </p>
                 <hr>
                 
@@ -377,11 +417,11 @@ Autoregressive language models achieve state-of-the-art performance across a wid
   <script src="https://ml-stat.github.io/MLSTAT2026/javascripts/application.js"></script>
   
   
-  <script src="https://ml-stat.github.io/MLSTAT2026/js/api.js?v=1773020381"></script>
+  <script src="https://ml-stat.github.io/MLSTAT2026/js/api.js?v=1774263051"></script>
   
-  <script src="https://ml-stat.github.io/MLSTAT2026/js/app.js?v=1773020381"></script>
+  <script src="https://ml-stat.github.io/MLSTAT2026/js/app.js?v=1774263051"></script>
   
-  <script src="https://ml-stat.github.io/MLSTAT2026/js/admin.js?v=1773020381"></script>
+  <script src="https://ml-stat.github.io/MLSTAT2026/js/admin.js?v=1774263051"></script>
   
 
   <script>

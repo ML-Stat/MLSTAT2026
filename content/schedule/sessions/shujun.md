@@ -2,7 +2,7 @@
 title: "基于Koopman理论的连续谱动力系统表示与预测方法"
 date: 2026-03-07
 tags: ["k1"]
-weight: 4
+weight: 6
 params:
   speaker: "束俊"
   affiliation: "西安交通大学"

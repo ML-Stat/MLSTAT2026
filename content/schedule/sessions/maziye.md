@@ -2,7 +2,7 @@
 title: "Escaping Local Minima Deterministically and Provably in Matrix Sensing: Power of Simulated Over-Parameterization"
 date: 2026-03-07
 tags: ["k1"]
-weight: 3
+weight: 5
 params:
   speaker: "马梓业"
   affiliation: "香港城市大学"
@@ -12,7 +12,7 @@ params:
 
 <h3 class="session-section-title">Abstract</h3>
 <p class="session-text">
-Low-rank matrix sensing is a fundamental yet challenging nonconvex problem whose optimization landscape typically contains numerous spurious local minima, making it difficult for gradient-based optimizers to converge to the global optimum. Recent work has shown that tensor over-parameterization can, in principle, convert such local minima into strict saddle points; which also serves as a theoretical footnote to why scaling can improve generalization and performance in modern machine learning models like LLMs. Motivated by this observation, we propose a new escape mechanism that simulates the landscape and escape direction of the tensor-lifted space, without resorting to actually lifting the problem, since that would be computationally intractable. In essence, we designed a mathematical framework to project over-parametrized escape directions onto the original parameter space that could guarantee a strict decrease of objective value from existing local minima. To the best of the our knowledge, this represents the first deterministic framework that could escape spurious local minima with guarantee, especially without using random perturbations or heuristic estimates.
+Low-rank matrix sensing is a fundamental yet challenging nonconvex problem whose optimization landscape typically contains numerous spurious local minima, making it difficult for gradient-based optimizers to converge to the global optimum. Recent work has shown that tensor over-parameterization can, in principle, convert such local minima into strict saddle points; which also serves as a theoretical footnote to why scaling can improve generalization and performance in modern machine learning models like LLMs. Motivated by this observation, we propose a new escape mechanism that simulates the landscape and escape direction of the tensor-lifted space, without resorting to actually lifting the problem, since that would be computationally intractable. In essence, we designed a mathematical framework to project over-parametrized escape directions onto the original parameter space that could guarantee a strict decrease of objective value from existing local minima. To the best of our knowledge, this represents the first deterministic framework that could escape spurious local minima with guarantee, especially without using random perturbations or heuristic estimates.
 </p>
 
 <h3 class="session-section-title">Biography</h3>
