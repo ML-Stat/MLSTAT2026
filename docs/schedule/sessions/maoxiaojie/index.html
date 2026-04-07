@@ -9,16 +9,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=10" />
-  <title>SpecTr-GBV: Multi-Draft Block Verification Accelerating Speculative Decoding - MLSTAT 2026</title>
+  <title>Contextual Linear Optimization under Full and Partial Feedback - MLSTAT 2026</title>
   <meta name="generator" content="Hugo 0.159.2">
 
   
   <meta name="description" content="The 4th Conference on Machine Learning and Statistics">
   
-  <link rel="canonical" href="https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhoufeng/">
+  <link rel="canonical" href="https://ml-stat.github.io/MLSTAT2026/schedule/sessions/maoxiaojie/">
   
 
-  <meta property="og:url" content="https://ml-stat.github.io/MLSTAT2026/schedule/sessions/zhoufeng/">
+  <meta property="og:url" content="https://ml-stat.github.io/MLSTAT2026/schedule/sessions/maoxiaojie/">
   <meta property="og:title" content="MLSTAT 2026">
   <meta property="og:image" content="https://ml-stat.github.io/MLSTAT2026/images/logo-AA.jpg">
   <meta name="apple-mobile-web-app-title" content="MLSTAT 2026">
@@ -107,7 +107,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        SpecTr-GBV: Multi-Draft Block Verification Accelerating Speculative Decoding
+        Contextual Linear Optimization under Full and Partial Feedback
       </div>
     </div>
 
@@ -256,12 +256,12 @@
                 <img src="https://ml-stat.github.io/MLSTAT2026/images/swufe.jpg">
                 </div>
             
-            <h1>SpecTr-GBV: Multi-Draft Block Verification Accelerating Speculative Decoding</h1>
+            <h1>Contextual Linear Optimization under Full and Partial Feedback</h1>
 
             
             
             <div class="session-speaker-info">
-                <span class="session-speaker-name">周峰</span><span class="session-speaker-sep">,&nbsp;</span><span class="session-speaker-affiliation">中国人民大学</span>
+                <span class="session-speaker-name">毛小介</span><span class="session-speaker-sep">,&nbsp;</span><span class="session-speaker-affiliation">清华大学</span>
             </div>
 
             
@@ -274,11 +274,11 @@
 
             <h3 class="session-section-title">Abstract</h3>
 <p class="session-text">
-Autoregressive language models achieve state-of-the-art performance across a wide range of natural language processing tasks, but suffer from high inference latency due to their sequential decoding nature. Speculative decoding (SD) mitigates this by employing a lightweight draft model to propose candidate tokens, which are selectively verified by a larger target model. While existing methods either adopt multi-draft strategies to increase acceptance rates or block verification techniques to jointly verify multiple tokens, they remain limited by treating these improvements in isolation. In this work, we propose SpecTr-GBV, a novel SD method that unifies multi-draft and greedy block verification (GBV) into a single framework. By formulating the verification step as an optimal transport problem over draft and target token blocks, SpecTr-GBV improves both theoretical efficiency and empirical performance. We theoretically prove that SpecTr-GBV achieves the optimal expected number of accepted tokens for any fixed number of draft sequences, and this bound improves as the number of drafts increases. Empirically, we evaluate SpecTr-GBV across five datasets and four baselines. Our method achieves superior speedup and significantly higher block efficiency while preserving output quality. In addition, we perform comprehensive ablation studies to evaluate the impact of various hyperparameters in the model.
+This talk is about Contextual Linear Optimization (CLO) across two feedback regimes, where we study the traditional two-stage Estimate-Then-Optimize (ETO) approach and the new integrated Induced Empirical Risk Minimization (IERM) framework. In the full-feedback setting, we theoretically demonstrate that under model correct specification, ETO can surprisingly achieve faster regret convergence rates than IERM by leveraging problem-specific geometric properties. In partial-feedback settings (bandit and semi-bandit), we propose a unified offline IERM framework and establish novel fast-rate guarantees. Numerical experiments on shortest path problems validate our theoretical findings across different regimes.
 </p>
 <h3 class="session-section-title">Biography</h3>
 <p class="session-text">
-周峰，中国人民大学统计学院副教授，中国人民大学"杰出青年学者"，主要研究领域包括统计机器学习、贝叶斯方法、随机过程、大模型推理加速等，主持国家自然科学基金青年项目、面上项目，在JMLR、STCO、ICML、NeurIPS、ICLR、AAAI、KDD等国际期刊和会议上发表论文40余篇，担任NeurIPS、ICLR、AISTATS等国际会议领域主席，国际期刊《Statistics and Computing》副主编，《Transactions on Machine Learning Research》执行编辑，《Journal of Machine Learning Research》编委，中国商业统计学会人工智能分会副秘书长、全国工业统计学教学研究会青年统计学家协会第二届理事会理事、IEEE高级会员。
+毛小介，清华大学经济管理学院管理科学与工程系副教授，2016年获得武汉大学经济学学士学位，2021年获得美国康奈尔大学统计与数据科学专业博士学位。研究兴趣主要包括因果推断、数据驱动的决策方法、统计机器学习等。
 </p>
 
 
