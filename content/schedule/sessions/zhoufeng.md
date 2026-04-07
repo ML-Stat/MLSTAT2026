@@ -2,7 +2,7 @@
 title: "SpecTr-GBV: Multi-Draft Block Verification Accelerating Speculative Decoding"
 date: 2026-03-07
 tags: ["k1"]
-weight: 10
+weight: 12
 params:
   speaker: "周峰"
   affiliation: "中国人民大学"

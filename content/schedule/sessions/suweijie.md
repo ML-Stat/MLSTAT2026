@@ -2,7 +2,7 @@
 title: "Some Recent Progress on Matrix-Gradient Optimizers"
 date: 2026-03-07
 tags: ["k1"]
-weight: 7
+weight: 9
 params:
   speaker: "苏炜杰"
   affiliation: "University of Pennsylvania"
