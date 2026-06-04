@@ -2,7 +2,7 @@
 title: "Contextual Linear Optimization under Full and Partial Feedback"
 date: 2026-03-07
 tags: ["k1"]
-weight: 6
+weight: 7
 params:
   speaker: "毛小介"
   affiliation: "清华大学"

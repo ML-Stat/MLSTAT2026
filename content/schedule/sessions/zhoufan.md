@@ -1,0 +1,21 @@
+---
+title: "AI for Statistics的一些最新进展"
+date: 2026-03-07
+tags: ["k1"]
+weight: 13
+params:
+  speaker: "周帆"
+  affiliation: "上海财经大学"
+  time: "TBD"
+  location: "TBD"
+---
+
+<h3 class="session-section-title">Abstract</h3>
+<p class="session-text">
+本报告将介绍我们近期在AI for Statistics方面的一系列探索与进展。围绕“大模型的统计推理能力”这一核心问题，我们从底层数据、知识建模与辅助研究三个层面展开研究。首先，我们构建了StatEval——首个面向统计学的综合性问答与推理的综合性数据集和评测基准，系统覆盖从本科与研究生基础知识到前沿科研级证明问题，填补了现有大模型基础数据与评测中统计学维度长期缺失的空白。特别的，我们设计了一个具有人机协同验证的多智能系统TRACE，能够在确保学术严谨性的同时，自动化完成结构抽取、逻辑解析和多难度题目生成。基于StatEval，我们提出了一种针对复杂证明的自适应过程化评分流水线，支持对推理能力进行细粒度的逐步评估。此外，利用 StatEval 进行检索增强生成（RAG）和领域微调，可明显提升推理能力。在此基础上，我们还开发了一个可以自动化进行研究级统计定理证明的智能体StatProver，能够辅助研究者构建证明思路与框架，处理科研级别的统计定理证明时频繁出现的逻辑断裂与公式幻觉问题，实现从统计学命题到完整证明的全自动生成与自我纠错。
+</p>
+
+<h3 class="session-section-title">Biography</h3>
+<p class="session-text">
+周帆，上海财经大学统计与数据科学学院副教授，国家级青年人才，博士毕业于美国北卡罗来纳大学教堂山分校，现担任统计学顶刊JASA的副主编与人工智能顶会NeurIPS等的领域主席。研究兴趣包括深度学习，强化学习的算法与理论，大模型，因果推断，在包括JASA, JMLR, NeurIPS, ICML, ICLR等统计学、机器学习顶刊和顶会上发表一作通讯文章数十篇，曾获泛华统计协会国际会议新研究者奖、UNC James E. Grizzle杰出校友奖和Barry H. Margolin Award。
+</p>

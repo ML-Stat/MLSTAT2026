@@ -2,7 +2,7 @@
 title: "Evaluating biomarkers for treatment selection from reproducibility studies"
 date: 2026-03-07
 tags: ["k1"]
-weight: 8
+weight: 9
 params:
   speaker: "宋晓"
   affiliation: "佐治亚大学"

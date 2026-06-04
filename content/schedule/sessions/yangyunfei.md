@@ -2,7 +2,7 @@
 title: "Approximating and learning smooth functions by ReLU neural networks"
 date: 2026-03-07
 tags: ["k1"]
-weight: 11
+weight: 12
 params:
   speaker: "杨云斐"
   affiliation: "中山大学"

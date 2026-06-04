@@ -2,7 +2,7 @@
 title: "Norm-Based Generalization Under Scaling: The φ-Curve from Deterministic Equivalence to Function Spaces"
 date: 2026-03-07
 tags: ["k1"]
-weight: 4
+weight: 5
 params:
   speaker: "刘方辉"
   affiliation: "上海交通大学"

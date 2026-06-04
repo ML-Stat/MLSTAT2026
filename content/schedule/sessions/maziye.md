@@ -2,7 +2,7 @@
 title: "Escaping Local Minima Deterministically and Provably in Matrix Sensing: Power of Simulated Over-Parameterization"
 date: 2026-03-07
 tags: ["k1"]
-weight: 5
+weight: 6
 params:
   speaker: "马梓业"
   affiliation: "香港城市大学"
