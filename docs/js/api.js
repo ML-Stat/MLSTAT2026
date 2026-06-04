@@ -219,6 +219,17 @@ class ApiClient {
         });
     }
 
+    async getTutorialChoice() {
+        return this.request('/conference/tutorial');
+    }
+
+    async updateTutorialChoice(attendTutorial) {
+        return this.request('/conference/tutorial', {
+            method: 'PUT',
+            body: JSON.stringify({ attend_tutorial: attendTutorial })
+        });
+    }
+
     async submitPayment() {
         return this.request('/conference/payment/submit', {
             method: 'POST'

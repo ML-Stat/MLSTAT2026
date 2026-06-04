@@ -28,6 +28,12 @@ function getApiBase() {
     return 'https://api.mlstat.top';
 }
 
+function getAdminTutorialChoiceText(value) {
+    if (value === true) return '参加';
+    if (value === false) return '不参加';
+    return '未选择';
+}
+
 // 初始化管理后台
 function initAdminPage() {
     dataCache = {};
@@ -202,7 +208,7 @@ async function loadPendingPayments() {
                 </div>
                 ${registrations.length ? `
                 <table class="admin-table">
-                    <thead><tr><th>姓名</th><th>单位</th><th>身份</th><th>手机</th><th>金额</th><th>操作</th></tr></thead>
+                    <thead><tr><th>姓名</th><th>单位</th><th>身份</th><th>手机</th><th>教程报名</th><th>金额</th><th>操作</th></tr></thead>
                     <tbody>
                     ${registrations.map(r => {
                         const identityMap = { student: '学生', teacher: '教师', researcher: '研究人员', other: '其他' };
@@ -212,6 +218,7 @@ async function loadPendingPayments() {
                         <td>${escapeHtml(r.user.affiliation)}</td>
                         <td>${identityMap[r.user.identity_type] || '-'}${isStudent && r.has_student_id ? ' <a href="javascript:viewStudentId(' + r.id + ')" title="查看学生证"><i class="material-icons" style="font-size:16px;vertical-align:middle;color:#1976d2">badge</i></a>' : ''}</td>
                         <td>${escapeHtml(r.user.phone || '-')}</td>
+                        <td>${getAdminTutorialChoiceText(r.attend_tutorial)}</td>
                         <td><strong style="color:#e53935">¥${r.payment_amount}</strong></td>
                         <td class="admin-actions">
                             <button class="admin-btn admin-btn-success" onclick="confirmPayment(${r.id})"><i class="material-icons">check</i> 确认</button>
@@ -233,7 +240,7 @@ async function loadPendingPayments() {
                 </div>
                 ${registrations.length ? `
                 <table class="admin-table">
-                    <thead><tr><th>姓名</th><th>单位</th><th>身份</th><th>手机</th><th>金额</th><th>文档状态</th><th>操作</th></tr></thead>
+                    <thead><tr><th>姓名</th><th>单位</th><th>身份</th><th>手机</th><th>教程报名</th><th>金额</th><th>文档状态</th><th>操作</th></tr></thead>
                     <tbody>
                     ${registrations.map(r => {
                         const identityMap = { student: '学生', teacher: '教师', researcher: '研究人员', other: '其他' };
@@ -243,6 +250,7 @@ async function loadPendingPayments() {
                         <td>${escapeHtml(r.user.affiliation)}</td>
                         <td>${identityMap[r.user.identity_type] || '-'}${isStudent && r.has_student_id ? ' <a href="javascript:viewStudentId(' + r.id + ')" title="查看学生证"><i class="material-icons" style="font-size:16px;vertical-align:middle;color:#1976d2">badge</i></a>' : ''}</td>
                         <td>${escapeHtml(r.user.phone || '-')}</td>
+                        <td>${getAdminTutorialChoiceText(r.attend_tutorial)}</td>
                         <td><strong>¥${r.payment_amount}</strong></td>
                         <td>
                             <span style="color:${r.has_invoice ? '#2e7d32' : '#888'}">${r.has_invoice ? '✓' : '○'} 发票</span><br>
@@ -653,13 +661,14 @@ async function loadRegistrations() {
             </div>
             ${registrations.length ? `
             <table class="admin-table">
-                <thead><tr><th>姓名</th><th>单位</th><th>手机</th><th>邮箱</th><th>金额</th><th>状态</th><th>注册时间</th></tr></thead>
+                <thead><tr><th>姓名</th><th>单位</th><th>手机</th><th>邮箱</th><th>教程报名</th><th>金额</th><th>状态</th><th>注册时间</th></tr></thead>
                 <tbody>
                 ${registrations.map(r => `<tr>
                     <td><strong>${escapeHtml(r.user.name)}</strong></td>
                     <td>${escapeHtml(r.user.affiliation)}</td>
                     <td>${escapeHtml(r.user.phone || '-')}</td>
                     <td><small>${escapeHtml(r.user.email)}</small></td>
+                    <td>${getAdminTutorialChoiceText(r.attend_tutorial)}</td>
                     <td>¥${r.payment_amount}</td>
                     <td><span class="dash-status dash-status-${r.payment_status}">${statusMap[r.payment_status] || '-'}</span></td>
                     <td style="font-size:13px;color:#666;">${r.created_at ? new Date(r.created_at).toLocaleDateString('zh-CN') : '-'}</td>
@@ -775,6 +784,7 @@ async function loadAdminLogs() {
             'register': '用户注册',
             'login': '用户登录',
             'conf_register': '会议注册',
+            'update_tutorial_choice': '教程报名',
             'submit_payment': '提交缴费',
             'submit_poster': '提交海报',
             'update_poster': '更新海报',
@@ -802,6 +812,8 @@ async function loadAdminLogs() {
                     details = escapeHtml(d.email || '');
                 } else if (log.action === 'conf_register') {
                     details = `${d.participation_type === 'poster' ? '海报展示' : '仅参会'} ¥${d.amount || ''}`;
+                } else if (log.action === 'update_tutorial_choice') {
+                    details = `${getAdminTutorialChoiceText(d.old_value)} → ${getAdminTutorialChoiceText(d.new_value)}`;
                 } else if (log.action === 'submit_payment') {
                     details = `¥${d.amount || ''}`;
                 } else if (log.action === 'submit_poster' || log.action === 'delete_poster') {

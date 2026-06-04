@@ -30,6 +30,11 @@ const STATUS = {
     document: {
         invoice: '电子发票 / Invoice',
         invitation: '邀请函 / Invitation'
+    },
+    tutorial: {
+        yes: '参加 / Attend',
+        no: '不参加 / Not Attend',
+        unset: '未选择 / Not Selected'
     }
 };
 
@@ -63,11 +68,17 @@ function requireAuth(redirectTo = 'login/') {
     return true;
 }
 
+function getTutorialChoiceText(value) {
+    if (value === true) return STATUS.tutorial.yes;
+    if (value === false) return STATUS.tutorial.no;
+    return STATUS.tutorial.unset;
+}
+
 // ==================== 导航栏 / Navigation ====================
 function updateNavAuth() {
     // 只在注册系统相关页面显示顶部导航
     const path = window.location.pathname;
-    const showAuthNavPages = ['/login', '/register', '/forgot-password', '/reset-password', '/verify', '/registration', '/dashboard', '/payment', '/poster', '/documents', '/admin'];
+    const showAuthNavPages = ['/login', '/register', '/forgot-password', '/reset-password', '/verify', '/registration', '/tutorial', '/dashboard', '/payment', '/poster', '/documents', '/admin'];
     const shouldShow = showAuthNavPages.some(p => path.includes(p));
     if (!shouldShow) {
         return;
@@ -260,6 +271,70 @@ async function checkRegistrationStatus() {
         // 未注册，可以继续
     }
     return false;
+}
+
+// ==================== 教程报名 / Tutorial Registration ====================
+async function loadTutorialPage() {
+    if (!requireAuth()) return;
+
+    const el = document.getElementById('tutorial-content');
+    if (!el) return;
+
+    try {
+        const { attend_tutorial } = await api.getTutorialChoice();
+        renderTutorialForm(attend_tutorial);
+    } catch (err) {
+        if (err.message === '请先完成会议注册') {
+            el.innerHTML = `
+                <div class="payment-box">
+                    <div class="payment-status-msg payment-status-pending">
+                        <i class="material-icons">event_busy</i>
+                        <div>请先完成会议注册<br><small>Please complete conference registration first</small></div>
+                    </div>
+                    <p style="text-align:center;margin-top:24px">
+                        <a href="${getBasePath()}registration/" class="custom-btn">前往注册 / Register Now</a>
+                    </p>
+                </div>
+            `;
+            return;
+        }
+        el.innerHTML = `<div class="admin-empty"><i class="material-icons">error</i><p style="color:#c62828">${escapeHtml(err.message)}</p></div>`;
+    }
+}
+
+function renderTutorialForm(attendTutorial) {
+    const el = document.getElementById('tutorial-content');
+    if (!el) return;
+
+    const current = document.getElementById('tutorial-current');
+    if (current) {
+        current.innerHTML = `
+            <i class="material-icons">school</i>
+            <span>当前状态 / Current Status：<strong>${getTutorialChoiceText(attendTutorial)}</strong></span>
+        `;
+    }
+
+    const select = document.getElementById('attend_tutorial');
+    if (select) {
+        select.value = attendTutorial === true ? 'true' : attendTutorial === false ? 'false' : '';
+    }
+}
+
+async function handleTutorialChoice(e) {
+    e.preventDefault();
+    const value = new FormData(e.target).get('attend_tutorial');
+
+    if (value !== 'true' && value !== 'false') {
+        return showMessage('请选择是否参加教程\nPlease select whether to attend the tutorial', 'error');
+    }
+
+    try {
+        const result = await api.updateTutorialChoice(value === 'true');
+        showMessage('教程报名信息已保存\nTutorial registration saved', 'success');
+        renderTutorialForm(result.attend_tutorial);
+    } catch (err) {
+        showMessage(err.message, 'error');
+    }
 }
 
 // ==================== 海报提交 / Poster Submission ====================
@@ -763,9 +838,11 @@ function renderDashboard(data) {
         <div class="dash-title"><i class="material-icons">event</i> 会议注册 / Registration</div>
         ${reg ? `
             <div class="dash-info"><span>参会类型 / Type</span><span>${STATUS.participation[reg.participation_type]}</span></div>
+            <div class="dash-info"><span>教程报名</span><span>${getTutorialChoiceText(reg.attend_tutorial)}</span></div>
             <div class="dash-info"><span>注册费用 / Fee</span><span>¥${reg.payment_amount}</span></div>
             <div class="dash-info"><span>缴费状态 / Status</span><span class="dash-status dash-status-${reg.payment_status}">${STATUS.payment[reg.payment_status]}</span></div>
             ${studentIdHtml}
+            <a href="${base}tutorial/" class="dash-link">教程报名 / Tutorial Registration →</a>
             ${reg.payment_status === 'pending' ? `<a href="${base}payment/" class="dash-link">前往缴费 / Pay Now →</a>` : ''}
             ${reg.payment_status === 'submitted' ? `<a href="${base}payment/" class="dash-link">查看缴费状态 / Payment Status →</a>` : ''}
             ${reg.payment_status === 'confirmed' ? `<a href="${base}documents/" class="dash-link">下载资料 / Documents →</a>` : ''}
@@ -914,6 +991,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (!requireAuth()) return;
         initRegistrationPage();
         await checkRegistrationStatus();
+    } else if (path.includes('/tutorial')) {
+        loadTutorialPage();
     } else if (path.includes('/poster') && !path.includes('/admin')) {
         loadPosterPage();
     } else if (path.includes('/payment')) {

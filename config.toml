@@ -50,6 +50,11 @@ unsafe = true
 	weight = 20
 
 [[menu.main]]
+	name   = "教程报名"
+	url    = "tutorial"
+	weight = 23
+
+[[menu.main]]
 	name   = "Committee"
 	url    = "committee"
 	weight = 40
@@ -58,4 +63,3 @@ unsafe = true
 	name   = "Schedule"
 	url    = "schedule"
 	weight = 160
-

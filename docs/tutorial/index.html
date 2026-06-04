@@ -9,16 +9,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=10" />
-  <title>重置密码 / Reset Password - MLSTAT 2026</title>
+  <title>教程报名 / Tutorial Registration - MLSTAT 2026</title>
   <meta name="generator" content="Hugo 0.162.1">
 
   
   <meta name="description" content="The 4th Conference on Machine Learning and Statistics">
   
-  <link rel="canonical" href="https://ml-stat.github.io/MLSTAT2026/reset-password/">
+  <link rel="canonical" href="https://ml-stat.github.io/MLSTAT2026/tutorial/">
   
 
-  <meta property="og:url" content="https://ml-stat.github.io/MLSTAT2026/reset-password/">
+  <meta property="og:url" content="https://ml-stat.github.io/MLSTAT2026/tutorial/">
   <meta property="og:title" content="MLSTAT 2026">
   <meta property="og:image" content="https://ml-stat.github.io/MLSTAT2026/images/logo-AA.jpg">
   <meta name="apple-mobile-web-app-title" content="MLSTAT 2026">
@@ -107,7 +107,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        重置密码 / Reset Password
+        教程报名 / Tutorial Registration
       </div>
     </div>
 
@@ -274,27 +274,30 @@
                 <img src="https://ml-stat.github.io/MLSTAT2026/images/swufe.jpg">
                 </div>
             
-            <h1>重置密码 / Reset Password</h1>
+            <h1>教程报名 / Tutorial Registration</h1>
 
             
 
-            <div id="reset-content">
-<div class="form-container">
+            <div id="tutorial-content">
+<div class="form-container" style="max-width:560px">
 <div class="card">
 <div class="card-content">
-<form onsubmit="handleResetPassword(event)">
-<div class="input-field">
-    <label for="password"><i class="material-icons">lock</i> 新密码 / New Password</label>
-    <input type="password" id="password" name="password" required minlength="8">
-    <span class="helper-text">至少8位 / At least 8 characters</span>
+<form onsubmit="handleTutorialChoice(event)">
+<div class="reg-fee-notice" id="tutorial-current">
+    <i class="material-icons">school</i>
+    <span>当前状态 / Current Status：<strong>正在加载 / Loading...</strong></span>
 </div>
 <div class="input-field">
-    <label for="confirm_password"><i class="material-icons">lock_outline</i> 确认密码 / Confirm Password</label>
-    <input type="password" id="confirm_password" name="confirm_password" required minlength="8">
+    <label><i class="material-icons">school</i> 是否参加教程 / Tutorial Attendance *</label>
+    <select id="attend_tutorial" name="attend_tutorial" required>
+        <option value="" disabled selected>请选择 / Please select</option>
+        <option value="true">参加 / Attend</option>
+        <option value="false">不参加 / Not Attend</option>
+    </select>
 </div>
 <div class="center-align" style="margin-top:2rem">
     <button type="submit" class="btn-large">
-        <i class="material-icons left">vpn_key</i>重置密码 / Reset Password
+        <i class="material-icons left">save</i>保存 / Save
     </button>
 </div>
 </form>
