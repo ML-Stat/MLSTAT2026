@@ -36,7 +36,7 @@ weight: 10
 
 - **7月16日 (周四) 全天** / July 16 (Thu) All Day<br>会议报告 / Conference — Session Chairs: [待定 / TBD]
 
-- **Poster**<br>18:30-20:30；地点：弘远楼一楼大厅<br><small class="grey-text">Poster Session: 18:30-20:30; Venue: Lobby, 1F Hongyuan Building</small>
+- **7月16日 (周四) 晚上** / July 16 (Thu) Evening<br>Poster：18:30-20:30｜地点：弘远楼一楼大厅<br><small class="grey-text">Poster Session: 18:30-20:30; Venue: Lobby, 1F Hongyuan Building</small>
 
 - **7月17日 (周五) 上午** / July 17 (Fri) Morning<br>会议报告 / Conference — Session Chairs: [待定 / TBD]
 
