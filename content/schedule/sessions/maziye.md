@@ -6,8 +6,8 @@ weight: 6
 params:
   speaker: "马梓业"
   affiliation: "香港城市大学"
-  time: "TBD"
-  location: "TBD"
+  time: "7月16日 14:20-15:00"
+  location: "西南财经大学柳林校区弘远楼105会议室"
 ---
 
 <h3 class="session-section-title">Abstract</h3>

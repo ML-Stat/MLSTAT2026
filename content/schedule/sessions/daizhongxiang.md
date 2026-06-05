@@ -6,8 +6,8 @@ weight: 2
 params:
   speaker: "代忠祥"
   affiliation: "香港中文大学（深圳）"
-  time: "TBD"
-  location: "TBD"
+  time: "7月16日 9:40-10:20"
+  location: "西南财经大学柳林校区弘远楼105会议室"
 ---
 
 <h3 class="session-section-title">Abstract</h3>

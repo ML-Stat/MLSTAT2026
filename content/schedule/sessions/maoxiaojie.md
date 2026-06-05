@@ -6,8 +6,8 @@ weight: 7
 params:
   speaker: "毛小介"
   affiliation: "清华大学"
-  time: "TBD"
-  location: "TBD"
+  time: "7月16日 15:00-15:40"
+  location: "西南财经大学柳林校区弘远楼105会议室"
 ---
 
 <h3 class="session-section-title">Abstract</h3>

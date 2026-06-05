@@ -30,10 +30,12 @@
                 <span class="session-speaker-name">{{ .Params.speaker }}</span>{{ with .Params.affiliation }}<span class="session-speaker-sep">,&nbsp;</span><span class="session-speaker-affiliation">{{ . }}</span>{{ end }}
             </div>
 
-            {{ if or .Params.time .Params.location }}
+            {{- $time := .Params.time }}
+            {{- $location := .Params.location }}
+            {{- if or (and $time (ne $time "TBD")) (and $location (ne $location "TBD")) }}
             <div class="session-meta">
-                {{ with .Params.time }}<span><b>Time:</b> {{ . }}</span>{{ end }}
-                {{ with .Params.location }}<span><b>Location:</b> {{ . }}</span>{{ end }}
+                {{ if and $time (ne $time "TBD") }}<span><b>Time:</b> {{ $time }}</span>{{ end }}
+                {{ if and $location (ne $location "TBD") }}<span><b>Location:</b> {{ $location }}</span>{{ end }}
             </div>
             {{ end }}
             {{ end }}

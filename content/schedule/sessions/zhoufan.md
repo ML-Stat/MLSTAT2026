@@ -6,8 +6,8 @@ weight: 13
 params:
   speaker: "周帆"
   affiliation: "上海财经大学"
-  time: "TBD"
-  location: "TBD"
+  time: "7月17日 10:40-11:20"
+  location: "西南财经大学柳林校区弘远楼105会议室"
 ---
 
 <h3 class="session-section-title">Abstract</h3>

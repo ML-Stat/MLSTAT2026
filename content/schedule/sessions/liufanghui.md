@@ -6,8 +6,8 @@ weight: 5
 params:
   speaker: "刘方辉"
   affiliation: "上海交通大学"
-  time: "TBD"
-  location: "TBD"
+  time: "7月16日 13:40-14:20"
+  location: "西南财经大学柳林校区弘远楼105会议室"
 ---
 
 <h3 class="session-section-title">Abstract</h3>

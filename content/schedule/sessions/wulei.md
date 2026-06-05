@@ -6,8 +6,8 @@ weight: 11
 params:
   speaker: "吴磊"
   affiliation: "北京大学"
-  time: "TBD"
-  location: "TBD"
+  time: "7月17日 9:00-9:40"
+  location: "西南财经大学柳林校区弘远楼105会议室"
 ---
 
 <h3 class="session-section-title">Abstract</h3>

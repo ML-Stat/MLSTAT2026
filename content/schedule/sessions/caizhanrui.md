@@ -6,8 +6,8 @@ weight: 1
 params:
   speaker: "蔡占锐"
   affiliation: "香港大学"
-  time: "TBD"
-  location: "TBD"
+  time: "7月16日 9:00-9:40"
+  location: "西南财经大学柳林校区弘远楼105会议室"
 ---
 
 <h3 class="session-section-title">Abstract</h3>

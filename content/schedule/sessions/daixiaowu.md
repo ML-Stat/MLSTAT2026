@@ -6,8 +6,8 @@ weight: 3
 params:
   speaker: "戴晓武"
   affiliation: "University of California, Los Angeles"
-  time: "TBD"
-  location: "TBD"
+  time: "7月16日 10:40-11:20"
+  location: "西南财经大学柳林校区弘远楼105会议室"
 ---
 
 <h3 class="session-section-title">Abstract</h3>

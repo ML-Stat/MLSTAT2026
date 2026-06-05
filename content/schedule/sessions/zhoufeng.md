@@ -6,8 +6,8 @@ weight: 14
 params:
   speaker: "周峰"
   affiliation: "中国人民大学"
-  time: "TBD"
-  location: "TBD"
+  time: "7月17日 11:20-12:00"
+  location: "西南财经大学柳林校区弘远楼105会议室"
 ---
 
 <h3 class="session-section-title">Abstract</h3>

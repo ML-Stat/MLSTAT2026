@@ -6,8 +6,8 @@ weight: 8
 params:
   speaker: "束俊"
   affiliation: "西安交通大学"
-  time: "TBD"
-  location: "TBD"
+  time: "7月16日 16:00-16:40"
+  location: "西南财经大学柳林校区弘远楼105会议室"
 ---
 
 <h3 class="session-section-title">Abstract</h3>

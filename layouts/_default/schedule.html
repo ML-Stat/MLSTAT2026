@@ -32,8 +32,10 @@
                 {{ if $page.Params.speaker }}
                 <div class="session-list-speaker">{{ $page.Params.speaker }}{{ with $page.Params.affiliation }}, {{ . }}{{ end }}</div>
                 {{ end }}
-                {{ if or $page.Params.time $page.Params.location }}
-                <div class="session-list-meta">{{ with $page.Params.time }}{{ . }}{{ end }}{{ if and $page.Params.time $page.Params.location }} | {{ end }}{{ with $page.Params.location }}{{ . }}{{ end }}</div>
+                {{- $time := $page.Params.time }}
+                {{- $location := $page.Params.location }}
+                {{- if or (and $time (ne $time "TBD")) (and $location (ne $location "TBD")) }}
+                <div class="session-list-meta">{{ if and $time (ne $time "TBD") }}{{ $time }}{{ end }}{{ if and (and $time (ne $time "TBD")) (and $location (ne $location "TBD")) }} | {{ end }}{{ if and $location (ne $location "TBD") }}{{ $location }}{{ end }}</div>
                 {{ end }}
             </div>
             {{ end }}
