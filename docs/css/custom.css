@@ -1234,6 +1234,7 @@
 
 .admin-tab-content {
     padding: 20px;
+    overflow-x: auto;
 }
 
 /* ==================== Admin 表格 ==================== */
@@ -1241,28 +1242,34 @@
     width: 100%;
     border-collapse: collapse;
     font-size: 14px;
+    min-width: 900px;
+}
+
+.admin-table-compact {
+    min-width: 760px;
 }
 
 .admin-table th {
     text-align: left;
-    padding: 12px 16px;
-    background: #f8f9fa;
+    padding: 10px 14px;
+    background: #f7f8fb;
     font-weight: 600;
-    color: #555;
-    border-bottom: 2px solid #e0e0e0;
+    color: #4d5565;
+    border-bottom: 1px solid #e4e7ee;
     font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
+    letter-spacing: 0;
+    white-space: nowrap;
 }
 
 .admin-table td {
-    padding: 14px 16px;
-    border-bottom: 1px solid #f0f0f0;
+    padding: 12px 14px;
+    border-bottom: 1px solid #f0f2f6;
     vertical-align: middle;
+    color: #2f3440;
 }
 
 .admin-table tr:hover {
-    background: #fafafa;
+    background: #fbfcff;
 }
 
 .admin-table tr:last-child td {
@@ -1285,16 +1292,39 @@
     color: #888;
 }
 
+.admin-primary {
+    color: #2f3440;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.admin-muted {
+    color: #747b8a;
+    font-size: 12px;
+    line-height: 1.45;
+    margin-top: 2px;
+}
+
+.admin-inline-icon {
+    color: #1976d2;
+    font-size: 16px;
+    vertical-align: -3px;
+}
+
+.admin-table .dash-status {
+    margin-top: 4px;
+}
+
 /* ==================== Admin 按钮 ==================== */
 .admin-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 4px;
-    padding: 8px 12px;
+    padding: 7px 11px;
     border: none;
     border-radius: 6px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
     cursor: pointer;
     background: var(--custom-primary);
@@ -1335,14 +1365,16 @@
 }
 
 .admin-btn-text {
-    padding: 8px 16px;
+    padding: 7px 11px;
 }
 
 /* 操作按钮组 */
 .admin-actions {
     display: flex;
-    gap: 8px;
+    gap: 6px;
     align-items: center;
+    flex-wrap: wrap;
+    min-width: 150px;
 }
 
 /* ==================== Admin 工具栏 ==================== */
@@ -1497,6 +1529,108 @@
     border-color: var(--custom-primary);
 }
 
+/* ==================== Admin 编辑弹窗 ==================== */
+.admin-edit-modal {
+    max-width: 780px;
+}
+
+.admin-edit-section {
+    border-top: 1px solid #eef0f4;
+    margin-top: 18px;
+    padding-top: 16px;
+}
+
+.admin-edit-section:first-child {
+    border-top: 0;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.admin-edit-section-title {
+    color: #2f3440;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.admin-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px 16px;
+}
+
+.admin-field {
+    display: block;
+    color: #596170;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.admin-field input,
+.admin-field select,
+.admin-field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 6px;
+    padding: 9px 10px;
+    border: 1px solid #d8dce5;
+    border-radius: 6px;
+    background: #fff;
+    color: #242936;
+    font-size: 14px;
+    letter-spacing: 0;
+}
+
+.admin-field textarea {
+    resize: vertical;
+    min-height: 78px;
+}
+
+.admin-field-wide {
+    margin-top: 14px;
+}
+
+.admin-field input:focus,
+.admin-field select:focus,
+.admin-field textarea:focus {
+    outline: none;
+    border-color: var(--custom-primary);
+    box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.12);
+}
+
+.admin-check-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.admin-check-row input {
+    width: 18px;
+    height: 18px;
+}
+
+.admin-edit-note {
+    color: #687084;
+    background: #f8f9fc;
+    border: 1px solid #e7e9ef;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 14px;
+}
+
+.admin-modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    border-top: 1px solid #eef0f4;
+    margin-top: 20px;
+    padding-top: 16px;
+}
+
 /* ==================== 响应式 ==================== */
 @media (max-width: 768px) {
     .admin-stats-grid {
@@ -1515,6 +1649,20 @@
     .admin-table th,
     .admin-table td {
         padding: 10px 12px;
+    }
+
+    .admin-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .admin-modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .admin-modal-actions .admin-btn {
+        width: 100%;
     }
 }
 

@@ -18,7 +18,17 @@
 })();
 
 // 根据环境自动选择 API 地址
-const API_BASE = 'https://api.mlstat.top';
+function resolveApiBase() {
+    if (window.location.hostname === 'ml-stat.github.io') {
+        return 'https://api.mlstat.top';
+    }
+    if (window.location.port === '1320') {
+        return '';
+    }
+    return 'http://127.0.0.1:5001';
+}
+
+const API_BASE = resolveApiBase();
 
 // 防止多个并发 401 响应触发重复跳转
 let _redirectingToLogin = false;
@@ -56,6 +66,10 @@ class ApiClient {
 
     isLoggedIn() {
         return !!this.token;
+    }
+
+    getApiBase() {
+        return API_BASE;
     }
 
     async request(endpoint, options = {}) {
@@ -350,6 +364,27 @@ class ApiClient {
         return this.request(`/admin/users/${userId}/set-admin`, {
             method: 'POST',
             body: JSON.stringify({ is_admin: isAdmin })
+        });
+    }
+
+    async adminUpdateUser(userId, data) {
+        return this.request(`/admin/users/${userId}`, {
+            method: 'PUT',
+            body: JSON.stringify(data)
+        });
+    }
+
+    async adminCreateRegistration(userId, data) {
+        return this.request(`/admin/users/${userId}/registration`, {
+            method: 'POST',
+            body: JSON.stringify(data)
+        });
+    }
+
+    async adminUpdateRegistration(regId, data) {
+        return this.request(`/admin/registrations/${regId}`, {
+            method: 'PUT',
+            body: JSON.stringify(data)
         });
     }
 }

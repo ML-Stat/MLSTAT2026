@@ -20,12 +20,16 @@ let dataCache = {};
 // 海报数据缓存（避免序列化到 HTML）
 let posterCache = {};
 
+// 管理员编辑缓存（避免序列化到 HTML）
+let userCache = {};
+let registrationCache = {};
+
 // 缴费管理 - 子标签状态
-let paymentSubTab = 'pending'; // pending=待确认, confirmed=已确认
+let paymentSubTab = 'pending'; // pending=待确认, confirmed=已缴费
 
 // API 基础地址
 function getApiBase() {
-    return 'https://api.mlstat.top';
+    return api.getApiBase();
 }
 
 function getAdminTutorialChoiceText(value) {
@@ -34,10 +38,73 @@ function getAdminTutorialChoiceText(value) {
     return '未选择';
 }
 
+function getAdminIdentityText(value) {
+    const map = { student: '学生', teacher: '教师', researcher: '研究人员', other: '其他' };
+    return map[value] || '-';
+}
+
+function getAdminParticipationText(value) {
+    const map = { oral: '口头报告', poster: '海报展示', attend_only: '仅参会' };
+    return map[value] || '-';
+}
+
+function getAdminPaymentStatusText(value) {
+    const map = { pending: '待缴费', submitted: '待确认', confirmed: '已缴费' };
+    return map[value] || '-';
+}
+
+function formatAdminDate(value) {
+    return value ? new Date(value).toLocaleDateString('zh-CN') : '-';
+}
+
+function renderAdminPerson(user, extra = '') {
+    return `
+        <div class="admin-primary">${escapeHtml(user.name)}${extra}</div>
+        <div class="admin-muted">${escapeHtml(user.email)}</div>
+    `;
+}
+
+function renderAdminContact(user) {
+    const department = user.department ? ` / ${escapeHtml(user.department)}` : '';
+    return `
+        <div class="admin-primary">${escapeHtml(user.affiliation || '-')}</div>
+        <div class="admin-muted">${escapeHtml(user.phone || '-')}${department}</div>
+    `;
+}
+
+function renderAdminRegistrationBrief(registration) {
+    if (!registration) {
+        return '<span class="grey-text">未注册</span>';
+    }
+    return `
+        <div class="admin-primary">${getAdminParticipationText(registration.participation_type)}</div>
+        <div class="admin-muted">教程：${getAdminTutorialChoiceText(registration.attend_tutorial)}</div>
+    `;
+}
+
+function renderAdminPaymentBrief(registration) {
+    if (!registration) return '-';
+    return `
+        <span class="dash-status dash-status-${registration.payment_status}">${getAdminPaymentStatusText(registration.payment_status)}</span>
+        <div class="admin-muted">¥${registration.payment_amount ?? '-'}</div>
+    `;
+}
+
+function renderAdminDocumentBrief(registration) {
+    if (!registration) return '-';
+    const invoice = registration.has_invoice ? '发票已传' : '发票未传';
+    const invitation = registration.has_invitation ? '邀请函已传' : '邀请函未传';
+    const studentId = registration.has_student_id ? '学生证已传' : '学生证未传';
+    const studentText = registration.user?.identity_type === 'student' ? ` · ${studentId}` : '';
+    return `<div class="admin-muted">${invoice} · ${invitation}${studentText}</div>`;
+}
+
 // 初始化管理后台
 function initAdminPage() {
     dataCache = {};
     posterCache = {};
+    userCache = {};
+    registrationCache = {};
     loadAdminDashboard();
 }
 
@@ -101,7 +168,7 @@ function renderAdminDashboard(stats) {
                     <i class="material-icons">payments</i>
                 </div>
                 <div class="summary-content">
-                    <div class="summary-label">已确认缴费收入 / Confirmed Revenue</div>
+                    <div class="summary-label">已缴费收入 / Confirmed Revenue</div>
                     <div class="summary-value">¥${stats.payments.total_amount.toLocaleString()}</div>
                     <div class="summary-detail">共 ${stats.payments.confirmed} 人已完成缴费 / ${stats.payments.confirmed} people confirmed</div>
                 </div>
@@ -195,33 +262,36 @@ async function loadPendingPayments() {
     try {
         const { registrations, total } = await api.adminGetRegistrations({ page, per_page: perPage, payment_status: status });
         dataCache[cacheKey] = true;
+        registrations.forEach(r => {
+            registrationCache[r.id] = r;
+            userCache[r.user.id] = r.user;
+        });
         const totalPages = Math.ceil(total / perPage);
 
         el.innerHTML = `
             <div class="admin-sub-tabs">
                 <button class="${paymentSubTab === 'pending' ? 'active' : ''}" onclick="switchPaymentSubTab('pending')">待确认</button>
-                <button class="${paymentSubTab === 'confirmed' ? 'active' : ''}" onclick="switchPaymentSubTab('confirmed')">已确认（待开票）</button>
+                <button class="${paymentSubTab === 'confirmed' ? 'active' : ''}" onclick="switchPaymentSubTab('confirmed')">已缴费（待开票）</button>
             </div>
             ${paymentSubTab === 'pending' ? `
                 <div class="admin-toolbar">
                     <div class="admin-count">共 ${total} 人待确认缴费</div>
                 </div>
                 ${registrations.length ? `
-                <table class="admin-table">
-                    <thead><tr><th>姓名</th><th>单位</th><th>身份</th><th>手机</th><th>教程报名</th><th>金额</th><th>操作</th></tr></thead>
+                <table class="admin-table admin-table-compact">
+                    <thead><tr><th>参会人</th><th>联系信息</th><th>报名</th><th>缴费</th><th>操作</th></tr></thead>
                     <tbody>
                     ${registrations.map(r => {
-                        const identityMap = { student: '学生', teacher: '教师', researcher: '研究人员', other: '其他' };
                         const isStudent = r.user.identity_type === 'student';
+                        const studentBadge = isStudent && r.has_student_id ? ' <a href="javascript:viewStudentId(' + r.id + ')" title="查看学生证"><i class="material-icons admin-inline-icon">badge</i></a>' : '';
                         return `<tr>
-                        <td><strong>${escapeHtml(r.user.name)}</strong></td>
-                        <td>${escapeHtml(r.user.affiliation)}</td>
-                        <td>${identityMap[r.user.identity_type] || '-'}${isStudent && r.has_student_id ? ' <a href="javascript:viewStudentId(' + r.id + ')" title="查看学生证"><i class="material-icons" style="font-size:16px;vertical-align:middle;color:#1976d2">badge</i></a>' : ''}</td>
-                        <td>${escapeHtml(r.user.phone || '-')}</td>
-                        <td>${getAdminTutorialChoiceText(r.attend_tutorial)}</td>
-                        <td><strong style="color:#e53935">¥${r.payment_amount}</strong></td>
+                        <td>${renderAdminPerson(r.user, studentBadge)}<div class="admin-muted">${getAdminIdentityText(r.user.identity_type)}</div></td>
+                        <td>${renderAdminContact(r.user)}</td>
+                        <td>${renderAdminRegistrationBrief(r)}</td>
+                        <td>${renderAdminPaymentBrief(r)}</td>
                         <td class="admin-actions">
                             <button class="admin-btn admin-btn-success" onclick="confirmPayment(${r.id})"><i class="material-icons">check</i> 确认</button>
+                            <button class="admin-btn admin-btn-text" onclick="showAdminEditModal(registrationCache[${r.id}].user, registrationCache[${r.id}], false)"><i class="material-icons">edit</i> 编辑</button>
                         </td>
                     </tr>`;
                     }).join('')}
@@ -232,39 +302,37 @@ async function loadPendingPayments() {
             ` : `
                 <div class="admin-toolbar">
                     <div class="admin-toolbar-left">
-                        <div class="admin-count">共 ${total} 人已确认缴费</div>
+                        <div class="admin-count">共 ${total} 人已缴费</div>
                     </div>
                     <div class="admin-toolbar-right">
                         <button class="admin-btn" onclick="exportInvoiceInfo()"><i class="material-icons">receipt_long</i> 导出开票信息</button>
                     </div>
                 </div>
                 ${registrations.length ? `
-                <table class="admin-table">
-                    <thead><tr><th>姓名</th><th>单位</th><th>身份</th><th>手机</th><th>教程报名</th><th>金额</th><th>文档状态</th><th>操作</th></tr></thead>
+                <table class="admin-table admin-table-compact">
+                    <thead><tr><th>参会人</th><th>联系信息</th><th>报名</th><th>缴费/文档</th><th>操作</th></tr></thead>
                     <tbody>
                     ${registrations.map(r => {
-                        const identityMap = { student: '学生', teacher: '教师', researcher: '研究人员', other: '其他' };
                         const isStudent = r.user.identity_type === 'student';
+                        const studentBadge = isStudent && r.has_student_id ? ' <a href="javascript:viewStudentId(' + r.id + ')" title="查看学生证"><i class="material-icons admin-inline-icon">badge</i></a>' : '';
                         return `<tr>
-                        <td><strong>${escapeHtml(r.user.name)}</strong></td>
-                        <td>${escapeHtml(r.user.affiliation)}</td>
-                        <td>${identityMap[r.user.identity_type] || '-'}${isStudent && r.has_student_id ? ' <a href="javascript:viewStudentId(' + r.id + ')" title="查看学生证"><i class="material-icons" style="font-size:16px;vertical-align:middle;color:#1976d2">badge</i></a>' : ''}</td>
-                        <td>${escapeHtml(r.user.phone || '-')}</td>
-                        <td>${getAdminTutorialChoiceText(r.attend_tutorial)}</td>
-                        <td><strong>¥${r.payment_amount}</strong></td>
                         <td>
-                            <span style="color:${r.has_invoice ? '#2e7d32' : '#888'}">${r.has_invoice ? '✓' : '○'} 发票</span><br>
-                            <span style="color:${r.has_invitation ? '#2e7d32' : '#888'}">${r.has_invitation ? '✓' : '○'} 邀请函</span>
+                            ${renderAdminPerson(r.user, studentBadge)}
+                            <div class="admin-muted">${getAdminIdentityText(r.user.identity_type)}</div>
                         </td>
+                        <td>${renderAdminContact(r.user)}</td>
+                        <td>${renderAdminRegistrationBrief(r)}</td>
+                        <td>${renderAdminPaymentBrief(r)}${renderAdminDocumentBrief(r)}</td>
                         <td class="admin-actions">
                             <button class="admin-btn" onclick="showUploadModal(${r.id}, '${escapeHtml(r.user.name).replace(/'/g, "\\'")}')"><i class="material-icons">upload_file</i> 上传</button>
+                            <button class="admin-btn admin-btn-text" onclick="showAdminEditModal(registrationCache[${r.id}].user, registrationCache[${r.id}], false)"><i class="material-icons">edit</i> 编辑</button>
                         </td>
                     </tr>`;
                     }).join('')}
                     </tbody>
                 </table>
                 ${totalPages > 1 ? renderPagination('payments', page, totalPages) : ''}
-                ` : '<div class="admin-empty"><i class="material-icons">inbox</i><p>暂无已确认的缴费</p></div>'}
+                ` : '<div class="admin-empty"><i class="material-icons">inbox</i><p>暂无已缴费记录</p></div>'}
             `}
         `;
     } catch (err) {
@@ -647,8 +715,11 @@ async function loadRegistrations() {
     try {
         const { registrations, total } = await api.adminGetRegistrations({ page, per_page: perPage });
         dataCache[cacheKey] = true;
+        registrations.forEach(r => {
+            registrationCache[r.id] = r;
+            userCache[r.user.id] = r.user;
+        });
         const totalPages = Math.ceil(total / perPage);
-        const statusMap = { pending: '待缴费', submitted: '待确认', confirmed: '已确认' };
 
         el.innerHTML = `
             <div class="admin-toolbar">
@@ -660,18 +731,21 @@ async function loadRegistrations() {
                 </div>
             </div>
             ${registrations.length ? `
-            <table class="admin-table">
-                <thead><tr><th>姓名</th><th>单位</th><th>手机</th><th>邮箱</th><th>教程报名</th><th>金额</th><th>状态</th><th>注册时间</th></tr></thead>
+            <table class="admin-table admin-table-compact">
+                <thead><tr><th>参会人</th><th>联系信息</th><th>报名</th><th>缴费/文档</th><th>时间</th><th>操作</th></tr></thead>
                 <tbody>
                 ${registrations.map(r => `<tr>
-                    <td><strong>${escapeHtml(r.user.name)}</strong></td>
-                    <td>${escapeHtml(r.user.affiliation)}</td>
-                    <td>${escapeHtml(r.user.phone || '-')}</td>
-                    <td><small>${escapeHtml(r.user.email)}</small></td>
-                    <td>${getAdminTutorialChoiceText(r.attend_tutorial)}</td>
-                    <td>¥${r.payment_amount}</td>
-                    <td><span class="dash-status dash-status-${r.payment_status}">${statusMap[r.payment_status] || '-'}</span></td>
-                    <td style="font-size:13px;color:#666;">${r.created_at ? new Date(r.created_at).toLocaleDateString('zh-CN') : '-'}</td>
+                    <td>
+                        ${renderAdminPerson(r.user)}
+                        <span class="dash-status dash-status-${r.user.is_verified ? 'confirmed' : 'pending'}">${r.user.is_verified ? '已验证' : '未验证'}</span>
+                    </td>
+                    <td>${renderAdminContact(r.user)}</td>
+                    <td>${renderAdminRegistrationBrief(r)}</td>
+                    <td>${renderAdminPaymentBrief(r)}${renderAdminDocumentBrief(r)}</td>
+                    <td><div class="admin-muted">报名：${formatAdminDate(r.created_at)}</div></td>
+                    <td class="admin-actions">
+                        <button class="admin-btn admin-btn-text" onclick="showAdminEditModal(registrationCache[${r.id}].user, registrationCache[${r.id}], false)"><i class="material-icons">edit</i> 编辑</button>
+                    </td>
                 </tr>`).join('')}
                 </tbody>
             </table>
@@ -713,29 +787,43 @@ async function loadUsers() {
     try {
         const { users, total } = await api.adminGetUsers({ page, per_page: perPage, include_admins: true });
         dataCache[cacheKey] = true;
+        users.forEach(u => {
+            userCache[u.id] = u;
+            if (u.registration) registrationCache[u.registration.id] = u.registration;
+        });
         const totalPages = Math.ceil(total / perPage);
         const currentUser = api.getUser();
-        const identityMap = { student: '学生', teacher: '教师', researcher: '研究人员', other: '其他' };
 
         el.innerHTML = `
             <div class="admin-toolbar">
                 <div class="admin-count">共 ${total} 位用户</div>
             </div>
             ${users.length ? `
-            <table class="admin-table">
-                <thead><tr><th>姓名</th><th>邮箱</th><th>单位</th><th>身份</th><th>操作</th></tr></thead>
+            <table class="admin-table admin-table-compact">
+                <thead><tr><th>用户</th><th>联系信息</th><th>账号/身份</th><th>报名/缴费</th><th>操作</th></tr></thead>
                 <tbody>
-                ${users.map(u => `<tr>
-                    <td><strong>${escapeHtml(u.name)}</strong>${u.is_admin ? ' <span class="admin-badge admin-badge-admin">管理员</span>' : ''}</td>
-                    <td><small>${escapeHtml(u.email)}</small></td>
-                    <td>${escapeHtml(u.affiliation)}</td>
-                    <td>${identityMap[u.identity_type] || '-'}</td>
-                    <td>${u.id === currentUser?.id ? '<span class="grey-text">本人</span>' :
+                ${users.map(u => {
+                    const registration = u.registration || null;
+                    const adminAction = u.id === currentUser?.id ? '<span class="grey-text">本人</span>' :
                         (u.is_admin ?
                             `<button class="admin-btn admin-btn-danger admin-btn-text" onclick="toggleAdmin(${u.id}, false)">取消管理员</button>` :
-                            `<button class="admin-btn admin-btn-secondary admin-btn-text" onclick="toggleAdmin(${u.id}, true)">设为管理员</button>`)
-                    }</td>
-                </tr>`).join('')}
+                            `<button class="admin-btn admin-btn-secondary admin-btn-text" onclick="toggleAdmin(${u.id}, true)">设为管理员</button>`);
+                    const adminBadge = u.is_admin ? ' <span class="admin-badge admin-badge-admin">管理员</span>' : '';
+                    return `<tr>
+                    <td>${renderAdminPerson(u, adminBadge)}</td>
+                    <td>${renderAdminContact(u)}</td>
+                    <td>
+                        <span class="dash-status dash-status-${u.is_verified ? 'confirmed' : 'pending'}">${u.is_verified ? '已验证' : '未验证'}</span>
+                        <div class="admin-muted">${getAdminIdentityText(u.identity_type)}${u.title ? ' / ' + escapeHtml(u.title) : ''}</div>
+                    </td>
+                    <td>${registration ? renderAdminRegistrationBrief(registration) + renderAdminPaymentBrief(registration) : '<span class="grey-text">未注册</span>'}</td>
+                    <td class="admin-actions">
+                        <button class="admin-btn admin-btn-text" onclick="showAdminEditModal(userCache[${u.id}], ${registration ? `registrationCache[${registration.id}]` : 'null'}, false)"><i class="material-icons">edit</i> 编辑资料</button>
+                        ${!u.is_admin && !registration ? `<button class="admin-btn admin-btn-secondary admin-btn-text" onclick="showAdminEditModal(userCache[${u.id}], null, true)"><i class="material-icons">event_available</i> 补报名</button>` : ''}
+                        ${adminAction}
+                    </td>
+                </tr>`;
+                }).join('')}
                 </tbody>
             </table>
             ${totalPages > 1 ? renderPagination('users', page, totalPages) : ''}
@@ -754,6 +842,206 @@ async function toggleAdmin(userId, isAdmin) {
         showMessage(isAdmin ? '已设为管理员\nAdmin granted' : '已取消管理员权限\nAdmin removed', 'success');
         dataCache = {};
         loadUsers();
+    } catch (err) {
+        showMessage(err.message, 'error');
+    }
+}
+
+// ==================== 管理员编辑用户/报名 ====================
+
+function refreshAdminAfterChange() {
+    dataCache = {};
+    userCache = {};
+    registrationCache = {};
+    loadAdminDashboard();
+}
+
+function adminOption(value, label, currentValue) {
+    return `<option value="${value}" ${value === currentValue ? 'selected' : ''}>${label}</option>`;
+}
+
+function adminBoolOption(value, label, currentValue) {
+    const normalized = currentValue === true ? 'true' : currentValue === false ? 'false' : '';
+    return `<option value="${value}" ${value === normalized ? 'selected' : ''}>${label}</option>`;
+}
+
+function showAdminEditModal(user, registration = null, createRegistration = false) {
+    const existingModal = document.getElementById('admin-edit-modal');
+    if (existingModal) existingModal.remove();
+
+    const shouldShowRegistrationForm = !!registration || createRegistration;
+    const modalTitle = registration ? '编辑资料与报名' : createRegistration ? '补建报名记录' : '编辑用户资料';
+    const participationValue = registration?.participation_type || 'attend_only';
+    const paymentStatusValue = registration?.payment_status || 'pending';
+    const invoiceTypeValue = registration?.invoice_type || '';
+
+    const modal = document.createElement('div');
+    modal.id = 'admin-edit-modal';
+    modal.className = 'modal-overlay';
+    modal.innerHTML = `
+        <div class="modal-content admin-edit-modal">
+            <div class="modal-header">
+                <h3>${modalTitle}</h3>
+                <button class="modal-close" onclick="closeAdminEditModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="admin-edit-section">
+                    <div class="admin-edit-section-title">个人信息</div>
+                    <div class="admin-form-grid">
+                    <label class="admin-field">姓名
+                        <input id="admin-edit-name" type="text" value="${escapeHtml(user.name || '')}">
+                    </label>
+                    <label class="admin-field">手机
+                        <input id="admin-edit-phone" type="text" value="${escapeHtml(user.phone || '')}">
+                    </label>
+                    <label class="admin-field">单位/学校
+                        <input id="admin-edit-affiliation" type="text" value="${escapeHtml(user.affiliation || '')}">
+                    </label>
+                    <label class="admin-field">院系/部门
+                        <input id="admin-edit-department" type="text" value="${escapeHtml(user.department || '')}">
+                    </label>
+                    <label class="admin-field">身份
+                        <select id="admin-edit-identity-type">
+                            ${adminOption('student', '学生', user.identity_type)}
+                            ${adminOption('teacher', '教师', user.identity_type)}
+                            ${adminOption('researcher', '研究人员', user.identity_type)}
+                            ${adminOption('other', '其他', user.identity_type)}
+                        </select>
+                    </label>
+                    <label class="admin-field">职称/年级
+                        <input id="admin-edit-title" type="text" value="${escapeHtml(user.title || '')}">
+                    </label>
+                    </div>
+                    <label class="admin-check-row">
+                        <input id="admin-edit-is-verified" type="checkbox" ${user.is_verified ? 'checked' : ''}>
+                        <span>邮箱已验证</span>
+                    </label>
+                </div>
+
+                ${shouldShowRegistrationForm ? `
+                    <div class="admin-edit-section">
+                        <div class="admin-edit-section-title">报名与缴费信息</div>
+                        <div class="admin-form-grid">
+                            <label class="admin-field">参会类型
+                                <select id="admin-edit-participation-type">
+                                    ${adminOption('oral', '口头报告', participationValue)}
+                                    ${adminOption('poster', '海报展示', participationValue)}
+                                    ${adminOption('attend_only', '仅参会', participationValue)}
+                                </select>
+                            </label>
+                            <label class="admin-field">教程报名
+                                <select id="admin-edit-attend-tutorial">
+                                    ${adminBoolOption('', '未选择', registration?.attend_tutorial)}
+                                    ${adminBoolOption('true', '参加', registration?.attend_tutorial)}
+                                    ${adminBoolOption('false', '不参加', registration?.attend_tutorial)}
+                                </select>
+                            </label>
+                            <label class="admin-field">缴费状态
+                                <select id="admin-edit-payment-status">
+                                    ${adminOption('pending', '待缴费', paymentStatusValue)}
+                                    ${adminOption('submitted', '待确认', paymentStatusValue)}
+                                    ${adminOption('confirmed', '已缴费', paymentStatusValue)}
+                                </select>
+                            </label>
+                            <label class="admin-field">缴费金额
+                                <input id="admin-edit-payment-amount" type="number" min="0" step="0.01" value="${registration?.payment_amount ?? ''}">
+                            </label>
+                            <label class="admin-field">发票类型
+                                <select id="admin-edit-invoice-type">
+                                    ${adminOption('', '未填写', invoiceTypeValue)}
+                                    ${adminOption('general', '增值税普通发票', invoiceTypeValue)}
+                                    ${adminOption('special', '增值税专用发票', invoiceTypeValue)}
+                                </select>
+                            </label>
+                            <label class="admin-field">发票抬头
+                                <input id="admin-edit-invoice-title" type="text" value="${escapeHtml(registration?.invoice_title || '')}">
+                            </label>
+                            <label class="admin-field">税号
+                                <input id="admin-edit-invoice-tax-id" type="text" value="${escapeHtml(registration?.invoice_tax_id || '')}">
+                            </label>
+                        </div>
+                        <label class="admin-field admin-field-wide">缴费备注
+                            <textarea id="admin-edit-payment-note" rows="3">${escapeHtml(registration?.payment_note || '')}</textarea>
+                        </label>
+                    </div>
+                ` : `
+                    <div class="admin-edit-section">
+                    <div class="admin-edit-note">
+                        该用户还没有会议报名记录。如需登记缴费，请在用户列表点击“补报名”。
+                    </div>
+                    </div>
+                `}
+
+                <div class="admin-modal-actions">
+                    <button onclick="closeAdminEditModal()" class="admin-btn admin-btn-secondary">取消</button>
+                    <button onclick="submitAdminEdit(${user.id}, ${registration ? registration.id : 'null'}, ${createRegistration})" class="admin-btn admin-btn-success">保存</button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeAdminEditModal();
+    });
+    document.body.appendChild(modal);
+}
+
+function closeAdminEditModal() {
+    const modal = document.getElementById('admin-edit-modal');
+    if (modal) modal.remove();
+}
+
+function readAdminAttendTutorial() {
+    const value = document.getElementById('admin-edit-attend-tutorial')?.value;
+    if (value === undefined) return undefined;
+    if (value === '') return null;
+    return value === 'true';
+}
+
+async function submitAdminEdit(userId, regId, createRegistration) {
+    const userData = {
+        name: document.getElementById('admin-edit-name').value.trim(),
+        phone: document.getElementById('admin-edit-phone').value.trim(),
+        affiliation: document.getElementById('admin-edit-affiliation').value.trim(),
+        department: document.getElementById('admin-edit-department').value.trim(),
+        identity_type: document.getElementById('admin-edit-identity-type').value,
+        title: document.getElementById('admin-edit-title').value.trim(),
+        is_verified: document.getElementById('admin-edit-is-verified').checked
+    };
+
+    const registrationSection = document.getElementById('admin-edit-participation-type');
+    let registrationData = null;
+    if (registrationSection) {
+        registrationData = {
+            participation_type: document.getElementById('admin-edit-participation-type').value,
+            attend_tutorial: readAdminAttendTutorial(),
+            payment_status: document.getElementById('admin-edit-payment-status').value,
+            payment_amount: document.getElementById('admin-edit-payment-amount').value,
+            payment_note: document.getElementById('admin-edit-payment-note').value.trim(),
+            invoice_type: document.getElementById('admin-edit-invoice-type').value,
+            invoice_title: document.getElementById('admin-edit-invoice-title').value.trim(),
+            invoice_tax_id: document.getElementById('admin-edit-invoice-tax-id').value.trim()
+        };
+    }
+
+    try {
+        const userResult = await api.adminUpdateUser(userId, userData);
+        const currentUser = api.getUser();
+        if (currentUser?.id === userId && userResult.user) {
+            api.setUser(userResult.user);
+        }
+
+        if (registrationData) {
+            if (createRegistration) {
+                await api.adminCreateRegistration(userId, registrationData);
+            } else if (regId) {
+                await api.adminUpdateRegistration(regId, registrationData);
+            }
+        }
+
+        showMessage('保存成功\nSaved', 'success');
+        closeAdminEditModal();
+        refreshAdminAfterChange();
     } catch (err) {
         showMessage(err.message, 'error');
     }
@@ -780,6 +1068,9 @@ async function loadAdminLogs() {
             'review_poster': '审核海报',
             'upload_document': '上传文档',
             'set_admin': '设置管理员',
+            'update_user': '编辑用户',
+            'create_registration_admin': '补建报名',
+            'update_registration_admin': '编辑报名',
             // 用户操作
             'register': '用户注册',
             'login': '用户登录',
@@ -808,6 +1099,14 @@ async function loadAdminLogs() {
                     details = `${escapeHtml(d.user_name || '')}: ${escapeHtml(d.file_name || '')}`;
                 } else if (log.action === 'set_admin') {
                     details = `${escapeHtml(d.user_name || '')} → ${d.is_admin ? '管理员' : '普通用户'}`;
+                } else if (log.action === 'update_user') {
+                    const keys = d.changes ? Object.keys(d.changes) : [];
+                    details = `${escapeHtml(d.user_name || '')} [${escapeHtml(keys.join('、') || '资料')}]`;
+                } else if (log.action === 'create_registration_admin') {
+                    details = `${escapeHtml(d.user_name || '')} → ${getAdminPaymentStatusText(d.payment_status)}`;
+                } else if (log.action === 'update_registration_admin') {
+                    const keys = d.changes ? Object.keys(d.changes) : [];
+                    details = `${escapeHtml(d.user_name || '')} [${escapeHtml(keys.join('、') || '报名')}]`;
                 } else if (log.action === 'register') {
                     details = escapeHtml(d.email || '');
                 } else if (log.action === 'conf_register') {
