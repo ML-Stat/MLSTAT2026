@@ -351,6 +351,14 @@ class ApiClient {
         });
     }
 
+    async adminBulkUploadInvitation(formData) {
+        return this.request('/admin/invitations/bulk-upload', {
+            method: 'POST',
+            body: formData,
+            headers: {}
+        });
+    }
+
     async adminGetStatistics() {
         return this.request('/admin/statistics');
     }

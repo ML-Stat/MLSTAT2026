@@ -305,6 +305,7 @@ async function loadPendingPayments() {
                         <div class="admin-count">共 ${total} 人已缴费</div>
                     </div>
                     <div class="admin-toolbar-right">
+                        <button class="admin-btn admin-btn-success" onclick="showBulkInvitationModal()"><i class="material-icons">mail</i> 批量上传邀请函</button>
                         <button class="admin-btn" onclick="exportInvoiceInfo()"><i class="material-icons">receipt_long</i> 导出开票信息</button>
                     </div>
                 </div>
@@ -361,6 +362,75 @@ async function exportInvoiceInfo() {
         a.download = `开票信息_${new Date().toISOString().slice(0,10)}.xlsx`;
         a.click();
         URL.revokeObjectURL(url);
+    } catch (err) {
+        showMessage(err.message, 'error');
+    }
+}
+
+function showBulkInvitationModal() {
+    const existingModal = document.getElementById('admin-bulk-invitation-modal');
+    if (existingModal) existingModal.remove();
+
+    const modal = document.createElement('div');
+    modal.id = 'admin-bulk-invitation-modal';
+    modal.className = 'modal-overlay';
+    modal.innerHTML = `
+        <div class="modal-content" style="max-width:480px;">
+            <div class="modal-header">
+                <h3>批量上传邀请函</h3>
+                <button class="modal-close" onclick="closeBulkInvitationModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="margin:0 0 16px;color:#555;line-height:1.6;">
+                    上传同一个邀请函文件。系统只会发送给已缴费且尚未上传邀请函的参会人；已有邀请函的记录会自动跳过。
+                </p>
+                <label class="admin-field">邀请函文件
+                    <input type="file" id="bulk-invitation-file" accept=".pdf,.png,.jpg,.jpeg">
+                </label>
+                <div class="admin-modal-actions">
+                    <button onclick="closeBulkInvitationModal()" class="admin-btn admin-btn-secondary">取消</button>
+                    <button onclick="submitBulkInvitation()" class="admin-btn admin-btn-success">
+                        <i class="material-icons">send</i> 上传并发送
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeBulkInvitationModal();
+    });
+
+    document.body.appendChild(modal);
+}
+
+function closeBulkInvitationModal() {
+    const modal = document.getElementById('admin-bulk-invitation-modal');
+    if (modal) modal.remove();
+}
+
+async function submitBulkInvitation() {
+    const input = document.getElementById('bulk-invitation-file');
+    const file = input?.files?.[0];
+
+    if (!file) {
+        showMessage('请选择邀请函文件', 'warning');
+        return;
+    }
+
+    try {
+        const formData = new FormData();
+        formData.append('file', file);
+
+        const result = await api.adminBulkUploadInvitation(formData);
+        closeBulkInvitationModal();
+        dataCache = {};
+        loadPendingPayments();
+
+        showMessage(
+            `${result.message}\n已确认缴费：${result.total_confirmed}\n本次上传/发送：${result.uploaded_count}\n跳过总数：${result.skipped_count}\n已有邀请函跳过：${result.skipped_existing_invitation}\n邮箱缺失跳过：${result.skipped_missing_email}`,
+            'success'
+        );
     } catch (err) {
         showMessage(err.message, 'error');
     }
@@ -1067,6 +1137,7 @@ async function loadAdminLogs() {
             'confirm_payment': '确认缴费',
             'review_poster': '审核海报',
             'upload_document': '上传文档',
+            'bulk_upload_invitation': '批量上传邀请函',
             'set_admin': '设置管理员',
             'update_user': '编辑用户',
             'create_registration_admin': '补建报名',
@@ -1097,6 +1168,8 @@ async function loadAdminLogs() {
                     details = `${titleText} → ${statusMapReview[d.new_status] || escapeHtml(d.new_status) || '-'}`;
                 } else if (log.action === 'upload_document') {
                     details = `${escapeHtml(d.user_name || '')}: ${escapeHtml(d.file_name || '')}`;
+                } else if (log.action === 'bulk_upload_invitation') {
+                    details = `发送 ${d.sent_count ?? d.uploaded_count ?? 0} / 跳过 ${d.skipped_existing_invitation ?? 0}`;
                 } else if (log.action === 'set_admin') {
                     details = `${escapeHtml(d.user_name || '')} → ${d.is_admin ? '管理员' : '普通用户'}`;
                 } else if (log.action === 'update_user') {
