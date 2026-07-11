@@ -2,11 +2,11 @@
 title: "AI for Statistics的一些最新进展"
 date: 2026-03-07
 tags: ["k1"]
-weight: 13
+weight: 9
 params:
   speaker: "周帆"
   affiliation: "上海财经大学"
-  time: "7月17日 10:40-11:20"
+  time: "7月16日 16:40-17:20"
   location: "西南财经大学柳林校区弘远楼105会议室"
 ---
 

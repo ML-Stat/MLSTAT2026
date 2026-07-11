@@ -2,11 +2,11 @@
 title: "泛函尺度律：大模型尺度现象的动力学解释"
 date: 2026-03-07
 tags: ["k1"]
-weight: 11
+weight: 4
 params:
   speaker: "吴磊"
   affiliation: "北京大学"
-  time: "7月17日 9:00-9:40"
+  time: "7月16日 11:20-12:00"
   location: "西南财经大学柳林校区弘远楼105会议室"
 ---
 

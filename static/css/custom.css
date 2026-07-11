@@ -22,6 +22,65 @@
     color: #666;
 }
 
+.conference-materials {
+    display: grid;
+    gap: 16px;
+    margin: 14px 0 28px;
+}
+
+.conference-handbook-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    padding: 10px 14px;
+    border: 1px solid #d7dbe8;
+    border-radius: 4px;
+    background: #f7f8fc;
+    color: var(--custom-primary);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.conference-handbook-link:hover {
+    background: #eef1fb;
+    text-decoration: none;
+}
+
+.conference-handbook-link .material-icons {
+    font-size: 20px;
+}
+
+.conference-wechat {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: 520px;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.conference-wechat img {
+    width: 150px;
+    max-width: 38vw;
+    height: auto;
+    border: 1px solid #eee;
+}
+
+@media (max-width: 520px) {
+    .conference-wechat {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .conference-wechat img {
+        width: 180px;
+        max-width: 100%;
+    }
+}
+
 /* ==================== 用户导航 ==================== */
 .custom-auth-nav {
     background: #f5f5f5;

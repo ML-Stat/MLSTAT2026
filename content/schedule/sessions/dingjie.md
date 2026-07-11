@@ -2,11 +2,11 @@
 title: "The Future of AI Scientists: Emerging Directions and Fundamental Challenges"
 date: 2026-03-07
 tags: ["k1"]
-weight: 4
+weight: 12
 params:
   speaker: "丁杰"
   affiliation: "明尼苏达大学"
-  time: "7月16日 11:20-12:00"
+  time: "7月17日 10:40-11:20"
   location: "西南财经大学柳林校区弘远楼105会议室"
 ---
 

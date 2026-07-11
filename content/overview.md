@@ -32,13 +32,31 @@ weight: 10
 
 **会议日程 / Schedule**
 
-- **7月15日 (周三) 下午** / July 15 (Wed) Afternoon<br>Tutorial — Session Chairs: Chengchun Shi (LSE)
+- **7月15日 (周三)** / July 15 (Wed)<br>会议报到、Tutorial、统计学科发展专家咨询会<br><small class="grey-text">Registration, Tutorial, and Expert Consultation Meeting on Statistical Discipline Development</small>
 
-- **7月16日 (周四) 全天** / July 16 (Thu) All Day<br>会议报告 / Conference — Session Chairs: [待定 / TBD]
+- **7月16日 (周四) 上午** / July 16 (Thu) Morning<br>欢迎仪式、合影、特邀报告（一）（二）<br><small class="grey-text">Opening Ceremony, Group Photo, and Invited Talks I-II</small>
 
-- **7月16日 (周四) 晚上** / July 16 (Thu) Evening<br>Poster：18:30-20:30｜地点：弘远楼一楼大厅<br><small class="grey-text">Poster Session: 18:30-20:30; Venue: Lobby, 1F Hongyuan Building</small>
+- **7月16日 (周四) 下午** / July 16 (Thu) Afternoon<br>特邀报告（三）（四）<br><small class="grey-text">Invited Talks III-IV</small>
 
-- **7月17日 (周五) 上午** / July 17 (Fri) Morning<br>会议报告 / Conference — Session Chairs: [待定 / TBD]
+- **7月16日 (周四) 晚上** / July 16 (Thu) Evening<br>中国现场统计研究会机器学习分会理事会：19:30-20:00｜地点：弘远楼109会议室<br>Poster：19:30-21:00｜地点：弘远楼一楼大厅<br><small class="grey-text">Machine Learning Branch Council Meeting: 19:30-20:00; Venue: Room 109, Hongyuan Building<br>Poster Session: 19:30-21:00; Venue: Lobby, 1F Hongyuan Building</small>
+
+- **7月17日 (周五) 上午** / July 17 (Fri) Morning<br>特邀报告（五）（六）<br><small class="grey-text">Invited Talks V-VI</small>
+
+**会议材料 / Conference Materials**
+
+<div class="conference-materials">
+  <a class="conference-handbook-link" href="/MLSTAT2026/etc/conference-handbook.pdf" target="_blank" rel="noopener">
+    <i class="material-icons" aria-hidden="true">picture_as_pdf</i>
+    <span>下载会议手册 / Download Conference Handbook</span>
+  </a>
+  <div class="conference-wechat">
+    <img src="/MLSTAT2026/images/wechat_group.png" alt="MLSTAT 2026 会议微信群二维码">
+    <div>
+      <strong>会议微信群 / WeChat Group</strong><br>
+      <small class="grey-text">请扫码加入会议微信群，获取现场通知。</small>
+    </div>
+  </div>
+</div>
 
 **注册费用 / Registration Fee**
 
