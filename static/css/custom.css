@@ -29,26 +29,31 @@
 }
 
 .conference-handbook-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    width: fit-content;
-    padding: 10px 14px;
-    border: 1px solid #d7dbe8;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
+    max-width: 520px;
+    padding: 14px 16px;
+    border: 1px solid #d9dce8;
     border-radius: 4px;
-    background: #f7f8fc;
-    color: var(--custom-primary);
+    background: #fff;
+    color: #273469;
     font-weight: 500;
     text-decoration: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .06);
 }
 
 .conference-handbook-link:hover {
-    background: #eef1fb;
+    border-color: var(--custom-primary);
+    color: var(--custom-primary);
     text-decoration: none;
 }
 
-.conference-handbook-link .material-icons {
-    font-size: 20px;
+.conference-handbook-link span {
+    color: #666;
+    font-size: 13px;
+    white-space: nowrap;
 }
 
 .conference-wechat {

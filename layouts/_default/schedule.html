@@ -24,6 +24,8 @@
             {{ end }}
             <h1>{{ .Title }}</h1>
 
+            {{ .Content }}
+
             {{ range where .Site.RegularPages "Section" "schedule" }}
             {{ if ne .Title "Sessions" }}
             {{ $page := . }}
